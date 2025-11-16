@@ -1,0 +1,2090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA & CGPA Calculator | Cavendish University Uganda</title>
+    <style>
+       :root {
+            --primary: #1a3a6c;
+            --secondary: #e6a900;
+            --accent: #8b0000;
+            --light: #f5f5f5;
+            --dark: #333;
+            --success: #28a745;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Updated Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f2a52 100%);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo {
+            height: 70px;
+            width: auto;
+            /* border-radius: 8px; */
+            
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo-text-container {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+        }
+        
+        .logo-subtext {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-top: 4px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav li {
+            position: relative;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 8px 5px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        nav a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+        
+        nav a:hover {
+            color: var(--secondary);
+        }
+        
+        nav a:hover:after {
+            width: 100%;
+        }
+        
+       /* Updated Mobile Navigation */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-wrap: wrap;
+        position: relative;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 60%;
+        background: linear-gradient(135deg, var(--primary) 0%, #0f2a52 100%);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        margin-top: 0;
+        display: none;
+        z-index: 1000;
+    }
+    
+    nav.active {
+        display: block;
+        animation: slideDown 0.3s ease;
+    }
+    
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 10px 0;
+    }
+    
+    nav li {
+        text-align: left;
+    }
+    
+    nav a {
+        display: block;
+        padding: 12px 20px;
+        background: transparent;
+        border-radius: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    nav a:last-child {
+        border-bottom: none;
+    }
+    
+    .logo {
+        height: 60px;
+    }
+    
+    .logo-text {
+        font-size: 1.5rem;
+    }
+    
+    .logo-subtext {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 576px) {
+            .section-title h2 {
+                font-size: 28px;
+            }
+            
+            .form-container {
+                padding: 25px 20px;
+            }
+            
+            .service-card {
+                padding: 20px;
+            }
+            
+            .header-container {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            
+            .logo {
+                margin-bottom: 0;
+            }
+            
+            .logo h1 {
+                font-size: 20px;
+            }
+            
+            .mobile-menu {
+                right: 10px;
+            }
+            .btn {
+                margin-bottom: 2rem;
+            }
+            
+           
+        }
+        
+        /* Rest of the styles remain the same */
+        .hero {
+            background: linear-gradient(rgba(26, 58, 108, 0.8), rgba(26, 58, 108, 0.9)), url('https://www.cavendish.ac/wp-content/uploads/2015/07/cavendish-ug.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--primary);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            background-color: #ffc107;
+            transform: translateY(-2px);
+        }
+        
+        .calculator-section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+            margin: 10px auto;
+        }
+        
+        .calculator-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .calculator-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .form-container, .results-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        select, input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        select:focus, input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .course-list {
+            margin-top: 20px;
+        }
+        
+        .course-item {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 10px;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            align-items: center;
+        }
+        
+        .course-item:last-child {
+            border-bottom: none;
+        }
+        
+        .course-header {
+            font-weight: bold;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+        }
+        
+        .elective-section {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 10px;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .elective-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .elective-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .elective-option input {
+            width: auto;
+            margin-right: 10px;
+        }
+        
+        .results-display {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            margin-bottom: 20px;
+        }
+        
+        .gpa-display {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 20px 0;
+        }
+        
+        .grade-info {
+            margin-top: 20px;
+        }
+        
+        .grade-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .grade-table th, .grade-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .grade-table th {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .grade-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .semester-history {
+            margin-top: 30px;
+        }
+        
+        .history-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cgpa-display {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin: 20px 0;
+        }
+        
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 40px 0;
+            text-align: left;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo-container">
+                <img src="logo.jpg" alt="Cavendish University Uganda Logo" class="logo">
+            </div>
+            
+            <button class="mobile-menu-btn">☰</button>
+            
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#calculator">Calculator</a></li>
+                    <li><a href="#grades">Grading System</a></li>
+                    <li><a href="#help">Help</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Calculate Your GPA & CGPA</h1>
+            <p>Track your academic performance with our easy-to-use calculator designed specifically for Cavendish University Uganda students.</p>
+            <a href="#calculator" class="btn">Get Started</a>
+        </div>
+    </section>
+
+    <section id="calculator" class="calculator-section">
+        <div class="container">
+            <h2 class="section-title">GPA & CGPA Calculator</h2>
+            <div class="calculator-container">
+                <div class="form-container">
+                    <div class="form-group">
+                        <label for="program">Select Program</label>
+                        <select id="program">
+                            <option value="">-- Select Program --</option>
+                            <!-- Programs will be populated by JavaScript -->
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="year">Select Year</label>
+                        <select id="year">
+                            <option value="">-- Select Year --</option>
+                            <option value="1">Year 1</option>
+                            <option value="2">Year 2</option>
+                            <option value="3">Year 3</option>
+                            <option value="4">Year 4</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="semester">Select Semester</label>
+                        <select id="semester">
+                            <option value="">-- Select Semester --</option>
+                            <option value="1">Semester 1</option>
+                            <option value="2">Semester 2</option>
+                        </select>
+                    </div>
+                    
+                    <div id="course-list" class="course-list" style="display: none;">
+                        <h3>Enter Your Course Scores</h3>
+                        <div class="course-item course-header">
+                            <div>Course Name</div>
+                            <div>Credit Units</div>
+                            <div>Score</div>
+                        </div>
+                        <!-- Course items will be dynamically added here -->
+                    </div>
+                    
+                    <button id="calculate-btn" class="btn" style="width: 100%; margin-top: 20px; display: none;">Calculate GPA</button>
+                </div>
+                
+                <div class="results-container">
+                    <h3>Your Results</h3>
+                    <div class="results-display">
+                        <p>Current Semester GPA</p>
+                        <div id="gpa-result" class="gpa-display">-</div>
+                        <p>Based on the courses you've entered</p>
+                    </div>
+                    
+                    <div class="semester-history">
+                        <h4>Semester History</h4>
+                        <div id="history-list">
+                            <!-- History items will be dynamically added here -->
+                            <p style="text-align: center; padding: 20px;">No semester data added yet</p>
+                        </div>
+                        
+                        <div style="margin-top: 20px; text-align: center;">
+                            <p>Cumulative GPA (CGPA)</p>
+                            <div id="cgpa-result" class="cgpa-display">-</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="grades" class="calculator-section" style="background-color: #f5f5f5;">
+        <div class="container">
+            <h2 class="section-title">Grading System</h2>
+            <table class="grade-table">
+                <thead>
+                    <tr>
+                        <th>Score Range</th>
+                        <th>Grade</th>
+                        <th>Grade Points</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>80 - 100%</td>
+                        <td>A</td>
+                        <td>5.0</td>
+                        <td>Excellent</td>
+                    </tr>
+                    <tr>
+                        <td>75 - 79%</td>
+                        <td>B+</td>
+                        <td>4.5</td>
+                        <td>Very Good</td>
+                    </tr>
+                    <tr>
+                        <td>70 - 74%</td>
+                        <td>B</td>
+                        <td>4.0</td>
+                        <td>Good</td>
+                    </tr>
+                    <tr>
+                        <td>65 - 69%</td>
+                        <td>C+</td>
+                        <td>3.5</td>
+                        <td>Above Average</td>
+                    </tr>
+                    <tr>
+                        <td>60 - 64%</td>
+                        <td>C</td>
+                        <td>3.0</td>
+                        <td>Average</td>
+                    </tr>
+                    <tr>
+                        <td>55 - 59%</td>
+                        <td>D+</td>
+                        <td>2.5</td>
+                        <td>Below Average</td>
+                    </tr>
+                    <tr>
+                        <td>50 - 54%</td>
+                        <td>D</td>
+                        <td>2.0</td>
+                        <td>Pass</td>
+                    </tr>
+                    <tr>
+                        <td>Below 50%</td>
+                        <td>F</td>
+                        <td>0.0</td>
+                        <td>Fail</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Plot 1469, Ggaba Road</p>
+                    <p>Kansanga, Kampala</p>
+                    <p>Uganda</p>
+                    <p>Email: info@cavendish.ac.ug</p>
+                    <p>Phone: +256 414 531 500</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="#calculator" style="color: white;">GPA Calculator</a></p>
+                    <p><a href="#grades" style="color: white;">Grading System</a></p>
+                    <p><a href="#help" style="color: white;">Help & Support</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>About</h3>
+                    <p>This GPA & CGPA calculator is designed specifically for Cavendish University Uganda students to track their academic performance.</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Cavendish University Uganda. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mainNav = document.getElementById('main-nav');
+    
+    mobileMenuBtn.addEventListener('click', function() {
+        mainNav.classList.toggle('active');
+        // Toggle menu icon between hamburger and X
+        if (mainNav.classList.contains('active')) {
+            mobileMenuBtn.innerHTML = '✕';
+        } else {
+            mobileMenuBtn.innerHTML = '☰';
+        }
+    });
+    
+    // Close mobile menu when clicking on a link
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                mainNav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '☰';
+            }
+        });
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 768 && mainNav.classList.contains('active')) {
+            if (!mainNav.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                mainNav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '☰';
+            }
+        }
+    });
+});
+        // Course data extracted from the document
+        const courseData = {
+    // Bachelor of Laws (LLB) - Updated with all modules
+    'llb': {
+        '1': {
+            '1': [
+                { code: 'LLB111', name: 'Introducing Law', credits: 3 },
+                { code: 'LLB112', name: 'Constitutional History', credits: 3 },
+                { code: 'LLB113', name: 'Criminal Law I', credits: 3 },
+                { code: 'LLB114', name: 'Law of Contract I', credits: 3 },
+                { code: 'LLB115', name: 'Law & Development', credits: 3 }
+            ],
+            '2': [
+                { code: 'LLB121', name: 'Legal Methods', credits: 3 },
+                { code: 'LLB122', name: 'Constitutional Law', credits: 3 },
+                { code: 'LLB123', name: 'Criminal Law II', credits: 3 },
+                { code: 'LLB124', name: 'Law of Contract II', credits: 3 },
+                { code: 'LLB125', name: 'Nature & History of Torts', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'LLB211', name: 'Family Law I', credits: 3 },
+                { code: 'LLB212', name: 'Land Law I', credits: 3 },
+                { code: 'LLB213', name: 'Evidence Law I', credits: 3 },
+                { code: 'LLB214', name: 'Negligence & Strict Liability', credits: 3 },
+                { code: 'LLB215', name: 'Equity and Trusts', credits: 3 }
+            ],
+            '2': [
+                { code: 'LLB221', name: 'Family Law II', credits: 3 },
+                { code: 'LLB222', name: 'Land Law II', credits: 3 },
+                { code: 'LLB223', name: 'Evidence Law II', credits: 3 },
+                { code: 'LLB224', name: 'Administrative Law', credits: 3 },
+                { code: 'LLB225', name: 'Social Research', credits: 3 }
+            ]
+        },
+        '3': {
+            '1': [
+                { code: 'LLB311', name: 'Criminal Procedure', credits: 3 },
+                { code: 'LLB312', name: 'Business Associations I', credits: 3 },
+                { code: 'LLB313', name: 'Jurisprudence I', credits: 3 },
+                { code: 'LLB314', name: 'Sale of Goods', credits: 3 },
+                { code: 'LLB315', name: 'Law of Banking', credits: 3 }
+            ],
+            '2': [
+                { code: 'LLB322', name: 'Jurisprudence II', credits: 3 },
+                { code: 'LLB323', name: 'Business Associations II', credits: 3 },
+                { code: 'LLB324', name: 'Alternative Dispute Resolution', credits: 3 },
+                { code: 'LLB325', name: 'Computers and the Law', credits: 3 },
+                { code: 'LLB327', name: 'Insurance Law', credits: 3 }
+            ]
+        },
+        '4': {
+            '1': [
+                { code: 'LLB411', name: 'Civil Procedure I', credits: 3 },
+                { code: 'LLB412', name: 'Revenue and Taxation Law I', credits: 3 },
+                { code: 'LLB413', name: 'International Law I', credits: 3 },
+                { code: 'LLB414', name: 'Labour Law', credits: 3 },
+                { code: 'LLB416', name: 'Intellectual Property Law I', credits: 3 }
+            ],
+            '2': [
+                { code: 'LLB421', name: 'Civil Procedure II', credits: 3 },
+                { code: 'LLB422', name: 'Revenue Law and Taxation II', credits: 3 },
+                { code: 'LLB424', name: 'International Law II', credits: 3 },
+                { code: 'LLB426', name: 'Intellectual Property Law II', credits: 3 }
+            ]
+        }
+    },
+    
+    // Bachelor of Science in Public Health - Updated
+    'bsc-public-health': {
+        '1': {
+            '1': [
+                { code: 'BJC110-S', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'BPH212', name: 'Principles of Environmental Health', credits: 3 },
+                { code: 'BPH114', name: 'Introduction to Public Health and Ethics', credits: 3 },
+                { code: 'BPH113', name: 'Human Biology', credits: 3 },
+                { code: 'BPH112', name: 'Health and Health Behavior', credits: 3 },
+                { code: 'BIT110-S', name: 'Introduction to Information and Communication Technologies', credits: 3 }
+            ],
+            '2': [
+                { code: 'BPH122', name: 'Public Health Microbiology and Disease Surveillance', credits: 3 },
+                { code: 'BPH121', name: 'First Aid and Emergency Rescue', credits: 3 },
+                { code: 'EHS121', name: 'Biostatistics', credits: 3 },
+                { code: 'EHS112', name: 'Principles of Epidemiology', credits: 3 },
+                { code: 'BPH124-PH', name: 'Diseases of Public Health Importance', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'BPH216', name: 'Principles of Disease Control', credits: 3 },
+                { code: 'BPH323', name: 'Health Informatics', credits: 3 },
+                { code: 'BPH215', name: 'Principles of Health Promotion', credits: 3 },
+                { code: 'EHS214', name: 'Principles of Demography and Population Dynamics', credits: 3 },
+                { code: 'BPH211', name: 'Public Health Nutrition', credits: 3 }
+            ],
+            '2': [
+                { code: 'EHS223', name: 'Occupational Health and Safety', credits: 3 },
+                { code: 'BPH221', name: 'Public Health in Emergency Situations', credits: 3 },
+                { code: 'BPH222', name: 'Principles of Health Education and Advocacy', credits: 3 },
+                { code: 'BPH224', name: 'Health Policies and Laws', credits: 3 },
+                { code: 'RSC001-H', name: 'Research Methodology', credits: 3 }
+            ]
+        },
+        '3': {
+            '1': [
+                { code: 'BPH314', name: 'Social Marketing for Health', credits: 3 },
+                { code: 'BPH311', name: 'Community Health Practice', credits: 3 },
+                { code: 'EHS313', name: 'Health Monitoring and Evaluation', credits: 3 },
+                { code: 'BPH313', name: 'Family and Reproductive Health', credits: 3 }
+            ],
+            '2': [
+                { code: 'EHS323', name: 'Institutional Health Management', credits: 3 },
+                { code: 'BBA322', name: 'Project Planning and Management', credits: 3 },
+                { code: 'BPH321', name: 'Health Economics and Financing', credits: 3 },
+                { code: 'BPH323 / ADHM1106', name: 'Health Service Management', credits: 3 }
+            ]
+        }
+    },
+    
+    // BBA Specializations - Updated with all options
+    'bba-accounting-finance': {
+        '1': {
+            '1': [
+                { code: 'BBA116 / DBA116', name: 'Basic Statistics', credits: 3 },
+                { code: 'BBA112 / DBA112', name: 'Microeconomics', credits: 3 },
+                { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'BBA113 / DBA113', name: 'Business Administration', credits: 3 },
+                { code: 'BIT110', name: 'Introduction to Information and Communication Technologies', credits: 3 },
+                { code: 'BBA115', name: 'Financial Accounting', credits: 3 }
+            ],
+            '2': [
+                { code: 'BBA122 / DBA122', name: 'Quantitative Methods for Business', credits: 3 },
+                { code: 'BBA124 / DBA124', name: 'Principles of Marketing', credits: 3 },
+                { code: 'PLM311', name: 'Principles of Procurement & Logistics Management', credits: 3 },
+                { code: 'BBA123', name: 'Macroeconomics', credits: 3 },
+                { code: 'BBA311', name: 'Principles of Management', credits: 3 },
+                { code: 'BBA125 / DBA125', name: 'Business Law', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'BAC215', name: 'Auditing I', credits: 3 },
+                { code: 'BBA215 / DBA215', name: 'Human Resource Management', credits: 3 },
+                { code: 'BBA214 / DBA213 / AGM212', name: 'Entrepreneurship & Small Business Management', credits: 3 },
+                { code: 'BBA212', name: 'Organisational Behavior', credits: 3 },
+                { code: 'BBA211 / DBA211', name: 'Managerial Accounting', credits: 3 },
+                { code: 'BBA216', name: 'Operations Management', credits: 3 }
+            ],
+            '2': [
+                { code: 'RSC001', name: 'Research Methodology', credits: 3 },
+                { code: 'BBA221', name: 'Strategic Management', credits: 3 },
+                { code: 'BBA223', name: 'Taxation I', credits: 3 },
+                { code: 'BBA224', name: 'Business Ethics', credits: 3 },
+                { code: 'BBF222', name: 'Financial Management', credits: 3 }
+            ]
+        },
+        '3': {
+            '1': [
+                { code: 'BBF316', name: 'Public Finance', credits: 3 },
+                { code: 'BAC314', name: 'Public Sector Accounting', credits: 3 },
+                { code: 'BAC316', name: 'Computerized Accounting I', credits: 3 },
+                { code: 'BBA317', name: 'Taxation II', credits: 3 },
+                { code: 'BAC313', name: 'Advanced Accounting I', credits: 3 },
+                { code: 'BBF317', name: 'Company Law', credits: 3 }
+            ],
+            '2': [
+                { code: 'BAC321', name: 'Auditing II', credits: 3 },
+                { code: 'BAC326', name: 'Computerized Accounting II', credits: 3 },
+                { code: 'BAC322', name: 'Advanced Accounting II', credits: 3 },
+                { code: 'BBA314', name: 'Investment Analysis', credits: 3 },
+                { code: 'BAC327', name: 'Treasury Management', credits: 3 }
+            ]
+        }
+    },
+    
+    'bba-banking-finance': {
+        '1': {
+            '1': [
+                { code: 'BBA116 / DBA116', name: 'Basic Statistics', credits: 3 },
+                { code: 'BBA112 / DBA112', name: 'Microeconomics', credits: 3 },
+                { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'BBA113 / DBA113', name: 'Business Administration', credits: 3 },
+                { code: 'BIT110', name: 'Introduction to Information and Communication Technologies', credits: 3 },
+                { code: 'BBA115', name: 'Financial Accounting', credits: 3 }
+            ],
+            '2': [
+                { code: 'BBA122 / DBA122', name: 'Quantitative Methods for Business', credits: 3 },
+                { code: 'BBA124 / DBA124', name: 'Principles of Marketing', credits: 3 },
+                { code: 'PLM311', name: 'Principles of Procurement & Logistics Management', credits: 3 },
+                { code: 'BBA123', name: 'Macroeconomics', credits: 3 },
+                { code: 'BBA311', name: 'Principles of Management', credits: 3 },
+                { code: 'BBA125 / DBA125', name: 'Business Law', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'BAC215', name: 'Auditing I', credits: 3 },
+                { code: 'BBA215 / DBA215', name: 'Human Resource Management', credits: 3 },
+                { code: 'BBA214 / DBA213 / AGM212', name: 'Entrepreneurship & Small Business Management', credits: 3 },
+                { code: 'BBA212', name: 'Organisational Behavior', credits: 3 },
+                { code: 'BBA211 / DBA211', name: 'Managerial Accounting', credits: 3 },
+                { code: 'BBA216', name: 'Operations Management', credits: 3 }
+            ],
+            '2': [
+                { code: 'RSC001', name: 'Research Methodology', credits: 3 },
+                { code: 'BBA221', name: 'Strategic Management', credits: 3 },
+                { code: 'BBA223', name: 'Taxation I', credits: 3 },
+                { code: 'BBA224', name: 'Business Ethics', credits: 3 },
+                { code: 'BBF222', name: 'Financial Management', credits: 3 }
+            ]
+        },
+        '3': {
+            '1': [
+                { code: 'BBF316', name: 'Public Finance', credits: 3 },
+                { code: 'BBF313', name: 'Banking Operations', credits: 3 },
+                { code: 'BBF322', name: 'Regulatory Framework of Financial Institutions', credits: 3 },
+                { code: 'BBF326', name: 'International Finance', credits: 3 },
+                { code: 'BAC316', name: 'Computerized Accounting I', credits: 3 },
+                { code: 'BBF315', name: 'Corporate and Merchant Banking', credits: 3 }
+            ],
+            '2': [
+                { code: 'BBF325', name: 'Banking Law', credits: 3 },
+                { code: 'BBA314', name: 'Investment Analysis', credits: 3 },
+                { code: 'BBF311', name: 'Banking Technologies and Systems Management', credits: 3 },
+                { code: 'BAC321', name: 'Auditing II', credits: 3 },
+                { code: 'BBF323', name: 'Security Analysis and Portfolio Management', credits: 3 }
+            ]
+        }
+    },
+    
+    'bba-human-resource-management': {
+        '1': {
+            '1': [
+                { code: 'BBA116 / DBA116', name: 'Basic Statistics', credits: 3 },
+                { code: 'BBA112 / DBA112', name: 'Microeconomics', credits: 3 },
+                { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'BBA113 / DBA113', name: 'Business Administration', credits: 3 },
+                { code: 'BIT110', name: 'Introduction to Information and Communication Technologies', credits: 3 },
+                { code: 'BBA115', name: 'Financial Accounting', credits: 3 }
+            ],
+            '2': [
+                { code: 'BBA122 / DBA122', name: 'Quantitative Methods for Business', credits: 3 },
+                { code: 'BBA124 / DBA124', name: 'Principles of Marketing', credits: 3 },
+                { code: 'PLM311', name: 'Principles of Procurement & Logistics Management', credits: 3 },
+                { code: 'BBA123', name: 'Macroeconomics', credits: 3 },
+                { code: 'BBA311', name: 'Principles of Management', credits: 3 },
+                { code: 'BBA125 / DBA125', name: 'Business Law', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'BAC215', name: 'Auditing I', credits: 3 },
+                { code: 'BBA215 / DBA215', name: 'Human Resource Management', credits: 3 },
+                { code: 'BBA214 / DBA213 / AGM212', name: 'Entrepreneurship & Small Business Management', credits: 3 },
+                { code: 'BBA212', name: 'Organisational Behavior', credits: 3 },
+                { code: 'BBA211 / DBA211', name: 'Managerial Accounting', credits: 3 },
+                { code: 'BBA216', name: 'Operations Management', credits: 3 }
+            ],
+            '2': [
+                { code: 'RSC001', name: 'Research Methodology', credits: 3 },
+                { code: 'BBA221', name: 'Strategic Management', credits: 3 },
+                { code: 'BBA223', name: 'Taxation I', credits: 3 },
+                { code: 'BBA224', name: 'Business Ethics', credits: 3 },
+                { code: 'BBF222', name: 'Financial Management', credits: 3 }
+            ]
+        },
+        '3': {
+            '1': [
+                { code: 'HRM313', name: 'Organisational Environment Management', credits: 3 },
+                { code: 'HRM316', name: 'Organisational Leadership', credits: 3 },
+                { code: 'HRM312', name: 'Benefits and Compensation', credits: 3 },
+                { code: 'HRM311', name: 'Human Resource Information System', credits: 3 },
+                { code: 'HRM314', name: 'Human Resource Policy and Management', credits: 3 },
+                { code: 'HRM315', name: 'Human Resource Training and Development', credits: 3 }
+            ],
+            '2': [
+                { code: 'HRM325', name: 'Industrial Psychology', credits: 3 },
+                { code: 'HRM321', name: 'Career Planning and Counseling', credits: 3 },
+                { code: 'HRM323', name: 'Strategic Human Resource Management', credits: 3 },
+                { code: 'BBA324', name: 'Managing Change in Organizations', credits: 3 },
+                { code: 'HRM322', name: 'Occupational Health and Safety', credits: 3 }
+            ]
+        }
+    },
+    
+    'bba-procurement-logistics': {
+        '1': {
+            '1': [
+                { code: 'BBA116 / DBA116', name: 'Basic Statistics', credits: 3 },
+                { code: 'BBA112 / DBA112', name: 'Microeconomics', credits: 3 },
+                { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'BBA113 / DBA113', name: 'Business Administration', credits: 3 },
+                { code: 'BIT110', name: 'Introduction to Information and Communication Technologies', credits: 3 },
+                { code: 'BBA115', name: 'Financial Accounting', credits: 3 }
+            ],
+            '2': [
+                { code: 'BBA122 / DBA122', name: 'Quantitative Methods for Business', credits: 3 },
+                { code: 'BBA124 / DBA124', name: 'Principles of Marketing', credits: 3 },
+                { code: 'PLM311', name: 'Principles of Procurement & Logistics Management', credits: 3 },
+                { code: 'BBA123', name: 'Macroeconomics', credits: 3 },
+                { code: 'BBA311', name: 'Principles of Management', credits: 3 },
+                { code: 'BBA125 / DBA125', name: 'Business Law', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'BAC215', name: 'Auditing I', credits: 3 },
+                { code: 'BBA215 / DBA215', name: 'Human Resource Management', credits: 3 },
+                { code: 'BBA214 / DBA213 / AGM212', name: 'Entrepreneurship & Small Business Management', credits: 3 },
+                { code: 'BBA212', name: 'Organisational Behavior', credits: 3 },
+                { code: 'BBA211 / DBA211', name: 'Managerial Accounting', credits: 3 },
+                { code: 'BBA216', name: 'Operations Management', credits: 3 }
+            ],
+            '2': [
+                { code: 'RSC001', name: 'Research Methodology', credits: 3 },
+                { code: 'BBA221', name: 'Strategic Management', credits: 3 },
+                { code: 'BBA223', name: 'Taxation I', credits: 3 },
+                { code: 'BBA224', name: 'Business Ethics', credits: 3 },
+                { code: 'BBF222', name: 'Financial Management', credits: 3 }
+            ]
+        },
+        '3': {
+            '1': [
+                { code: 'PLM314', name: 'Business Negotiations', credits: 3 },
+                { code: 'PLM319', name: 'Logistics & Supply Chain Management', credits: 3 },
+                { code: 'PLM318', name: 'Risk & Insurance Management', credits: 3 },
+                { code: 'PLM316', name: 'Legal Aspects of Purchasing', credits: 3 },
+                { code: 'PLM317', name: 'Public Procurement & Contract Management', credits: 3 },
+                { code: 'PLM315', name: 'Global Purchasing and Supply Chain Management', credits: 3 }
+            ],
+            '2': [
+                { code: 'PLM326', name: 'Inventory & Warehousing Operations', credits: 3 },
+                { code: 'PLM322', name: 'Sustainable Purchasing', credits: 3 },
+                { code: 'PLM327', name: 'Procurement Audit & Investigations', credits: 3 },
+                { code: 'PLM324', name: 'Strategic Procurement', credits: 3 },
+                { code: 'PLM328', name: 'E-Procurement & Software Applications', credits: 3 }
+            ]
+        }
+    },
+    
+    'bba-management': {
+        '1': {
+            '1': [
+                { code: 'BBA116 / DBA116', name: 'Basic Statistics', credits: 3 },
+                { code: 'BBA112 / DBA112', name: 'Microeconomics', credits: 3 },
+                { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'BBA113 / DBA113', name: 'Business Administration', credits: 3 },
+                { code: 'BIT110', name: 'Introduction to Information and Communication Technologies', credits: 3 },
+                { code: 'BBA115', name: 'Financial Accounting', credits: 3 }
+            ],
+            '2': [
+                { code: 'BBA122 / DBA122', name: 'Quantitative Methods for Business', credits: 3 },
+                { code: 'BBA124 / DBA124', name: 'Principles of Marketing', credits: 3 },
+                { code: 'PLM311', name: 'Principles of Procurement & Logistics Management', credits: 3 },
+                { code: 'BBA123', name: 'Macroeconomics', credits: 3 },
+                { code: 'BBA311', name: 'Principles of Management', credits: 3 },
+                { code: 'BBA125 / DBA125', name: 'Business Law', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'BAC215', name: 'Auditing I', credits: 3 },
+                { code: 'BBA215 / DBA215', name: 'Human Resource Management', credits: 3 },
+                { code: 'BBA214 / DBA213 / AGM212', name: 'Entrepreneurship & Small Business Management', credits: 3 },
+                { code: 'BBA212', name: 'Organisational Behavior', credits: 3 },
+                { code: 'BBA211 / DBA211', name: 'Managerial Accounting', credits: 3 },
+                { code: 'BBA216', name: 'Operations Management', credits: 3 }
+            ],
+            '2': [
+                { code: 'RSC001', name: 'Research Methodology', credits: 3 },
+                { code: 'BBA221', name: 'Strategic Management', credits: 3 },
+                { code: 'BBA223', name: 'Taxation I', credits: 3 },
+                { code: 'BBA224', name: 'Business Ethics', credits: 3 },
+                { code: 'BBF222', name: 'Financial Management', credits: 3 }
+            ]
+        },
+        '3': {
+            '1': [
+                { code: 'BBF316', name: 'Public Finance', credits: 3 },
+                { code: 'PLM314', name: 'Business Negotiations', credits: 3 },
+                { code: 'HRM316', name: 'Organisational Leadership', credits: 3 },
+                { code: 'BBF326', name: 'International Finance', credits: 3 },
+                { code: 'BBA313', name: 'Quality Systems Management', credits: 3 },
+                { code: 'BIT125 / DBA212', name: 'Management Information Systems', credits: 3 }
+            ],
+            '2': [
+                { code: 'BBA322', name: 'Project Planning and Management', credits: 3 },
+                { code: 'BBA323', name: 'Business Risk Management', credits: 3 },
+                { code: 'BBA314', name: 'Investment Analysis', credits: 3 },
+                { code: 'BBA324', name: 'Managing Change in Organizations', credits: 3 },
+                { code: 'BBA315', name: 'Marketing Strategy', credits: 3 }
+            ]
+        }
+    },
+    
+    // Bachelor of Information Technology
+    'bit': {
+        '1': {
+            '1': [
+                { code: 'BIT111', name: 'Discrete Mathematics', credits: 3 },
+                { code: 'BBA116 / DBA116-GRP1', name: 'Basic Statistics', credits: 3 },
+                { code: 'BJC110-GRP2', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'BIT113', name: 'Fundamentals of Information Systems', credits: 3 },
+                { code: 'BIT110-GRP3', name: 'Introduction to Information and Communication Technologies', credits: 3 }
+            ],
+            '2': [
+                { code: 'BIT122 / BSE121 / DDA1204', name: 'Internet Technology & Web Design', credits: 3 },
+                { code: 'BIT123', name: 'Computer Applications', credits: 3 },
+                { code: 'BIT121 / BSE121', name: 'Database Development and Management I', credits: 3 },
+                { code: 'COM122', name: 'Principles of Programming', credits: 3 },
+                { code: 'BIT125 / DBA212', name: 'Information Systems Management', credits: 3 },
+                { code: 'BIT124', name: 'E-Commerce', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'BIT212', name: 'Systems Analysis and Design', credits: 3 },
+                { code: 'COM211', name: 'Object Oriented Programming', credits: 3 },
+                { code: 'BIT215', name: 'Database Development and Management II', credits: 3 },
+                { code: 'BBA214 / DBA213 / AGM212', name: 'Entrepreneurship & Small Business Management', credits: 3 },
+                { code: 'BIT213 / BSE213', name: 'Web Development and Management', credits: 3 },
+                { code: 'BIT214', name: 'Computer Networks & Data Communications', credits: 3 }
+            ],
+            '2': [
+                { code: 'COM221', name: 'Operating Systems Principles', credits: 3 },
+                { code: 'COM224 / BSE212', name: 'Software Engineering Principles', credits: 3 },
+                { code: 'BIT225', name: 'Emerging Trends in Information Technology', credits: 3 },
+                { code: 'BIT223', name: 'Computer Repair and Maintenance', credits: 3 },
+                { code: 'BIT222', name: 'Research Methodology in Computing', credits: 3 }
+            ]
+        },
+        '3': {
+            '1': [
+                { code: 'BIT311', name: 'ICT Project Planning and Management', credits: 3 },
+                { code: 'BIS313', name: 'Business Systems Modelling', credits: 3 },
+                { code: 'BIT315 / DIT224', name: 'Multimedia Systems', credits: 3 },
+                { code: 'BIT312 / BSE311', name: 'Mobile Application Development', credits: 3 },
+                { code: 'BIT314', name: 'Network Configuration and Management', credits: 3 }
+            ],
+            '2': [
+                { code: 'BIT321 / BSE427', name: 'Professional Issues in Computing', credits: 3 },
+                { code: 'BIT325', name: 'Information Systems Audit', credits: 3 },
+                { code: 'BIT322', name: 'Distributed System Development', credits: 3 },
+                { code: 'BIT324', name: 'Network and Information Security', credits: 3 },
+                { code: 'BIT323', name: 'User Interface Design', credits: 3 }
+            ]
+        }
+    },
+    
+    // Higher Education Certificate - Humanities
+    'hec-humanities': {
+        '1': {
+            '1': [
+                { code: 'HEC113', name: 'Reading & Writing Skills for Beginners', credits: 3 },
+                { code: 'HEC111', name: 'Computing and Study Skills', credits: 3 },
+                { code: 'FOU112', name: 'Communication Skills', credits: 3 },
+                { code: 'FOU114', name: 'English', credits: 3 },
+                { code: 'FOU110', name: 'Foundational Mathematics', credits: 3 }
+            ],
+            '2': [
+                { code: 'HEC122', name: 'Ethical Practice and Professionalism', credits: 3 },
+                { code: 'FOA122 / BPA113', name: 'Introduction to Critical Thinking', credits: 3 },
+                { code: 'FOU113', name: 'Introduction to Development Studies', credits: 3 },
+                // Elective section
+                {
+                    type: 'elective',
+                    title: 'Electives (choose any two)',
+                    options: [
+                        { code: 'IRDS121 / BPA121 / FOA124', name: 'Introduction to Political Science', credits: 3 },
+                        { code: 'FOA123', name: 'Business Administration', credits: 3 },
+                        { code: 'FOA120', name: 'Foundation of Law', credits: 3 },
+                        { code: 'HEC125', name: 'Basic Entrepreneurial Skills', credits: 3 },
+                        { code: 'FOA121', name: 'Principles of Accounting', credits: 3 }
+                    ],
+                    maxSelect: 2
+                }
+            ]
+        }
+    },
+    
+    // Higher Education Certificate - Biological Sciences
+    'hec-biological-sciences': {
+        '1': {
+            '1': [
+                { code: 'HEC115', name: 'Introduction to Animal Physiology', credits: 3 },
+                { code: 'HEC112', name: 'Foundation Biology I', credits: 3 },
+                { code: 'HEC111-S', name: 'Computing Skills', credits: 3 },
+                { code: 'FOS111', name: 'Foundation Physical and Inorganic Chemistry', credits: 3 },
+                { code: 'FOU114-S', name: 'English', credits: 3 },
+                { code: 'FOU112-S', name: 'Communication and Study Skills', credits: 3 }
+            ],
+            '2': [
+                { code: 'FOS127', name: 'Foundation Organic and Analytic Chemistry', credits: 3 },
+                { code: 'FOS125', name: 'Foundation Statistics', credits: 3 },
+                { code: 'HEC126', name: 'Introduction to Physical Chemistry', credits: 3 },
+                { code: 'HEC128', name: 'Life Skills Education', credits: 3 },
+                { code: 'HEC123', name: 'Foundation Biology II', credits: 3 },
+                { code: 'HEC124', name: 'Introduction to Plant Physiology', credits: 3 }
+            ]
+        }
+    },
+    
+    // Higher Education Certificate - Physical Sciences
+    'hec-physical-sciences': {
+        '1': {
+            '1': [
+                { code: 'FOS112', name: 'Foundation Physics I', credits: 3 },
+                { code: 'FOU110-S', name: 'Foundational Mathematics', credits: 3 },
+                { code: 'HEC111-S', name: 'Computing Skills', credits: 3 },
+                { code: 'FOS111', name: 'Foundation Physical and Inorganic Chemistry', credits: 3 },
+                { code: 'FOU114-S', name: 'English', credits: 3 },
+                { code: 'FOU112-S', name: 'Communication Skills', credits: 3 }
+            ],
+            '2': [
+                { code: 'FOS127', name: 'Foundation Organic and Analytic Chemistry', credits: 3 },
+                { code: 'FOS125', name: 'Foundation Statistics', credits: 3 },
+                { code: 'HEC128', name: 'Life Skills Education', credits: 3 },
+                { code: 'FOS126', name: 'Foundation Physics II', credits: 3 },
+                { code: 'FOU113-P', name: 'Introduction to Development Studies', credits: 3 }
+            ]
+        }
+    },
+    
+    // Diploma in Information Technology
+    'dit': {
+        '1': {
+            '1': [
+                { code: 'DCS112', name: 'Introduction to Operating Systems', credits: 3 },
+                { code: 'BJC110-GRP2', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'BIT113', name: 'Fundamentals of Information Systems', credits: 3 },
+                { code: 'BIT110-GRP3', name: 'Introduction to Information and Communication Technologies', credits: 3 },
+                { code: 'DCS111', name: 'Fundamentals of Mathematics', credits: 3 }
+            ],
+            '2': [
+                { code: 'BIT122 / BSE121 / DDA1204', name: 'Internet Technology and Web Design', credits: 3 },
+                { code: 'BIT123', name: 'Computer Applications', credits: 3 },
+                { code: 'COM113', name: 'Computer Architecture and Organisation', credits: 3 },
+                { code: 'BIT121 / BSE121', name: 'Introduction to Database Systems', credits: 3 },
+                { code: 'COM122', name: 'Programming Principles', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'BIT212', name: 'Systems Analysis and Design', credits: 3 },
+                { code: 'BIT225', name: 'Emerging Trends in Information Technology', credits: 3 },
+                { code: 'BIT124', name: 'E-Commerce', credits: 3 },
+                { code: 'BIT213 / BSE213', name: 'Dynamic Website Development', credits: 3 },
+                { code: 'BIT223', name: 'Computer Assembly, Repair and Maintenance', credits: 3 }
+            ],
+            '2': [
+                { code: 'BIT321 / BSE427', name: 'Professional Issues in Computing', credits: 3 },
+                { code: 'BIT215', name: 'Database Development and Administration', credits: 3 },
+                { code: 'BIT315 / DIT224', name: 'Introduction to Multimedia Systems', credits: 3 },
+                { code: 'BIT214', name: 'PC Network and Data Communication', credits: 3 },
+                { code: 'BIT222', name: 'Research Methodology in Computing', credits: 3 }
+            ]
+        }
+    },
+    
+    // Bachelor of Science in Software Engineering
+    'bse': {
+        '1': {
+            '1': [
+                { code: 'BIT111', name: 'Discrete Mathematics', credits: 3 },
+                { code: 'BIT110-GRP2', name: 'Introduction to Information and Communication Technologies', credits: 3 },
+                { code: 'BJC110-GRP2', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'COM113', name: 'Computer Architecture and Organisation', credits: 3 },
+                { code: 'BSE111', name: 'Calculus for Software Engineering', credits: 3 }
+            ],
+            '2': [
+                { code: 'BIT212', name: 'System Analysis and Design', credits: 3 },
+                { code: 'BIT122 / BSE121 / DDA1204', name: 'Internet and Web Programming', credits: 3 },
+                { code: 'BIT121 / BSE121', name: 'Fundamentals of Database Systems', credits: 3 },
+                { code: 'COM122', name: 'Principles of Programming', credits: 3 },
+                { code: 'COM123 / DDA1201', name: 'Numerical Analysis and Computation', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'COM221', name: 'Operating Systems Principles', credits: 3 },
+                { code: 'COM224 / BSE212', name: 'Principles of Software Engineering', credits: 3 },
+                { code: 'COM211', name: 'Object Oriented Programming', credits: 3 },
+                { code: 'BIT215', name: 'Advanced Database Systems', credits: 3 },
+                { code: 'COM212', name: 'Data Structures and Algorithms', credits: 3 },
+                { code: 'BIT214', name: 'Computer Networks and Data Communications', credits: 3 }
+            ],
+            '2': [
+                { code: 'BSE222', name: 'Advanced Object Oriented Programming', credits: 3 },
+                { code: 'BSE224', name: 'Python Programming', credits: 3 },
+                { code: 'BSE226', name: 'Software Requirements Engineering', credits: 3 },
+                { code: 'BIT213 / BSE213', name: 'Advanced Internet and Web Programming', credits: 3 },
+                { code: 'BSE221', name: 'Formal Methods in Software Engineering', credits: 3 },
+                { code: 'BIT222', name: 'Research Methodology in Computing', credits: 3 }
+            ]
+        },
+        '3': {
+            '1': [
+                { code: 'COM312', name: 'Artificial Intelligence and Expert Systems', credits: 3 },
+                { code: 'BSE314', name: 'Internet of Things', credits: 3 },
+                { code: 'COM311', name: 'Compiler Design', credits: 3 },
+                { code: 'BIT124', name: 'E-Commerce', credits: 3 },
+                { code: 'BIT312 / BSE311', name: 'Mobile Applications Development', credits: 3 },
+                { code: 'BIT314', name: 'Network Configuration & Management', credits: 3 }
+            ],
+            '2': [
+                { code: 'COM321', name: 'Simulation & Modelling', credits: 3 },
+                { code: 'COM324', name: 'Machine Learning', credits: 3 },
+                { code: 'BSE326', name: 'Software Evolution', credits: 3 },
+                { code: 'BSE322', name: 'Advanced Mobile Applications Development', credits: 3 },
+                { code: 'BIT323', name: 'User Interface Design', credits: 3 }
+            ]
+        },
+        '4': {
+            '1': [
+                { code: 'BSE321', name: 'Software Metrics', credits: 3 },
+                { code: 'BBA214 / DBA213 / AGM212', name: 'Entrepreneurship & Small Business Management', credits: 3 },
+                { code: 'BSE411', name: 'Software Quality Assurance and Testing', credits: 3 },
+                { code: 'BSE414', name: 'Computer Games Development', credits: 3 },
+                { code: 'BSE412 / COM225', name: 'Embedded Systems Development', credits: 3 },
+                { code: 'BSE323', name: 'Software Architecture & Patterns', credits: 3 }
+            ],
+            '2': [
+                { code: 'BIT311', name: 'Managing Software Engineering Projects', credits: 3 },
+                { code: 'BIT321 / BSE427', name: 'Software Engineering Ethics', credits: 3 },
+                { code: 'BSE417', name: 'Network Application Development', credits: 3 },
+                { code: 'BSE426', name: 'Software Security', credits: 3 }
+            ]
+        }
+    },
+    
+    // Advanced Diploma in Health Leadership and Management
+    'adhm': {
+        '1': {
+            '1': [
+                { code: 'BPH323 / ADHM1106', name: 'Health Systems Management', credits: 3 },
+                { code: 'ADHM1104', name: 'Fundamentals of Epidemiology and Biostatistics', credits: 3 },
+                { code: 'ADHM1102', name: 'Basic English Language Communication Skills', credits: 3 },
+                { code: 'ADHM1105', name: 'Fundamentals of Financial Management in Health Care', credits: 3 },
+                { code: 'ADHM1103', name: 'Managing Primary Health Care Services', credits: 3 },
+                { code: 'ADHM1101', name: 'Information Technology in Health Services Management', credits: 3 }
+            ],
+            '2': [
+                { code: 'ADHM1204', name: 'Project Planning and Management', credits: 3 },
+                { code: 'ADHM1205', name: 'Mobilization of Resources for Health Services', credits: 3 },
+                { code: 'ADHM1203', name: 'Management and Maintenance of Health Material Resources', credits: 3 },
+                { code: 'ADHM1201', name: 'Environmental and Occupational Health and Safety', credits: 3 },
+                { code: 'ADHM1206', name: 'Fundamentals of Action Research in Health Services Research', credits: 3 },
+                { code: 'ADHM1202', name: 'Human Resource Management', credits: 3 }
+            ]
+        }
+    },
+    
+    // Bachelor of Science in Computer Science
+    'bcs': {
+        '1': {
+            '1': [
+                { code: 'BIT111', name: 'Discrete Mathematics', credits: 3 },
+                { code: 'BBA116 / DBA116-GRP1', name: 'Basic Statistics', credits: 3 },
+                { code: 'BJC110-GRP2', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'COM113', name: 'Computer Architecture and Organisation', credits: 3 },
+                { code: 'BIT110-GRP3', name: 'Introduction to Information and Communication Technologies', credits: 3 },
+                { code: 'COM111', name: 'Mathematics for Computing', credits: 3 }
+            ],
+            '2': [
+                { code: 'BIT212', name: 'Systems Analysis and Design', credits: 3 },
+                { code: 'BIT122 / BSE121 / DDA1204', name: 'Internet and Web Programming I', credits: 3 },
+                { code: 'COM122', name: 'Principles of Programming', credits: 3 },
+                { code: 'BIT124', name: 'E-Commerce', credits: 3 },
+                { code: 'COM123 / DDA1201', name: 'Numerical Analysis and Computation', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'COM321', name: 'Simulation & Modeling', credits: 3 },
+                { code: 'COM211', name: 'Object Oriented Programming', credits: 3 },
+                { code: 'BIT121 / BSE121', name: 'Database Development and Management I', credits: 3 },
+                { code: 'BIT213 / BSE213', name: 'Internet and Web Programming II', credits: 3 },
+                { code: 'COM212', name: 'Data Structures and Algorithms', credits: 3 },
+                { code: 'BIT214', name: 'Computer Networks and Data Communications', credits: 3 }
+            ],
+            '2': [
+                { code: 'COM221', name: 'Operating Systems Principles', credits: 3 },
+                { code: 'COM224 / BSE212', name: 'Software Engineering Principles', credits: 3 },
+                { code: 'BIT215', name: 'Database Development and Management II', credits: 3 },
+                { code: 'BSE224', name: 'Python Programming', credits: 3 },
+                { code: 'BIT222', name: 'Research Methodology in Computing', credits: 3 },
+                {
+                    type: 'elective',
+                    title: 'Electives (Choose 1)',
+                    options: [
+                        { code: 'BIS313', name: 'Business Systems Modeling', credits: 3 },
+                        { code: 'BSE412 / COM225', name: 'Embedded Systems Design', credits: 3 }
+                    ],
+                    maxSelect: 1
+                }
+            ]
+        },
+        '3': {
+            '1': [
+                { code: 'COM312', name: 'Artificial Intelligence and Expert Systems', credits: 3 },
+                { code: 'BIT311', name: 'ICT Project Planning and Management', credits: 3 },
+                { code: 'COM323', name: 'Computer Graphics', credits: 3 },
+                { code: 'COM311', name: 'Compiler Design', credits: 3 },
+                { code: 'BIT312 / BSE311', name: 'Mobile Application Development', credits: 3 },
+                { code: 'BIT314', name: 'Network Configuration and Management', credits: 3 }
+            ],
+            '2': [
+                { code: 'BIT321 / BSE427', name: 'Professional Issues in Computing', credits: 3 },
+                { code: 'COM324', name: 'Machine Learning', credits: 3 },
+                { code: 'BBA214 / DBA213 / AGM212', name: 'Entrepreneurship & Small Business Management', credits: 3 },
+                { code: 'BIT225', name: 'Emerging Trends in Computer Science', credits: 3 },
+                { code: 'BIT324', name: 'Network and Information Security', credits: 3 }
+            ]
+        }
+    },
+    
+    // Bachelor of Data Science and Artificial Intelligence
+    'bdsa': {
+        '1': {
+            '1': [
+                { code: 'DDA1106', name: 'Digital Electronics', credits: 3 },
+                { code: 'BIT111', name: 'Discrete Mathematics', credits: 3 },
+                { code: 'BBA116 / DBA116-GRP1', name: 'Basic Statistics', credits: 3 },
+                { code: 'BJC110-GRP2', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'BSE224', name: 'Python Engineering', credits: 3 },
+                { code: 'BSE111', name: 'Calculus for Software Engineering', credits: 3 },
+                { code: 'BIT110-GRP3', name: 'Introduction to Information and Communication Technologies', credits: 3 }
+            ],
+            '2': [
+                { code: 'BDA1202 / DDA1203', name: 'R Programming', credits: 3 },
+                { code: 'BDA1201 / DDA1206', name: 'Design Thinking', credits: 3 },
+                { code: 'COM123 / DDA1201', name: 'Numerical Analysis and Computation', credits: 3 },
+                { code: 'BIT214', name: 'Computer Networks and Data Communications', credits: 3 },
+                {
+                    type: 'elective',
+                    title: 'Electives (Choose One)',
+                    options: [
+                        { code: 'BIT122 / BSE121 / DDA1204', name: 'Internet and Web Programming', credits: 3 },
+                        { code: 'COM211', name: 'Object Oriented Programming', credits: 3 }
+                    ],
+                    maxSelect: 1
+                }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'COM221', name: 'Operating Systems', credits: 3 },
+                { code: 'BDA2102', name: 'Data Wrangling', credits: 3 },
+                { code: 'BDA2101', name: 'Data Ethics', credits: 3 },
+                { code: 'BIT121 / BSE121', name: 'Data Development and Management', credits: 3 },
+                { code: 'BSE314', name: 'Internet of Things', credits: 3 },
+                { code: 'COM212', name: 'Data Structures and Algorithms', credits: 3 },
+                { code: 'BDA2104', name: 'ASP.NET & C#', credits: 3 }
+            ]
+        }
+    },
+    
+    // Diploma in Data Science and Analytics
+    'ddsa': {
+        '1': {
+            '1': [
+                { code: 'DDA1106', name: 'Digital Electronics', credits: 3 },
+                { code: 'BBA116 / DBA116-GRP1', name: 'Basic Statistics', credits: 3 },
+                { code: 'BJC110-GRP2', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'BSE224', name: 'Python Engineering', credits: 3 },
+                { code: 'BIT110-GRP3', name: 'Introduction to Information and Communication Technologies', credits: 3 },
+                { code: 'DCS111', name: 'Fundamentals of Mathematics', credits: 3 }
+            ],
+            '2': [
+                { code: 'BIT122 / BSE121 / DDA1204', name: 'Internet Technologies and Web Design', credits: 3 },
+                { code: 'DDA1205', name: 'Data Science Essentials', credits: 3 },
+                { code: 'BDA1202 / DDA1203', name: 'R Programming', credits: 3 },
+                { code: 'BSE314', name: 'Internet of Things', credits: 3 },
+                { code: 'BDA1201 / DDA1206', name: 'Design Thinking', credits: 3 },
+                { code: 'COM123 / DDA1201', name: 'Numerical Analysis and Computation', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'DDA2103', name: 'Business Cloud Computing', credits: 3 },
+                { code: 'DDA2102', name: 'Statistical Data Analysis', credits: 3 },
+                { code: 'BIT121 / BSE121', name: 'Database Development and Management', credits: 3 },
+                { code: 'BIT214', name: 'Computer Networks & Data Communication', credits: 3 }
+            ]
+        }
+    },
+    
+    // Bachelor of Environmental Health Science
+    'behs': {
+        '1': {
+            '1': [
+                { code: 'EHS112', name: 'Principles of Epidemiology', credits: 3 },
+                { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'EHS113', name: 'Health Laboratory Management', credits: 3 },
+                { code: 'BPH113', name: 'Human Biology', credits: 3 },
+                { code: 'BIT110', name: 'Introduction to Information and Communication Technology', credits: 3 },
+                { code: 'EHS111', name: 'Human Environment', credits: 3 }
+            ],
+            '2': [
+                { code: 'EHS124', name: 'Introduction to Hydrology and Hydraulics', credits: 3 },
+                { code: 'EHS121', name: 'Biostatistics', credits: 3 },
+                { code: 'BPH124-EH', name: 'Diseases of Public Health Importance', credits: 3 },
+                { code: 'EHS122', name: 'Solid and Hazardous Wastes Management', credits: 3 },
+                { code: 'EHS125', name: 'Environmental Health Microbiology', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'EHS212', name: 'Environmental Pollution', credits: 3 },
+                { code: 'BPH211', name: 'Public Health Nutrition', credits: 3 },
+                { code: 'EHS215', name: 'Behavior Change Communication for Health', credits: 3 },
+                { code: 'EHS216', name: 'Vector and Vermin Control', credits: 3 },
+                { code: 'EHS213', name: 'Excreta and Waste Water Management', credits: 3 },
+                { code: 'EHS214', name: 'Principles of Demography and Population Dynamics', credits: 3 }
+            ],
+            '2': [
+                { code: 'EHS222', name: 'Town and Country Planning', credits: 3 },
+                { code: 'RSC001', name: 'Research Methodology', credits: 3 },
+                { code: 'EHS224', name: 'Building Technology I', credits: 3 },
+                { code: 'EHS223', name: 'Occupational Health and Safety', credits: 3 },
+                { code: 'EHS225', name: 'Food Hygiene and Food Safety', credits: 3 },
+                { code: 'EHS221', name: 'Safe Water Management', credits: 3 }
+            ]
+        },
+        '3': {
+            '1': [
+                { code: 'EHS313', name: 'Health Monitoring and Evaluation', credits: 3 },
+                { code: 'BPH311', name: 'Community Health Practice', credits: 3 },
+                { code: 'EHS312', name: 'Environmental and Public Health Law', credits: 3 },
+                { code: 'EHS314', name: 'Building Technology II', credits: 3 },
+                {
+                    type: 'elective',
+                    title: 'Electives (Choose One)',
+                    options: [
+                        { code: 'EHS315', name: 'Environmental Impact Assessment', credits: 3 },
+                        { code: 'EHS316', name: 'Global Health', credits: 3 }
+                    ],
+                    maxSelect: 1
+                }
+            ],
+            '2': [
+                { code: 'BPH321', name: 'Health Economics and Financing', credits: 3 },
+                { code: 'EHS321', name: 'Natural and Alternative Medicine', credits: 3 },
+                { code: 'EHS323', name: 'Institutional Health Management', credits: 3 },
+                { code: 'EHS322', name: 'Health Policy Planning and Management', credits: 3 }
+            ]
+        }
+    },
+    
+    // Diploma in Business Administration
+    'dba': {
+        '1': {
+            '1': [
+                { code: 'BBA116 / DBA116', name: 'Basic Statistics', credits: 3 },
+                { code: 'BIT110', name: 'Introduction to Information and Communication Technologies', credits: 3 },
+                { code: 'BBA115', name: 'Financial Accounting', credits: 3 },
+                { code: 'BBA113 / DBA113', name: 'Business Administration', credits: 3 },
+                { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'BBA112 / DBA112', name: 'Microeconomics', credits: 3 }
+            ],
+            '2': [
+                { code: 'BBA123', name: 'Macroeconomics', credits: 3 },
+                { code: 'BBA122 / DBA122', name: 'Quantitative Methods for Business', credits: 3 },
+                { code: 'DBA126', name: 'Stores and Inventory Management', credits: 3 },
+                { code: 'BBA311', name: 'Principles of Management', credits: 3 },
+                { code: 'BBA125 / DBA125', name: 'Business Law', credits: 3 },
+                { code: 'BBA124 / DBA124', name: 'Principles of Marketing', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'DBA216', name: 'Procurement Management', credits: 3 },
+                { code: 'BBA214 / DBA213 / AGM212', name: 'Entrepreneurship and E-commerce', credits: 3 },
+                { code: 'BBA216', name: 'Operations Management', credits: 3 },
+                { code: 'BIT125 / DBA212', name: 'Management Information Systems', credits: 3 },
+                { code: 'RSC001-B', name: 'Research Methodology', credits: 3 },
+                { code: 'BBA215 / DBA215', name: 'Human Resource Management', credits: 3 }
+            ],
+            '2': [
+                { code: 'DBA222', name: 'Financial Management', credits: 3 },
+                { code: 'DBA223', name: 'Taxation', credits: 3 },
+                { code: 'DBA221', name: 'Auditing I', credits: 3 },
+                { code: 'BBA211 / DBA211', name: 'Managerial Accounting', credits: 3 }
+            ]
+        }
+    },
+    
+    // Bachelor of Journalism and Communication Studies
+    'bjcs': {
+        '1': {
+            '1': [
+                { code: 'BJC112', name: 'Introduction to Behavioral Science', credits: 3 },
+                { code: 'BJC115', name: 'Introduction to Journalism & Media Organisation', credits: 3 },
+                { code: 'BJC110 (SES)', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'BIT110', name: 'Introduction to Information and Communication Technologies', credits: 3 },
+                { code: 'BJC125', name: 'History of the Media and Communication', credits: 3 },
+                { code: 'BJC116', name: 'Basic Academic Writing Skills', credits: 3 }
+            ],
+            '2': [
+                { code: 'BJC121', name: 'Mass Media and Society', credits: 3 },
+                { code: 'IRDS121 / BPA121 / FOA124', name: 'Introduction to Political Science and Classical Thought', credits: 3 },
+                { code: 'BJC123', name: 'Introduction to Broadcasting', credits: 3 },
+                { code: 'BJC122', name: 'Introduction to Public Relations', credits: 3 },
+                { code: 'BJC127', name: 'Introduction to Media Writing', credits: 3 },
+                { code: 'BJC128', name: 'Computer Applications for Media', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'BJC214', name: 'Photojournalism', credits: 3 },
+                { code: 'BJC124', name: 'News Writing & Reporting', credits: 3 },
+                { code: 'BJC225', name: 'Development Communication', credits: 3 },
+                { code: 'BJC213', name: 'Media and Communication Policy', credits: 3 },
+                { code: 'BJC217', name: 'Media and Communication Theories', credits: 3 },
+                { code: 'BJC211', name: 'Audience Analysis and Media Research', credits: 3 }
+            ],
+            '2': [
+                { code: 'BJC226', name: 'Media Law & Ethics', credits: 3 },
+                { code: 'BJC224', name: 'Media Management', credits: 3 },
+                { code: 'BJC212', name: 'Advanced Writing', credits: 3 },
+                { code: 'BJC221', name: 'Principles of Advertising', credits: 3 },
+                { code: 'BJC229', name: 'Commercial Photography', credits: 3 },
+                { code: 'RSC001', name: 'Research Methodology', credits: 3 }
+            ]
+        },
+        '3': {
+            '1': [
+                { code: 'BJC315', name: 'Investigative Journalism', credits: 3 },
+                { code: 'BJC324', name: 'Politics of Developments', credits: 3 },
+                { code: 'BJC323', name: 'Radio Production', credits: 3 },
+                { code: 'BJC311', name: 'The Art of Public Speaking', credits: 3 },
+                { code: 'BJC314', name: 'Multimedia and Animation', credits: 3 },
+                { code: 'BJC312', name: 'Public Relations & Media Practice', credits: 3 }
+            ],
+            '2': [
+                { code: 'BJC327', name: 'Environmental Journalism', credits: 3 },
+                { code: 'BJC313', name: 'Television Production', credits: 3 },
+                { code: 'BJC329', name: 'Online and Digital Journalism', credits: 3 },
+                { code: 'BJC322', name: 'Newspaper and Magazine Design', credits: 3 },
+                { code: 'BJC328', name: 'Fake News and Media Production', credits: 3 },
+                { code: 'BJC326', name: 'Media, Human Rights and Gender', credits: 3 }
+            ]
+        }
+    },
+    
+    // Bachelor of Public Administration & Management
+    'bpam': {
+        '1': {
+            '1': [
+                { code: 'BJC110 (SES)', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'BIT110', name: 'Introduction to Information and Communication Technologies', credits: 3 },
+                { code: 'BJC116', name: 'Basic Academic Writing Skills', credits: 3 },
+                { code: 'BPA116', name: 'Theory and Management of Organisations', credits: 3 },
+                { code: 'BPA112', name: 'Public Finance Administration and Management', credits: 3 },
+                { code: 'BPA111', name: 'Public Administration and Management', credits: 3 }
+            ],
+            '2': [
+                { code: 'BPA124', name: 'Organizational Psychology', credits: 3 },
+                { code: 'IRDS121 / BPA121 / FOA124', name: 'Introduction to Political Science', credits: 3 },
+                { code: 'IRDS125 / BPA126', name: 'Political Economy', credits: 3 },
+                { code: 'BPA122', name: 'Governance and Public Sector Management', credits: 3 },
+                { code: 'BPA123', name: 'Decentralization and Local Government Administration', credits: 3 },
+                { code: 'BPA221', name: 'Economics for Public Administration and Management', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'BPA215', name: 'Environmental Management and Sustainable Development', credits: 3 },
+                { code: 'BPA211', name: 'Leadership and Change Management', credits: 3 },
+                { code: 'BPA217', name: 'Development Public Administration and Management', credits: 3 },
+                { code: 'BPA216', name: 'Human and Social Services Systems', credits: 3 },
+                { code: 'BPA125 / IRDS214', name: 'Gender in Public Administration and Management', credits: 3 },
+                { code: 'BPA213', name: 'Regional Planning and Management', credits: 3 }
+            ],
+            '2': [
+                { code: 'BPA226', name: 'Demography and Population Studies', credits: 3 },
+                { code: 'FOA122 / BPA113', name: 'Introduction to Critical Thinking', credits: 3 },
+                { code: 'NGO316', name: 'Resource Mobilization and Grants Administration', credits: 3 },
+                { code: 'IRDS122 / BPA225', name: 'Government and Politics in Africa', credits: 3 },
+                { code: 'RSC001', name: 'Research Methodology', credits: 3 }
+            ]
+        },
+        '3': {
+            '1': [
+                { code: 'BPA312', name: 'Public Policy, Planning Analysis and Management', credits: 3 },
+                { code: 'BPA314', name: 'Constitutionalism and Administrative Law', credits: 3 },
+                { code: 'PLM317', name: 'Public and Private Procurement Management', credits: 3 },
+                { code: 'BPA316', name: 'Management of Public Enterprises', credits: 3 },
+                { code: 'BBA215 / DBA215', name: 'Human Resource Management', credits: 3 },
+                { code: 'BPA313', name: 'Civil Society Development and NGOs Management', credits: 3 }
+            ],
+            '2': [
+                { code: 'BBA322', name: 'Project Planning and Management', credits: 3 },
+                { code: 'BPA325', name: 'Human Rights and Social Justice', credits: 3 },
+                { code: 'BPA324', name: 'Ethics and Professionalism in Public Administration', credits: 3 },
+                { code: 'IRDS311', name: 'Security Studies', credits: 3 },
+                { code: 'BPA322', name: 'Disaster Preparedness and Management', credits: 3 }
+            ]
+        }
+    },
+    
+    // Bachelor of International Relations and Diplomatic Studies
+    'birds': {
+        '1': {
+            '1': [
+                { code: 'BJC110 (SES)', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'IRDS114', name: 'Protocol and Etiquette', credits: 3 },
+                { code: 'BIT110-GRP1', name: 'Introduction to Information and Communication Technologies', credits: 3 },
+                { code: 'BJC116', name: 'Basic Academic Writing Skills', credits: 3 },
+                { code: 'IRDS112', name: 'Introduction to Diplomacy', credits: 3 },
+                { code: 'IRDS111', name: 'Introduction to International Relations', credits: 3 }
+            ],
+            '2': [
+                { code: 'IRDS129', name: 'Terrorism and Related Global Issues', credits: 3 },
+                { code: 'IRDS121 / BPA121 / FOA124', name: 'Introduction to Political Science', credits: 3 },
+                { code: 'IRDS124', name: 'International Law', credits: 3 },
+                { code: 'IRDS125 / BPA126', name: 'International Political Economy', credits: 3 },
+                { code: 'IRDS128', name: 'The United Nations Systems', credits: 3 },
+                { code: 'IRDS122 / BPA225', name: 'Government and Politics in Africa', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'IRDS215', name: 'Regional Integration and Globalization', credits: 3 },
+                { code: 'IRDS216', name: 'International Investment, Trade and Business Management', credits: 3 },
+                { code: 'IRDS217', name: 'Religion, Conflict and Peace Studies', credits: 3 },
+                { code: 'BPA111', name: 'Public Administration and Management', credits: 3 },
+                { code: 'BPA125 / IRDS214', name: 'Gender and International Relations', credits: 3 },
+                { code: 'IRDS211', name: 'Africa and International Relations', credits: 3 }
+            ],
+            '2': [
+                { code: 'IRDS224', name: 'International Politics of the Environment', credits: 3 },
+                { code: 'IRDS222', name: 'Foreign Policy Analysis', credits: 3 },
+                { code: 'IRDS225', name: 'Conflict Resolution, Management and Transformation', credits: 3 },
+                { code: 'RSC001-B', name: 'Research Methods in International Relations', credits: 3 },
+                { code: 'IRDS223', name: 'Comparative Political Systems', credits: 3 },
+                { code: 'IRDS227', name: 'Advanced Theory of Diplomacy', credits: 3 }
+            ]
+        },
+        '3': {
+            '1': [
+                { code: 'IRDS314', name: 'International Politics, Media and Conflict', credits: 3 },
+                { code: 'IRDS313', name: 'International Justice Mechanisms and International Criminal Justice', credits: 3 },
+                { code: 'IRDS316', name: 'Global Geopolitical Analysis', credits: 3 },
+                { code: 'IRDS312', name: 'Displaced Persons and Forced Migration Studies', credits: 3 },
+                { code: 'IRDS311', name: 'Security Studies', credits: 3 },
+                { code: 'IRDS315', name: 'International Development', credits: 3 }
+            ],
+            '2': [
+                { code: 'IRDS321', name: 'Ethics in International Relations', credits: 3 },
+                { code: 'IRDS325', name: 'International Public Relations and Strategic Communication', credits: 3 },
+                { code: 'IRDS323', name: 'Strategic Intelligence, Modern Warfare and Human Rights', credits: 3 },
+                { code: 'IRDS317', name: 'Civil Military Relations', credits: 3 },
+                { code: 'IRDS324', name: 'Cyber Security and International Security', credits: 3 },
+                { code: 'IRDS322', name: 'Africa and Contemporary International Security', credits: 3 }
+            ]
+        }
+    }
+};
+
+        // Grade point mapping
+        const gradePoints = {
+            'A': 5.0,
+            'B+': 4.5,
+            'B': 4.0,
+            'C+': 3.5,
+            'C': 3.0,
+            'D+': 2.5,
+            'D': 2.0,
+            'F': 0.0
+        };
+
+        // DOM elements
+        const programSelect = document.getElementById('program');
+        const yearSelect = document.getElementById('year');
+        const semesterSelect = document.getElementById('semester');
+        const courseList = document.getElementById('course-list');
+        const calculateBtn = document.getElementById('calculate-btn');
+        const gpaResult = document.getElementById('gpa-result');
+        const cgpaResult = document.getElementById('cgpa-result');
+        const historyList = document.getElementById('history-list');
+
+        // Store semester results
+        let semesterResults = [];
+
+        // Initialize program dropdown
+        function initializePrograms() {
+            // Clear existing options
+            programSelect.innerHTML = '<option value="">-- Select Program --</option>';
+            
+            // Add programs from courseData
+            const programs = Object.keys(courseData);
+            programs.forEach(program => {
+                const option = document.createElement('option');
+                option.value = program;
+                
+                // Format program name for display
+                let displayName = program.replace(/-/g, ' ').toUpperCase();
+                if (displayName.includes('BBA')) {
+                    displayName = displayName.replace('BBA ', 'BBA - ');
+                }
+                
+                option.textContent = displayName;
+                programSelect.appendChild(option);
+            });
+        }
+
+        // Event listeners
+        programSelect.addEventListener('change', updateCourseList);
+        yearSelect.addEventListener('change', updateCourseList);
+        semesterSelect.addEventListener('change', updateCourseList);
+        calculateBtn.addEventListener('click', calculateGPA);
+
+        function updateCourseList() {
+    const program = programSelect.value;
+    const year = yearSelect.value;
+    const semester = semesterSelect.value;
+    
+    if (program && year && semester && courseData[program] && 
+        courseData[program][year] && courseData[program][year][semester]) {
+        const courses = courseData[program][year][semester];
+        
+        // Clear previous course list
+        courseList.innerHTML = `
+            <h3>Enter Your Course Scores</h3>
+            <div class="course-item course-header">
+                <div>Course Name</div>
+                <div>Credit Units</div>
+                <div>Score</div>
+            </div>
+        `;
+        
+        // Add courses to the list
+        courses.forEach(course => {
+            if (course.type === 'elective') {
+                // Handle elective courses
+                const electiveSection = document.createElement('div');
+                electiveSection.className = 'elective-section';
+                electiveSection.innerHTML = `
+                    <div class="elective-title">${course.title}</div>
+                    <div class="elective-instruction" style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">
+                        Please select exactly ${course.maxSelect} elective(s)
+                    </div>
+                `;
+                
+                course.options.forEach(option => {
+                    const electiveOption = document.createElement('div');
+                    electiveOption.className = 'elective-option';
+                    electiveOption.innerHTML = `
+                        <input type="checkbox" class="elective-checkbox" data-credits="${option.credits}" data-code="${option.code}">
+                        <div style="flex: 1;">
+                            <div style="font-weight: 500;">${option.code} - ${option.name}</div>
+                            <div style="font-size: 0.8rem; color: #666;">${option.credits} credit units</div>
+                        </div>
+                    `;
+                    electiveSection.appendChild(electiveOption);
+                });
+                
+                courseList.appendChild(electiveSection);
+            } else {
+                // Regular course
+                const courseItem = document.createElement('div');
+                courseItem.className = 'course-item';
+                courseItem.innerHTML = `
+                    <div>${course.code} - ${course.name}</div>
+                    <div>${course.credits}</div>
+                    <div>
+                        <input type="number" min="0" max="100" class="course-score" data-code="${course.code}" data-credits="${course.credits}" placeholder="0-100">
+                    </div>
+                `;
+                courseList.appendChild(courseItem);
+            }
+        });
+        
+        // Show the course list and calculate button
+        courseList.style.display = 'block';
+        calculateBtn.style.display = 'block';
+    } else {
+        // Hide the course list and calculate button if no valid selection
+        courseList.style.display = 'none';
+        calculateBtn.style.display = 'none';
+    }
+}
+
+        function calculateGPA() {
+            const program = programSelect.value;
+            const year = yearSelect.value;
+            const semester = semesterSelect.value;
+            const semesterName = `Year ${year}, Semester ${semester}`;
+            
+            if (!program || !year || !semester || !courseData[program] || 
+                !courseData[program][year] || !courseData[program][year][semester]) {
+                alert('Please select a valid program, year, and semester.');
+                return;
+            }
+            
+            const courses = courseData[program][year][semester];
+            const scoreInputs = document.querySelectorAll('.course-score');
+            const electiveCheckboxes = document.querySelectorAll('.elective-checkbox');
+            
+            let totalCreditPoints = 0;
+            let totalCredits = 0;
+            let allScoresValid = true;
+            
+            // Calculate GPA for regular courses
+            for (let i = 0; i < scoreInputs.length; i++) {
+                const score = parseInt(scoreInputs[i].value);
+                
+                if (isNaN(score) || score < 0 || score > 100) {
+                    allScoresValid = false;
+                    break;
+                }
+                
+                const credits = parseInt(scoreInputs[i].dataset.credits);
+                const grade = getGradeFromScore(score);
+                const gradePoint = gradePoints[grade];
+                
+                totalCreditPoints += gradePoint * credits;
+                totalCredits += credits;
+            }
+            
+            // Calculate GPA for elective courses
+            const electiveCourses = courses.filter(course => course.type === 'elective');
+            if (electiveCourses.length > 0) {
+                electiveCourses.forEach(elective => {
+                    const selectedOptions = [];
+                    
+                    // Count selected electives
+                    electiveCheckboxes.forEach(checkbox => {
+                        if (checkbox.checked) {
+                            selectedOptions.push({
+                                credits: parseInt(checkbox.dataset.credits),
+                                code: checkbox.dataset.code
+                            });
+                        }
+                    });
+                    
+                    // Check if the correct number of electives is selected
+                    if (selectedOptions.length !== elective.maxSelect) {
+                        alert(`Please select exactly ${elective.maxSelect} elective(s) from: ${elective.title}`);
+                        allScoresValid = false;
+                        return;
+                    }
+                    
+                    // For electives, we need to prompt for scores
+                    selectedOptions.forEach(option => {
+                        const score = prompt(`Enter score for ${option.code}:`, '0');
+                        const parsedScore = parseInt(score);
+                        
+                        if (isNaN(parsedScore) || parsedScore < 0 || parsedScore > 100) {
+                            allScoresValid = false;
+                            return;
+                        }
+                        
+                        const grade = getGradeFromScore(parsedScore);
+                        const gradePoint = gradePoints[grade];
+                        
+                        totalCreditPoints += gradePoint * option.credits;
+                        totalCredits += option.credits;
+                    });
+                });
+            }
+            
+            if (!allScoresValid) {
+                alert('Please enter valid scores (0-100) for all courses.');
+                return;
+            }
+            
+            const gpa = totalCreditPoints / totalCredits;
+            const roundedGPA = gpa.toFixed(2);
+            
+            // Display GPA
+            gpaResult.textContent = roundedGPA;
+            
+            // Color code the GPA
+            if (gpa >= 4.5) {
+                gpaResult.style.color = 'var(--success)';
+            } else if (gpa >= 3.0) {
+                gpaResult.style.color = 'var(--secondary)';
+            } else {
+                gpaResult.style.color = 'var(--accent)';
+            }
+            
+            // Add to semester history
+            const existingIndex = semesterResults.findIndex(result => 
+                result.program === program && result.year === year && result.semester === semester
+            );
+            
+            if (existingIndex !== -1) {
+                semesterResults[existingIndex].gpa = roundedGPA;
+            } else {
+                semesterResults.push({
+                    program: program,
+                    year: year,
+                    semester: semester,
+                    semesterName: semesterName,
+                    gpa: roundedGPA
+                });
+            }
+            
+            updateHistoryAndCGPA();
+        }
+
+        function getGradeFromScore(score) {
+            if (score >= 80) return 'A';
+            if (score >= 75) return 'B+';
+            if (score >= 70) return 'B';
+            if (score >= 65) return 'C+';
+            if (score >= 60) return 'C';
+            if (score >= 55) return 'D+';
+            if (score >= 50) return 'D';
+            return 'F';
+        }
+
+        function updateHistoryAndCGPA() {
+            // Update history list
+            if (semesterResults.length === 0) {
+                historyList.innerHTML = '<p style="text-align: center; padding: 20px;">No semester data added yet</p>';
+            } else {
+                historyList.innerHTML = '';
+                semesterResults.forEach(result => {
+                    const historyItem = document.createElement('div');
+                    historyItem.className = 'history-item';
+                    historyItem.innerHTML = `
+                        <div>${result.semesterName}</div>
+                        <div>GPA: ${result.gpa}</div>
+                    `;
+                    historyList.appendChild(historyItem);
+                });
+            }
+            
+            // Calculate CGPA
+            if (semesterResults.length > 0) {
+                const totalGPA = semesterResults.reduce((sum, result) => sum + parseFloat(result.gpa), 0);
+                const cgpa = (totalGPA / semesterResults.length).toFixed(2);
+                cgpaResult.textContent = cgpa;
+                
+                // Color code the CGPA
+                if (cgpa >= 4.5) {
+                    cgpaResult.style.color = 'var(--success)';
+                } else if (cgpa >= 3.0) {
+                    cgpaResult.style.color = 'var(--secondary)';
+                } else {
+                    cgpaResult.style.color = 'var(--accent)';
+                }
+            } else {
+                cgpaResult.textContent = '-';
+            }
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            initializePrograms();
+        });
+    </script>
+</body>
+</html>
