@@ -226,7 +226,7 @@
             .form-container {
                 padding: 25px 20px;
             }
-            .course-list {
+            .course-list input {
                 font-size: 15px;
             }
 
@@ -1933,7 +1933,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 courseItem.innerHTML = `
                     <div>${course.code} - ${course.name}</div>
                     <div>${course.credits}</div>
-                    <div>
+                    <div class = "course-list">
                         <input type="number" min="0" max="100" class="course-score" data-code="${course.code}" data-credits="${course.credits}" placeholder="0-100">
                     </div>
                 `;
@@ -2125,6 +2125,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </body>
 
 </html>
+
 
 
 
