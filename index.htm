@@ -766,699 +766,955 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-        // Course data extracted from the document
-        const courseData = {
-    // Bachelor of Laws (LLB) - Updated with all modules
-    'llb': {
+         // Course data extracted from the document
+const courseData = {
+    // Higher Education Certificate - Biological Sciences (HEC-BS)
+    'hec-biological-sciences': {
         '1': {
             '1': [
-                { code: 'LLB111', name: 'Introducing Law', credits: 3 },
-                { code: 'LLB112', name: 'Constitutional History', credits: 3 },
-                { code: 'LLB113', name: 'Criminal Law I', credits: 3 },
-                { code: 'LLB114', name: 'Law of Contract I', credits: 3 },
-                { code: 'LLB115', name: 'Law & Development', credits: 3 }
+                { code: 'HEC112', name: 'Foundation Biology I', credits: 4 },
+                { code: 'FOU112', name: 'Communication and Study Skills', credits: 3 },
+                { code: 'FOU111', name: 'Computing Skills', credits: 3 },
+                { code: 'FOS111', name: 'Foundation Physical and Inorganic Chemistry', credits: 4 },
+                { code: 'HEC115', name: 'Introduction to Animal Physiology', credits: 4 },
+                { code: 'FOU114', name: 'English', credits: 4 }
             ],
             '2': [
-                { code: 'LLB121', name: 'Legal Methods', credits: 3 },
-                { code: 'LLB122', name: 'Constitutional Law', credits: 3 },
-                { code: 'LLB123', name: 'Criminal Law II', credits: 3 },
-                { code: 'LLB124', name: 'Law of Contract II', credits: 3 },
-                { code: 'LLB125', name: 'Nature & History of Torts', credits: 3 }
-            ]
-        },
-        '2': {
-            '1': [
-                { code: 'LLB211', name: 'Family Law I', credits: 3 },
-                { code: 'LLB212', name: 'Land Law I', credits: 3 },
-                { code: 'LLB213', name: 'Evidence Law I', credits: 3 },
-                { code: 'LLB214', name: 'Negligence & Strict Liability', credits: 3 },
-                { code: 'LLB215', name: 'Equity and Trusts', credits: 3 }
-            ],
-            '2': [
-                { code: 'LLB221', name: 'Family Law II', credits: 3 },
-                { code: 'LLB222', name: 'Land Law II', credits: 3 },
-                { code: 'LLB223', name: 'Evidence Law II', credits: 3 },
-                { code: 'LLB224', name: 'Administrative Law', credits: 3 },
-                { code: 'LLB225', name: 'Social Research', credits: 3 }
-            ]
-        },
-        '3': {
-            '1': [
-                { code: 'LLB311', name: 'Criminal Procedure', credits: 3 },
-                { code: 'LLB312', name: 'Business Associations I', credits: 3 },
-                { code: 'LLB313', name: 'Jurisprudence I', credits: 3 },
-                { code: 'LLB314', name: 'Sale of Goods', credits: 3 },
-                { code: 'LLB315', name: 'Law of Banking', credits: 3 }
-            ],
-            '2': [
-                { code: 'LLB322', name: 'Jurisprudence II', credits: 3 },
-                { code: 'LLB323', name: 'Business Associations II', credits: 3 },
-                { code: 'LLB324', name: 'Alternative Dispute Resolution', credits: 3 },
-                { code: 'LLB325', name: 'Computers and the Law', credits: 3 },
-                { code: 'LLB327', name: 'Insurance Law', credits: 3 }
-            ]
-        },
-        '4': {
-            '1': [
-                { code: 'LLB411', name: 'Civil Procedure I', credits: 3 },
-                { code: 'LLB412', name: 'Revenue and Taxation Law I', credits: 3 },
-                { code: 'LLB413', name: 'International Law I', credits: 3 },
-                { code: 'LLB414', name: 'Labour Law', credits: 3 },
-                { code: 'LLB416', name: 'Intellectual Property Law I', credits: 3 }
-            ],
-            '2': [
-                { code: 'LLB421', name: 'Civil Procedure II', credits: 3 },
-                { code: 'LLB422', name: 'Revenue Law and Taxation II', credits: 3 },
-                { code: 'LLB424', name: 'International Law II', credits: 3 },
-                { code: 'LLB426', name: 'Intellectual Property Law II', credits: 3 }
+                { code: 'FOS125', name: 'Foundation Statistics', credits: 4 },
+                { code: 'HEC123', name: 'Foundation Biology II', credits: 4 },
+                { code: 'FOS127', name: 'Foundation Organic and Analytic Chemistry', credits: 4 },
+                { code: 'HEC128', name: 'Life Skills Education', credits: 3 },
+                { code: 'HEC124', name: 'Introduction to Plant Physiology', credits: 4 },
+                { code: 'HEC126', name: 'Introduction to Physical Chemistry', credits: 3 }
             ]
         }
     },
-    
-    // Bachelor of Science in Public Health - Updated
-    'bsc-public-health': {
+
+    // Higher Education Certificate - Physical Sciences (HEC-PS)
+    'hec-physical-sciences': {
         '1': {
             '1': [
-                { code: 'BJC110-S', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
-                { code: 'BPH212', name: 'Principles of Environmental Health', credits: 3 },
-                { code: 'BPH114', name: 'Introduction to Public Health and Ethics', credits: 3 },
-                { code: 'BPH113', name: 'Human Biology', credits: 3 },
-                { code: 'BPH112', name: 'Health and Health Behavior', credits: 3 },
-                { code: 'BIT110-S', name: 'Introduction to Information and Communication Technologies', credits: 3 }
+                { code: 'FOU110', name: 'Foundational Mathematics', credits: 4 },
+                { code: 'FOU111', name: 'Computing Skills', credits: 3 },
+                { code: 'FOU112', name: 'Communication Skills', credits: 3 },
+                { code: 'FOS111', name: 'Foundation Physics and Inorganic Chemistry', credits: 4 },
+                { code: 'FOS112', name: 'Foundation Physics I', credits: 4 },
+                { code: 'FOU114', name: 'English', credits: 4 }
             ],
             '2': [
-                { code: 'BPH122', name: 'Public Health Microbiology and Disease Surveillance', credits: 3 },
-                { code: 'BPH121', name: 'First Aid and Emergency Rescue', credits: 3 },
-                { code: 'EHS121', name: 'Biostatistics', credits: 3 },
-                { code: 'EHS112', name: 'Principles of Epidemiology', credits: 3 },
-                { code: 'BPH124-PH', name: 'Diseases of Public Health Importance', credits: 3 }
-            ]
-        },
-        '2': {
-            '1': [
-                { code: 'BPH216', name: 'Principles of Disease Control', credits: 3 },
-                { code: 'BPH323', name: 'Health Informatics', credits: 3 },
-                { code: 'BPH215', name: 'Principles of Health Promotion', credits: 3 },
-                { code: 'EHS214', name: 'Principles of Demography and Population Dynamics', credits: 3 },
-                { code: 'BPH211', name: 'Public Health Nutrition', credits: 3 }
-            ],
-            '2': [
-                { code: 'EHS223', name: 'Occupational Health and Safety', credits: 3 },
-                { code: 'BPH221', name: 'Public Health in Emergency Situations', credits: 3 },
-                { code: 'BPH222', name: 'Principles of Health Education and Advocacy', credits: 3 },
-                { code: 'BPH224', name: 'Health Policies and Laws', credits: 3 },
-                { code: 'RSC001-H', name: 'Research Methodology', credits: 3 }
-            ]
-        },
-        '3': {
-            '1': [
-                { code: 'BPH314', name: 'Social Marketing for Health', credits: 3 },
-                { code: 'BPH311', name: 'Community Health Practice', credits: 3 },
-                { code: 'EHS313', name: 'Health Monitoring and Evaluation', credits: 3 },
-                { code: 'BPH313', name: 'Family and Reproductive Health', credits: 3 }
-            ],
-            '2': [
-                { code: 'EHS323', name: 'Institutional Health Management', credits: 3 },
-                { code: 'BBA322', name: 'Project Planning and Management', credits: 3 },
-                { code: 'BPH321', name: 'Health Economics and Financing', credits: 3 },
-                { code: 'BPH323 / ADHM1106', name: 'Health Service Management', credits: 3 }
+                { code: 'FOS125', name: 'Foundation Statistics', credits: 4 },
+                { code: 'FOS126', name: 'Foundation Physics II', credits: 4 },
+                { code: 'FOS127', name: 'Foundation Organic and Analytic Chemistry', credits: 4 },
+                { code: 'HEC128', name: 'Life Skills Education', credits: 3 },
+                { code: 'FOU113', name: 'Introduction to Development Studies', credits: 4 }
             ]
         }
     },
-    
-    // BBA Specializations - Updated with all options
-    'bba-accounting-finance': {
-        '1': {
-            '1': [
-                { code: 'BBA116 / DBA116', name: 'Basic Statistics', credits: 3 },
-                { code: 'BBA112 / DBA112', name: 'Microeconomics', credits: 3 },
-                { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
-                { code: 'BBA113 / DBA113', name: 'Business Administration', credits: 3 },
-                { code: 'BIT110', name: 'Introduction to Information and Communication Technologies', credits: 3 },
-                { code: 'BBA115', name: 'Financial Accounting', credits: 3 }
-            ],
-            '2': [
-                { code: 'BBA122 / DBA122', name: 'Quantitative Methods for Business', credits: 3 },
-                { code: 'BBA124 / DBA124', name: 'Principles of Marketing', credits: 3 },
-                { code: 'PLM311', name: 'Principles of Procurement & Logistics Management', credits: 3 },
-                { code: 'BBA123', name: 'Macroeconomics', credits: 3 },
-                { code: 'BBA311', name: 'Principles of Management', credits: 3 },
-                { code: 'BBA125 / DBA125', name: 'Business Law', credits: 3 }
-            ]
-        },
-        '2': {
-            '1': [
-                { code: 'BAC215', name: 'Auditing I', credits: 3 },
-                { code: 'BBA215 / DBA215', name: 'Human Resource Management', credits: 3 },
-                { code: 'BBA214 / DBA213 / AGM212', name: 'Entrepreneurship & Small Business Management', credits: 3 },
-                { code: 'BBA212', name: 'Organisational Behavior', credits: 3 },
-                { code: 'BBA211 / DBA211', name: 'Managerial Accounting', credits: 3 },
-                { code: 'BBA216', name: 'Operations Management', credits: 3 }
-            ],
-            '2': [
-                { code: 'RSC001', name: 'Research Methodology', credits: 3 },
-                { code: 'BBA221', name: 'Strategic Management', credits: 3 },
-                { code: 'BBA223', name: 'Taxation I', credits: 3 },
-                { code: 'BBA224', name: 'Business Ethics', credits: 3 },
-                { code: 'BBF222', name: 'Financial Management', credits: 3 }
-            ]
-        },
-        '3': {
-            '1': [
-                { code: 'BBF316', name: 'Public Finance', credits: 3 },
-                { code: 'BAC314', name: 'Public Sector Accounting', credits: 3 },
-                { code: 'BAC316', name: 'Computerized Accounting I', credits: 3 },
-                { code: 'BBA317', name: 'Taxation II', credits: 3 },
-                { code: 'BAC313', name: 'Advanced Accounting I', credits: 3 },
-                { code: 'BBF317', name: 'Company Law', credits: 3 }
-            ],
-            '2': [
-                { code: 'BAC321', name: 'Auditing II', credits: 3 },
-                { code: 'BAC326', name: 'Computerized Accounting II', credits: 3 },
-                { code: 'BAC322', name: 'Advanced Accounting II', credits: 3 },
-                { code: 'BBA314', name: 'Investment Analysis', credits: 3 },
-                { code: 'BAC327', name: 'Treasury Management', credits: 3 }
-            ]
-        }
-    },
-    
-    'bba-banking-finance': {
-        '1': {
-            '1': [
-                { code: 'BBA116 / DBA116', name: 'Basic Statistics', credits: 3 },
-                { code: 'BBA112 / DBA112', name: 'Microeconomics', credits: 3 },
-                { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
-                { code: 'BBA113 / DBA113', name: 'Business Administration', credits: 3 },
-                { code: 'BIT110', name: 'Introduction to Information and Communication Technologies', credits: 3 },
-                { code: 'BBA115', name: 'Financial Accounting', credits: 3 }
-            ],
-            '2': [
-                { code: 'BBA122 / DBA122', name: 'Quantitative Methods for Business', credits: 3 },
-                { code: 'BBA124 / DBA124', name: 'Principles of Marketing', credits: 3 },
-                { code: 'PLM311', name: 'Principles of Procurement & Logistics Management', credits: 3 },
-                { code: 'BBA123', name: 'Macroeconomics', credits: 3 },
-                { code: 'BBA311', name: 'Principles of Management', credits: 3 },
-                { code: 'BBA125 / DBA125', name: 'Business Law', credits: 3 }
-            ]
-        },
-        '2': {
-            '1': [
-                { code: 'BAC215', name: 'Auditing I', credits: 3 },
-                { code: 'BBA215 / DBA215', name: 'Human Resource Management', credits: 3 },
-                { code: 'BBA214 / DBA213 / AGM212', name: 'Entrepreneurship & Small Business Management', credits: 3 },
-                { code: 'BBA212', name: 'Organisational Behavior', credits: 3 },
-                { code: 'BBA211 / DBA211', name: 'Managerial Accounting', credits: 3 },
-                { code: 'BBA216', name: 'Operations Management', credits: 3 }
-            ],
-            '2': [
-                { code: 'RSC001', name: 'Research Methodology', credits: 3 },
-                { code: 'BBA221', name: 'Strategic Management', credits: 3 },
-                { code: 'BBA223', name: 'Taxation I', credits: 3 },
-                { code: 'BBA224', name: 'Business Ethics', credits: 3 },
-                { code: 'BBF222', name: 'Financial Management', credits: 3 }
-            ]
-        },
-        '3': {
-            '1': [
-                { code: 'BBF316', name: 'Public Finance', credits: 3 },
-                { code: 'BBF313', name: 'Banking Operations', credits: 3 },
-                { code: 'BBF322', name: 'Regulatory Framework of Financial Institutions', credits: 3 },
-                { code: 'BBF326', name: 'International Finance', credits: 3 },
-                { code: 'BAC316', name: 'Computerized Accounting I', credits: 3 },
-                { code: 'BBF315', name: 'Corporate and Merchant Banking', credits: 3 }
-            ],
-            '2': [
-                { code: 'BBF325', name: 'Banking Law', credits: 3 },
-                { code: 'BBA314', name: 'Investment Analysis', credits: 3 },
-                { code: 'BBF311', name: 'Banking Technologies and Systems Management', credits: 3 },
-                { code: 'BAC321', name: 'Auditing II', credits: 3 },
-                { code: 'BBF323', name: 'Security Analysis and Portfolio Management', credits: 3 }
-            ]
-        }
-    },
-    
-    'bba-human-resource-management': {
-        '1': {
-            '1': [
-                { code: 'BBA116 / DBA116', name: 'Basic Statistics', credits: 3 },
-                { code: 'BBA112 / DBA112', name: 'Microeconomics', credits: 3 },
-                { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
-                { code: 'BBA113 / DBA113', name: 'Business Administration', credits: 3 },
-                { code: 'BIT110', name: 'Introduction to Information and Communication Technologies', credits: 3 },
-                { code: 'BBA115', name: 'Financial Accounting', credits: 3 }
-            ],
-            '2': [
-                { code: 'BBA122 / DBA122', name: 'Quantitative Methods for Business', credits: 3 },
-                { code: 'BBA124 / DBA124', name: 'Principles of Marketing', credits: 3 },
-                { code: 'PLM311', name: 'Principles of Procurement & Logistics Management', credits: 3 },
-                { code: 'BBA123', name: 'Macroeconomics', credits: 3 },
-                { code: 'BBA311', name: 'Principles of Management', credits: 3 },
-                { code: 'BBA125 / DBA125', name: 'Business Law', credits: 3 }
-            ]
-        },
-        '2': {
-            '1': [
-                { code: 'BAC215', name: 'Auditing I', credits: 3 },
-                { code: 'BBA215 / DBA215', name: 'Human Resource Management', credits: 3 },
-                { code: 'BBA214 / DBA213 / AGM212', name: 'Entrepreneurship & Small Business Management', credits: 3 },
-                { code: 'BBA212', name: 'Organisational Behavior', credits: 3 },
-                { code: 'BBA211 / DBA211', name: 'Managerial Accounting', credits: 3 },
-                { code: 'BBA216', name: 'Operations Management', credits: 3 }
-            ],
-            '2': [
-                { code: 'RSC001', name: 'Research Methodology', credits: 3 },
-                { code: 'BBA221', name: 'Strategic Management', credits: 3 },
-                { code: 'BBA223', name: 'Taxation I', credits: 3 },
-                { code: 'BBA224', name: 'Business Ethics', credits: 3 },
-                { code: 'BBF222', name: 'Financial Management', credits: 3 }
-            ]
-        },
-        '3': {
-            '1': [
-                { code: 'HRM313', name: 'Organisational Environment Management', credits: 3 },
-                { code: 'HRM316', name: 'Organisational Leadership', credits: 3 },
-                { code: 'HRM312', name: 'Benefits and Compensation', credits: 3 },
-                { code: 'HRM311', name: 'Human Resource Information System', credits: 3 },
-                { code: 'HRM314', name: 'Human Resource Policy and Management', credits: 3 },
-                { code: 'HRM315', name: 'Human Resource Training and Development', credits: 3 }
-            ],
-            '2': [
-                { code: 'HRM325', name: 'Industrial Psychology', credits: 3 },
-                { code: 'HRM321', name: 'Career Planning and Counseling', credits: 3 },
-                { code: 'HRM323', name: 'Strategic Human Resource Management', credits: 3 },
-                { code: 'BBA324', name: 'Managing Change in Organizations', credits: 3 },
-                { code: 'HRM322', name: 'Occupational Health and Safety', credits: 3 }
-            ]
-        }
-    },
-    
-    'bba-procurement-logistics': {
-        '1': {
-            '1': [
-                { code: 'BBA116 / DBA116', name: 'Basic Statistics', credits: 3 },
-                { code: 'BBA112 / DBA112', name: 'Microeconomics', credits: 3 },
-                { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
-                { code: 'BBA113 / DBA113', name: 'Business Administration', credits: 3 },
-                { code: 'BIT110', name: 'Introduction to Information and Communication Technologies', credits: 3 },
-                { code: 'BBA115', name: 'Financial Accounting', credits: 3 }
-            ],
-            '2': [
-                { code: 'BBA122 / DBA122', name: 'Quantitative Methods for Business', credits: 3 },
-                { code: 'BBA124 / DBA124', name: 'Principles of Marketing', credits: 3 },
-                { code: 'PLM311', name: 'Principles of Procurement & Logistics Management', credits: 3 },
-                { code: 'BBA123', name: 'Macroeconomics', credits: 3 },
-                { code: 'BBA311', name: 'Principles of Management', credits: 3 },
-                { code: 'BBA125 / DBA125', name: 'Business Law', credits: 3 }
-            ]
-        },
-        '2': {
-            '1': [
-                { code: 'BAC215', name: 'Auditing I', credits: 3 },
-                { code: 'BBA215 / DBA215', name: 'Human Resource Management', credits: 3 },
-                { code: 'BBA214 / DBA213 / AGM212', name: 'Entrepreneurship & Small Business Management', credits: 3 },
-                { code: 'BBA212', name: 'Organisational Behavior', credits: 3 },
-                { code: 'BBA211 / DBA211', name: 'Managerial Accounting', credits: 3 },
-                { code: 'BBA216', name: 'Operations Management', credits: 3 }
-            ],
-            '2': [
-                { code: 'RSC001', name: 'Research Methodology', credits: 3 },
-                { code: 'BBA221', name: 'Strategic Management', credits: 3 },
-                { code: 'BBA223', name: 'Taxation I', credits: 3 },
-                { code: 'BBA224', name: 'Business Ethics', credits: 3 },
-                { code: 'BBF222', name: 'Financial Management', credits: 3 }
-            ]
-        },
-        '3': {
-            '1': [
-                { code: 'PLM314', name: 'Business Negotiations', credits: 3 },
-                { code: 'PLM319', name: 'Logistics & Supply Chain Management', credits: 3 },
-                { code: 'PLM318', name: 'Risk & Insurance Management', credits: 3 },
-                { code: 'PLM316', name: 'Legal Aspects of Purchasing', credits: 3 },
-                { code: 'PLM317', name: 'Public Procurement & Contract Management', credits: 3 },
-                { code: 'PLM315', name: 'Global Purchasing and Supply Chain Management', credits: 3 }
-            ],
-            '2': [
-                { code: 'PLM326', name: 'Inventory & Warehousing Operations', credits: 3 },
-                { code: 'PLM322', name: 'Sustainable Purchasing', credits: 3 },
-                { code: 'PLM327', name: 'Procurement Audit & Investigations', credits: 3 },
-                { code: 'PLM324', name: 'Strategic Procurement', credits: 3 },
-                { code: 'PLM328', name: 'E-Procurement & Software Applications', credits: 3 }
-            ]
-        }
-    },
-    
-    'bba-management': {
-        '1': {
-            '1': [
-                { code: 'BBA116 / DBA116', name: 'Basic Statistics', credits: 3 },
-                { code: 'BBA112 / DBA112', name: 'Microeconomics', credits: 3 },
-                { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
-                { code: 'BBA113 / DBA113', name: 'Business Administration', credits: 3 },
-                { code: 'BIT110', name: 'Introduction to Information and Communication Technologies', credits: 3 },
-                { code: 'BBA115', name: 'Financial Accounting', credits: 3 }
-            ],
-            '2': [
-                { code: 'BBA122 / DBA122', name: 'Quantitative Methods for Business', credits: 3 },
-                { code: 'BBA124 / DBA124', name: 'Principles of Marketing', credits: 3 },
-                { code: 'PLM311', name: 'Principles of Procurement & Logistics Management', credits: 3 },
-                { code: 'BBA123', name: 'Macroeconomics', credits: 3 },
-                { code: 'BBA311', name: 'Principles of Management', credits: 3 },
-                { code: 'BBA125 / DBA125', name: 'Business Law', credits: 3 }
-            ]
-        },
-        '2': {
-            '1': [
-                { code: 'BAC215', name: 'Auditing I', credits: 3 },
-                { code: 'BBA215 / DBA215', name: 'Human Resource Management', credits: 3 },
-                { code: 'BBA214 / DBA213 / AGM212', name: 'Entrepreneurship & Small Business Management', credits: 3 },
-                { code: 'BBA212', name: 'Organisational Behavior', credits: 3 },
-                { code: 'BBA211 / DBA211', name: 'Managerial Accounting', credits: 3 },
-                { code: 'BBA216', name: 'Operations Management', credits: 3 }
-            ],
-            '2': [
-                { code: 'RSC001', name: 'Research Methodology', credits: 3 },
-                { code: 'BBA221', name: 'Strategic Management', credits: 3 },
-                { code: 'BBA223', name: 'Taxation I', credits: 3 },
-                { code: 'BBA224', name: 'Business Ethics', credits: 3 },
-                { code: 'BBF222', name: 'Financial Management', credits: 3 }
-            ]
-        },
-        '3': {
-            '1': [
-                { code: 'BBF316', name: 'Public Finance', credits: 3 },
-                { code: 'PLM314', name: 'Business Negotiations', credits: 3 },
-                { code: 'HRM316', name: 'Organisational Leadership', credits: 3 },
-                { code: 'BBF326', name: 'International Finance', credits: 3 },
-                { code: 'BBA313', name: 'Quality Systems Management', credits: 3 },
-                { code: 'BIT125 / DBA212', name: 'Management Information Systems', credits: 3 }
-            ],
-            '2': [
-                { code: 'BBA322', name: 'Project Planning and Management', credits: 3 },
-                { code: 'BBA323', name: 'Business Risk Management', credits: 3 },
-                { code: 'BBA314', name: 'Investment Analysis', credits: 3 },
-                { code: 'BBA324', name: 'Managing Change in Organizations', credits: 3 },
-                { code: 'BBA315', name: 'Marketing Strategy', credits: 3 }
-            ]
-        }
-    },
-    
-    // Bachelor of Information Technology
-    'bit': {
-        '1': {
-            '1': [
-                { code: 'BIT111', name: 'Discrete Mathematics', credits: 3 },
-                { code: 'BBA116 / DBA116-GRP1', name: 'Basic Statistics', credits: 3 },
-                { code: 'BJC110-GRP2', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
-                { code: 'BIT113', name: 'Fundamentals of Information Systems', credits: 3 },
-                { code: 'BIT110-GRP3', name: 'Introduction to Information and Communication Technologies', credits: 3 }
-            ],
-            '2': [
-                { code: 'BIT122 / BSE121 / DDA1204', name: 'Internet Technology & Web Design', credits: 3 },
-                { code: 'BIT123', name: 'Computer Applications', credits: 3 },
-                { code: 'BIT121 / BSE121', name: 'Database Development and Management I', credits: 3 },
-                { code: 'COM122', name: 'Principles of Programming', credits: 3 },
-                { code: 'BIT125 / DBA212', name: 'Information Systems Management', credits: 3 },
-                { code: 'BIT124', name: 'E-Commerce', credits: 3 }
-            ]
-        },
-        '2': {
-            '1': [
-                { code: 'BIT212', name: 'Systems Analysis and Design', credits: 3 },
-                { code: 'COM211', name: 'Object Oriented Programming', credits: 3 },
-                { code: 'BIT215', name: 'Database Development and Management II', credits: 3 },
-                { code: 'BBA214 / DBA213 / AGM212', name: 'Entrepreneurship & Small Business Management', credits: 3 },
-                { code: 'BIT213 / BSE213', name: 'Web Development and Management', credits: 3 },
-                { code: 'BIT214', name: 'Computer Networks & Data Communications', credits: 3 }
-            ],
-            '2': [
-                { code: 'COM221', name: 'Operating Systems Principles', credits: 3 },
-                { code: 'COM224 / BSE212', name: 'Software Engineering Principles', credits: 3 },
-                { code: 'BIT225', name: 'Emerging Trends in Information Technology', credits: 3 },
-                { code: 'BIT223', name: 'Computer Repair and Maintenance', credits: 3 },
-                { code: 'BIT222', name: 'Research Methodology in Computing', credits: 3 }
-            ]
-        },
-        '3': {
-            '1': [
-                { code: 'BIT311', name: 'ICT Project Planning and Management', credits: 3 },
-                { code: 'BIS313', name: 'Business Systems Modelling', credits: 3 },
-                { code: 'BIT315 / DIT224', name: 'Multimedia Systems', credits: 3 },
-                { code: 'BIT312 / BSE311', name: 'Mobile Application Development', credits: 3 },
-                { code: 'BIT314', name: 'Network Configuration and Management', credits: 3 }
-            ],
-            '2': [
-                { code: 'BIT321 / BSE427', name: 'Professional Issues in Computing', credits: 3 },
-                { code: 'BIT325', name: 'Information Systems Audit', credits: 3 },
-                { code: 'BIT322', name: 'Distributed System Development', credits: 3 },
-                { code: 'BIT324', name: 'Network and Information Security', credits: 3 },
-                { code: 'BIT323', name: 'User Interface Design', credits: 3 }
-            ]
-        }
-    },
-    
-    // Higher Education Certificate - Humanities
+
+    // Higher Education Certificate - Humanities (HEC-HUM)
     'hec-humanities': {
         '1': {
             '1': [
-                { code: 'HEC113', name: 'Reading & Writing Skills for Beginners', credits: 3 },
-                { code: 'HEC111', name: 'Computing and Study Skills', credits: 3 },
-                { code: 'FOU112', name: 'Communication Skills', credits: 3 },
-                { code: 'FOU114', name: 'English', credits: 3 },
-                { code: 'FOU110', name: 'Foundational Mathematics', credits: 3 }
+                { code: 'FOU110', name: 'Foundational Mathematics', credits: 4 },
+                { code: 'HEC111', name: 'Computing and Study Skills', credits: 4 },
+                { code: 'FOU112', name: 'Communication Skills', credits: 4 },
+                { code: 'HEC113', name: 'Reading & Writing Skills for Beginners', credits: 4 },
+                { code: 'FOU114', name: 'English', credits: 4 }
             ],
             '2': [
-                { code: 'HEC122', name: 'Ethical Practice and Professionalism', credits: 3 },
-                { code: 'FOA122 / BPA113', name: 'Introduction to Critical Thinking', credits: 3 },
-                { code: 'FOU113', name: 'Introduction to Development Studies', credits: 3 },
-                // Elective section
+                { code: 'FOA122', name: 'Introduction to Critical Thinking', credits: 4 },
+                { code: 'FOU113', name: 'Introduction to Development Studies', credits: 4 },
+                { code: 'HEC122', name: 'Ethical Practice and Professionalism', credits: 4 },
                 {
                     type: 'elective',
                     title: 'Electives (choose any two)',
                     options: [
-                        { code: 'IRDS121 / BPA121 / FOA124', name: 'Introduction to Political Science', credits: 3 },
-                        { code: 'FOA123', name: 'Business Administration', credits: 3 },
-                        { code: 'FOA120', name: 'Foundation of Law', credits: 3 },
-                        { code: 'HEC125', name: 'Basic Entrepreneurial Skills', credits: 3 },
-                        { code: 'FOA121', name: 'Principles of Accounting', credits: 3 }
+                        { code: 'FOA120', name: 'Foundation of Law', credits: 4 },
+                        { code: 'FOA121', name: 'Principles of Accounting', credits: 4 },
+                        { code: 'HEC125', name: 'Basic Entrepreneurial Skills', credits: 4 },
+                        { code: 'FOA123', name: 'Business Administration', credits: 4 },
+                        { code: 'FOA124', name: 'Introduction to Political Science', credits: 4 }
                     ],
                     maxSelect: 2
                 }
             ]
         }
     },
-    
-    // Higher Education Certificate - Biological Sciences
-    'hec-biological-sciences': {
+
+    // Bachelor of Journalism and Communication Studies (BJCS)
+    'bjcs': {
         '1': {
             '1': [
-                { code: 'HEC115', name: 'Introduction to Animal Physiology', credits: 3 },
-                { code: 'HEC112', name: 'Foundation Biology I', credits: 3 },
-                { code: 'HEC111-S', name: 'Computing Skills', credits: 3 },
-                { code: 'FOS111', name: 'Foundation Physical and Inorganic Chemistry', credits: 3 },
-                { code: 'FOU114-S', name: 'English', credits: 3 },
-                { code: 'FOU112-S', name: 'Communication and Study Skills', credits: 3 }
+                { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'BIT110', name: 'Introduction to Information and Communication Technologies', credits: 4 },
+                { code: 'BJC112', name: 'Introduction to Behavioral Science', credits: 3 },
+                { code: 'BJC115', name: 'Introduction to Journalism', credits: 3 },
+                { code: 'BJC116', name: 'Basic Academic Writing Skills', credits: 3 },
+                { code: 'BJC125', name: 'Media and Communication History', credits: 3 }
             ],
             '2': [
-                { code: 'FOS127', name: 'Foundation Organic and Analytic Chemistry', credits: 3 },
-                { code: 'FOS125', name: 'Foundation Statistics', credits: 3 },
-                { code: 'HEC126', name: 'Introduction to Physical Chemistry', credits: 3 },
-                { code: 'HEC128', name: 'Life Skills Education', credits: 3 },
-                { code: 'HEC123', name: 'Foundation Biology II', credits: 3 },
-                { code: 'HEC124', name: 'Introduction to Plant Physiology', credits: 3 }
-            ]
-        }
-    },
-    
-    // Higher Education Certificate - Physical Sciences
-    'hec-physical-sciences': {
-        '1': {
-            '1': [
-                { code: 'FOS112', name: 'Foundation Physics I', credits: 3 },
-                { code: 'FOU110-S', name: 'Foundational Mathematics', credits: 3 },
-                { code: 'HEC111-S', name: 'Computing Skills', credits: 3 },
-                { code: 'FOS111', name: 'Foundation Physical and Inorganic Chemistry', credits: 3 },
-                { code: 'FOU114-S', name: 'English', credits: 3 },
-                { code: 'FOU112-S', name: 'Communication Skills', credits: 3 }
-            ],
-            '2': [
-                { code: 'FOS127', name: 'Foundation Organic and Analytic Chemistry', credits: 3 },
-                { code: 'FOS125', name: 'Foundation Statistics', credits: 3 },
-                { code: 'HEC128', name: 'Life Skills Education', credits: 3 },
-                { code: 'FOS126', name: 'Foundation Physics II', credits: 3 },
-                { code: 'FOU113-P', name: 'Introduction to Development Studies', credits: 3 }
-            ]
-        }
-    },
-    
-    // Diploma in Information Technology
-    'dit': {
-        '1': {
-            '1': [
-                { code: 'DCS112', name: 'Introduction to Operating Systems', credits: 3 },
-                { code: 'BJC110-GRP2', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
-                { code: 'BIT113', name: 'Fundamentals of Information Systems', credits: 3 },
-                { code: 'BIT110-GRP3', name: 'Introduction to Information and Communication Technologies', credits: 3 },
-                { code: 'DCS111', name: 'Fundamentals of Mathematics', credits: 3 }
-            ],
-            '2': [
-                { code: 'BIT122 / BSE121 / DDA1204', name: 'Internet Technology and Web Design', credits: 3 },
-                { code: 'BIT123', name: 'Computer Applications', credits: 3 },
-                { code: 'COM113', name: 'Computer Architecture and Organisation', credits: 3 },
-                { code: 'BIT121 / BSE121', name: 'Introduction to Database Systems', credits: 3 },
-                { code: 'COM122', name: 'Programming Principles', credits: 3 }
+                { code: 'BJC121', name: 'Mass Media and Society', credits: 4 },
+                { code: 'BJC122', name: 'Introduction to Public Relations', credits: 3 },
+                { code: 'BJC123', name: 'Introduction to Broadcasting', credits: 4 },
+                { code: 'BJC128', name: 'Computer Applications for Media', credits: 3 },
+                { code: 'BJC127', name: 'Introduction to Journalism Writing', credits: 4 },
+                { code: 'BJC126', name: 'Introduction to Political Science and Classical Thought', credits: 3 }
             ]
         },
         '2': {
             '1': [
-                { code: 'BIT212', name: 'Systems Analysis and Design', credits: 3 },
-                { code: 'BIT225', name: 'Emerging Trends in Information Technology', credits: 3 },
-                { code: 'BIT124', name: 'E-Commerce', credits: 3 },
-                { code: 'BIT213 / BSE213', name: 'Dynamic Website Development', credits: 3 },
-                { code: 'BIT223', name: 'Computer Assembly, Repair and Maintenance', credits: 3 }
+                { code: 'BJC211', name: 'Audience Analysis and Media Research', credits: 3 },
+                { code: 'BJC225', name: 'Development Communication', credits: 4 },
+                { code: 'BJC213', name: 'Media and Communication Policy', credits: 3 },
+                { code: 'BJC214', name: 'Photojournalism', credits: 4 },
+                { code: 'BJC217', name: 'Media and Communication Theories', credits: 4 },
+                { code: 'BJC124', name: 'News Writing & Reporting', credits: 3 }
             ],
             '2': [
-                { code: 'BIT321 / BSE427', name: 'Professional Issues in Computing', credits: 3 },
-                { code: 'BIT215', name: 'Database Development and Administration', credits: 3 },
-                { code: 'BIT315 / DIT224', name: 'Introduction to Multimedia Systems', credits: 3 },
-                { code: 'BIT214', name: 'PC Network and Data Communication', credits: 3 },
-                { code: 'BIT222', name: 'Research Methodology in Computing', credits: 3 }
-            ]
-        }
-    },
-    
-    // Bachelor of Science in Software Engineering
-    'bse': {
-        '1': {
-            '1': [
-                { code: 'BIT111', name: 'Discrete Mathematics', credits: 3 },
-                { code: 'BIT110-GRP2', name: 'Introduction to Information and Communication Technologies', credits: 3 },
-                { code: 'BJC110-GRP2', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
-                { code: 'COM113', name: 'Computer Architecture and Organisation', credits: 3 },
-                { code: 'BSE111', name: 'Calculus for Software Engineering', credits: 3 }
-            ],
-            '2': [
-                { code: 'BIT212', name: 'System Analysis and Design', credits: 3 },
-                { code: 'BIT122 / BSE121 / DDA1204', name: 'Internet and Web Programming', credits: 3 },
-                { code: 'BIT121 / BSE121', name: 'Fundamentals of Database Systems', credits: 3 },
-                { code: 'COM122', name: 'Principles of Programming', credits: 3 },
-                { code: 'COM123 / DDA1201', name: 'Numerical Analysis and Computation', credits: 3 }
-            ]
-        },
-        '2': {
-            '1': [
-                { code: 'COM221', name: 'Operating Systems Principles', credits: 3 },
-                { code: 'COM224 / BSE212', name: 'Principles of Software Engineering', credits: 3 },
-                { code: 'COM211', name: 'Object Oriented Programming', credits: 3 },
-                { code: 'BIT215', name: 'Advanced Database Systems', credits: 3 },
-                { code: 'COM212', name: 'Data Structures and Algorithms', credits: 3 },
-                { code: 'BIT214', name: 'Computer Networks and Data Communications', credits: 3 }
-            ],
-            '2': [
-                { code: 'BSE222', name: 'Advanced Object Oriented Programming', credits: 3 },
-                { code: 'BSE224', name: 'Python Programming', credits: 3 },
-                { code: 'BSE226', name: 'Software Requirements Engineering', credits: 3 },
-                { code: 'BIT213 / BSE213', name: 'Advanced Internet and Web Programming', credits: 3 },
-                { code: 'BSE221', name: 'Formal Methods in Software Engineering', credits: 3 },
-                { code: 'BIT222', name: 'Research Methodology in Computing', credits: 3 }
+                { code: 'BJC221', name: 'Principles of Advertising', credits: 3 },
+                { code: 'BJC212', name: 'Advanced Writing', credits: 3 },
+                { code: 'BJC229', name: 'Commercial Photography', credits: 3 },
+                { code: 'BJC224', name: 'Media Management', credits: 3 },
+                { code: 'BJC226', name: 'Media Law and Ethics', credits: 3 },
+                { code: 'RSC001', name: 'Research Methodology', credits: 3 },
+                { code: 'BJC227', name: 'Internship', credits: 6 }
             ]
         },
         '3': {
             '1': [
-                { code: 'COM312', name: 'Artificial Intelligence and Expert Systems', credits: 3 },
-                { code: 'BSE314', name: 'Internet of Things', credits: 3 },
-                { code: 'COM311', name: 'Compiler Design', credits: 3 },
-                { code: 'BIT124', name: 'E-Commerce', credits: 3 },
-                { code: 'BIT312 / BSE311', name: 'Mobile Applications Development', credits: 3 },
-                { code: 'BIT314', name: 'Network Configuration & Management', credits: 3 }
+                { code: 'BJC311', name: 'The Art of Public Speaking', credits: 3 },
+                { code: 'BJC312', name: 'Public Relations & Media Practice', credits: 3 },
+                { code: 'BJC314', name: 'Multimedia and Animation', credits: 3 },
+                { code: 'BJC315', name: 'Investigative Journalism', credits: 3 },
+                { code: 'BJC316', name: 'Research Project', credits: 5 },
+                {
+                    type: 'specialization',
+                    title: 'Public Relations Specialisation (Choose 2)',
+                    options: [
+                        { code: 'BPR323', name: 'Politics of Communication and Propaganda', credits: 4 },
+                        { code: 'BPR322', name: 'PR Strategies, Planning and Programming', credits: 4 }
+                    ],
+                    maxSelect: 2
+                },
+                {
+                    type: 'specialization',
+                    title: 'Journalism Specialisation (Choose 2)',
+                    options: [
+                        { code: 'BJC323', name: 'Radio Production', credits: 4 },
+                        { code: 'BJC324', name: 'Politics of Developments', credits: 4 }
+                    ],
+                    maxSelect: 2
+                }
             ],
-            '2': [
-                { code: 'COM321', name: 'Simulation & Modelling', credits: 3 },
-                { code: 'COM324', name: 'Machine Learning', credits: 3 },
-                { code: 'BSE326', name: 'Software Evolution', credits: 3 },
-                { code: 'BSE322', name: 'Advanced Mobile Applications Development', credits: 3 },
-                { code: 'BIT323', name: 'User Interface Design', credits: 3 }
-            ]
-        },
-        '4': {
-            '1': [
-                { code: 'BSE321', name: 'Software Metrics', credits: 3 },
-                { code: 'BBA214 / DBA213 / AGM212', name: 'Entrepreneurship & Small Business Management', credits: 3 },
-                { code: 'BSE411', name: 'Software Quality Assurance and Testing', credits: 3 },
-                { code: 'BSE414', name: 'Computer Games Development', credits: 3 },
-                { code: 'BSE412 / COM225', name: 'Embedded Systems Development', credits: 3 },
-                { code: 'BSE323', name: 'Software Architecture & Patterns', credits: 3 }
-            ],
-            '2': [
-                { code: 'BIT311', name: 'Managing Software Engineering Projects', credits: 3 },
-                { code: 'BIT321 / BSE427', name: 'Software Engineering Ethics', credits: 3 },
-                { code: 'BSE417', name: 'Network Application Development', credits: 3 },
-                { code: 'BSE426', name: 'Software Security', credits: 3 }
-            ]
+            '2': {
+                'journalism': [
+                    { code: 'BJC313', name: 'Television Production', credits: 4 },
+                    { code: 'BJC329', name: 'Online and Digital Journalism', credits: 4 },
+                    { code: 'BJC322', name: 'Newspaper and Magazine Design', credits: 4 },
+                    { code: 'BJC327', name: 'Environmental Journalism', credits: 4 },
+                    { code: 'BJC326', name: 'Media, Human Rights and Gender', credits: 4 },
+                    { code: 'BJC328', name: 'Fake News and Media Production', credits: 4 }
+                ],
+                'public-relations': [
+                    { code: 'BJC313', name: 'Television Production', credits: 4 },
+                    { code: 'BPR321', name: 'International Public Relations and Diplomacy', credits: 4 },
+                    { code: 'BPR324', name: 'Media and Conflict Management', credits: 4 },
+                    { code: 'BPR327', name: 'Public Relations Consultancy and Media Monitoring', credits: 4 },
+                    { code: 'BPR325', name: 'Media, Identity and Representation', credits: 4 },
+                    { code: 'BPR329', name: 'Digital Content for Brand Communications', credits: 4 }
+                ]
+            }
         }
     },
-    
-    // Advanced Diploma in Health Leadership and Management
-    'adhm': {
+
+    // Certificate in Business Administration (CBA)
+    'ncba': {
         '1': {
             '1': [
-                { code: 'BPH323 / ADHM1106', name: 'Health Systems Management', credits: 3 },
-                { code: 'ADHM1104', name: 'Fundamentals of Epidemiology and Biostatistics', credits: 3 },
-                { code: 'ADHM1102', name: 'Basic English Language Communication Skills', credits: 3 },
-                { code: 'ADHM1105', name: 'Fundamentals of Financial Management in Health Care', credits: 3 },
-                { code: 'ADHM1103', name: 'Managing Primary Health Care Services', credits: 3 },
-                { code: 'ADHM1101', name: 'Information Technology in Health Services Management', credits: 3 }
+                { code: 'NCBK111', name: 'Bookkeeping', credits: 4 },
+                { code: 'NCCS112', name: 'Basic Communication Skills', credits: 3 },
+                { code: 'NCBA113', name: 'Fundamentals of Business Administration', credits: 5 },
+                { code: 'NCBE114', name: 'Introduction to Business Ethics', credits: 3 },
+                { code: 'NCBS115', name: 'Elements of Business Statistics', credits: 5 },
+                { code: 'NCBA115', name: 'Real Life Project 1', credits: 4 }
             ],
             '2': [
-                { code: 'ADHM1204', name: 'Project Planning and Management', credits: 3 },
-                { code: 'ADHM1205', name: 'Mobilization of Resources for Health Services', credits: 3 },
-                { code: 'ADHM1203', name: 'Management and Maintenance of Health Material Resources', credits: 3 },
-                { code: 'ADHM1201', name: 'Environmental and Occupational Health and Safety', credits: 3 },
-                { code: 'ADHM1206', name: 'Fundamentals of Action Research in Health Services Research', credits: 3 },
-                { code: 'ADHM1202', name: 'Human Resource Management', credits: 3 }
-            ]
-        }
-    },
-    
-    // Bachelor of Science in Computer Science
-    'bcs': {
-        '1': {
-            '1': [
-                { code: 'BIT111', name: 'Discrete Mathematics', credits: 3 },
-                { code: 'BBA116 / DBA116-GRP1', name: 'Basic Statistics', credits: 3 },
-                { code: 'BJC110-GRP2', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
-                { code: 'COM113', name: 'Computer Architecture and Organisation', credits: 3 },
-                { code: 'BIT110-GRP3', name: 'Introduction to Information and Communication Technologies', credits: 3 },
-                { code: 'COM111', name: 'Mathematics for Computing', credits: 3 }
-            ],
-            '2': [
-                { code: 'BIT212', name: 'Systems Analysis and Design', credits: 3 },
-                { code: 'BIT122 / BSE121 / DDA1204', name: 'Internet and Web Programming I', credits: 3 },
-                { code: 'COM122', name: 'Principles of Programming', credits: 3 },
-                { code: 'BIT124', name: 'E-Commerce', credits: 3 },
-                { code: 'COM123 / DDA1201', name: 'Numerical Analysis and Computation', credits: 3 }
+                { code: 'NCBA121', name: 'Elements of Purchasing and Supplies Management', credits: 5 },
+                { code: 'NCBF122', name: 'Elements of Business Finance', credits: 5 },
+                { code: 'NCPE123', name: 'Principles of Economics', credits: 4 },
+                { code: 'NCCA124', name: 'Computer Applications', credits: 4 },
+                { code: 'NCED125', name: 'Elements of Entrepreneurship Development', credits: 4 },
+                { code: 'NCBA126', name: 'Real Life Project 2', credits: 4 }
             ]
         },
         '2': {
             '1': [
-                { code: 'COM321', name: 'Simulation & Modeling', credits: 3 },
-                { code: 'COM211', name: 'Object Oriented Programming', credits: 3 },
-                { code: 'BIT121 / BSE121', name: 'Database Development and Management I', credits: 3 },
-                { code: 'BIT213 / BSE213', name: 'Internet and Web Programming II', credits: 3 },
+                { code: 'NCPM211', name: 'Introduction to Public Sector Management', credits: 4 },
+                { code: 'NCBL212', name: 'Introduction to Business Law', credits: 3 },
+                { code: 'NCBAT213', name: 'Fundamentals of Production Management', credits: 5 },
+                { code: 'NCBA214', name: 'Elements of Cost Accounting', credits: 4 },
+                { code: 'NCIM215', name: 'Introduction to Marketing', credits: 3 },
+                { code: 'NCBA216', name: 'Real Life Project 3', credits: 4 }
+            ],
+            '2': [
+                { code: 'NCHR221', name: 'Elements of Human Resource Management', credits: 3 },
+                { code: 'NCET222', name: 'Elements of Taxation', credits: 4 },
+                { code: 'NCKS223', name: 'Basic Kiswahili', credits: 3 },
+                { code: 'NCEA224', name: 'Elements of Auditing', credits: 4 },
+                { code: 'NCBA225', name: 'Real Life Project 4', credits: 4 },
+                { code: 'NCBA226', name: 'Industrial Training (2 months)', credits: 4 }
+            ]
+        }
+    },
+
+    // Diploma in Business Administration (DBA)
+    'dba': {
+        '1': {
+            '1': [
+                { code: 'DBA113', name: 'Introduction to Business Administration', credits: 3 },
+                { code: 'DBA112', name: 'Microeconomics', credits: 3 },
+                { code: 'DBA115', name: 'Financial Accounting', credits: 4 },
+                { code: 'DIT110', name: 'Introduction to Information and Communication Technologies', credits: 4 },
+                { code: 'DJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'DBA116', name: 'Business Statistics', credits: 3 }
+            ],
+            '2': [
+                { code: 'DBA127', name: 'Principles of Management', credits: 3 },
+                { code: 'DBA122', name: 'Quantitative Methods for Business', credits: 4 },
+                { code: 'DBA128', name: 'Macroeconomics', credits: 3 },
+                { code: 'DBA124', name: 'Principles of Marketing', credits: 3 },
+                { code: 'DBA125', name: 'Business Law', credits: 4 },
+                { code: 'DBA126', name: 'Stores and Inventory Management', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'DBA212', name: 'Management Information Systems', credits: 3 },
+                { code: 'DBA213', name: 'Entrepreneurship and E-commerce', credits: 4 },
+                { code: 'DBA218', name: 'Operations Management', credits: 3 },
+                { code: 'DBA216', name: 'Procurement Management', credits: 3 },
+                { code: 'DBA215', name: 'Human Resource Management', credits: 3 },
+                { code: 'RSC001', name: 'Research Methodology', credits: 4 }
+            ],
+            '2': [
+                { code: 'DBA221', name: 'Auditing I', credits: 3 },
+                { code: 'DBA222', name: 'Financial Management', credits: 3 },
+                { code: 'DBA223', name: 'Taxation', credits: 3 },
+                { code: 'DBA211', name: 'Managerial Accounting', credits: 4 },
+                { code: 'DBA217', name: 'Industrial Training', credits: 3 },
+                { code: 'DBA226', name: 'Research Project', credits: 5 }
+            ]
+        }
+    },
+
+    // Bachelor of Business Administration (BBA) - Core Years (keep this as reference)
+    'bba': {
+        '1': {
+            '1': [
+                { code: 'BBA112', name: 'Microeconomics', credits: 3 },
+                { code: 'BBA113', name: 'Business Administration', credits: 3 },
+                { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'BIT110', name: 'Introduction to Information and Communication Technologies', credits: 4 },
+                { code: 'BBA115', name: 'Financial Accounting', credits: 3 },
+                { code: 'BBA116', name: 'Basic Statistics', credits: 3 }
+            ],
+            '2': [
+                { code: 'BBA311', name: 'Principles of Management', credits: 3 },
+                { code: 'BBA122', name: 'Quantitative Methods for Business', credits: 3 },
+                { code: 'PLM311', name: 'Principles of Procurement & Logistics Management', credits: 3 },
+                { code: 'BBA123', name: 'Macroeconomics', credits: 3 },
+                { code: 'BBA124', name: 'Principles of Marketing', credits: 3 },
+                { code: 'BBA125', name: 'Business Law', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'BBA211', name: 'Managerial Accounting', credits: 3 },
+                { code: 'BBA212', name: 'Organisational Behavior', credits: 3 },
+                { code: 'BBA214', name: 'Entrepreneurship & Small Business Management', credits: 3 },
+                { code: 'BAC215', name: 'Auditing I', credits: 3 },
+                { code: 'BBA215', name: 'Human Resource Management', credits: 3 },
+                { code: 'BBA216', name: 'Operations Management', credits: 3 }
+            ],
+            '2': [
+                { code: 'BBA221', name: 'Strategic Management', credits: 3 },
+                { code: 'BBA223', name: 'Taxation I', credits: 3 },
+                { code: 'BBF222', name: 'Financial Management', credits: 3 },
+                { code: 'BBA224', name: 'Business Ethics', credits: 3 },
+                { code: 'RSC001', name: 'Research Methodology', credits: 3 },
+                { code: 'BBA226', name: 'Practicum', credits: 3 }
+            ]
+        }
+    },
+
+    // BBA Finance & Accounting - COMPLETE (Years 1-3)
+    'bba-finance-accounting': {
+        '1': {
+            '1': [
+                { code: 'BBA112', name: 'Microeconomics', credits: 3 },
+                { code: 'BBA113', name: 'Business Administration', credits: 3 },
+                { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'BIT110', name: 'Introduction to Information and Communication Technologies', credits: 4 },
+                { code: 'BBA115', name: 'Financial Accounting', credits: 3 },
+                { code: 'BBA116', name: 'Basic Statistics', credits: 3 }
+            ],
+            '2': [
+                { code: 'BBA311', name: 'Principles of Management', credits: 3 },
+                { code: 'BBA122', name: 'Quantitative Methods for Business', credits: 3 },
+                { code: 'PLM311', name: 'Principles of Procurement & Logistics Management', credits: 3 },
+                { code: 'BBA123', name: 'Macroeconomics', credits: 3 },
+                { code: 'BBA124', name: 'Principles of Marketing', credits: 3 },
+                { code: 'BBA125', name: 'Business Law', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'BBA211', name: 'Managerial Accounting', credits: 3 },
+                { code: 'BBA212', name: 'Organisational Behavior', credits: 3 },
+                { code: 'BBA214', name: 'Entrepreneurship & Small Business Management', credits: 3 },
+                { code: 'BAC215', name: 'Auditing I', credits: 3 },
+                { code: 'BBA215', name: 'Human Resource Management', credits: 3 },
+                { code: 'BBA216', name: 'Operations Management', credits: 3 }
+            ],
+            '2': [
+                { code: 'BBA221', name: 'Strategic Management', credits: 3 },
+                { code: 'BBA223', name: 'Taxation I', credits: 3 },
+                { code: 'BBF222', name: 'Financial Management', credits: 3 },
+                { code: 'BBA224', name: 'Business Ethics', credits: 3 },
+                { code: 'RSC001', name: 'Research Methodology', credits: 3 },
+                { code: 'BBA226', name: 'Practicum', credits: 3 }
+            ]
+        },
+        '3': {
+            '1': [
+                { code: 'BAC313', name: 'Advanced Accounting I', credits: 3 },
+                { code: 'BAC316', name: 'Computerized Accounting I', credits: 4 },
+                { code: 'BAC314', name: 'Public Sector Accounting', credits: 3 },
+                { code: 'BBF317', name: 'Company Law', credits: 3 },
+                { code: 'BBA317', name: 'Taxation II', credits: 3 },
+                { code: 'BBF316', name: 'Public Finance', credits: 3 }
+            ],
+            '2': [
+                { code: 'BAC321', name: 'Auditing II', credits: 3 },
+                { code: 'BAC326', name: 'Computerized Accounting II', credits: 4 },
+                { code: 'BAC327', name: 'Treasury Management', credits: 3 },
+                { code: 'BBA314', name: 'Investment Analysis', credits: 3 },
+                { code: 'BAC322', name: 'Advanced Accounting II', credits: 3 },
+                { code: 'BBA326', name: 'Research Project', credits: 5 }
+            ]
+        }
+    },
+
+    // BBA Banking & Finance - COMPLETE (Years 1-3)
+    'bba-banking-finance': {
+        '1': {
+            '1': [
+                { code: 'BBA112', name: 'Microeconomics', credits: 3 },
+                { code: 'BBA113', name: 'Business Administration', credits: 3 },
+                { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'BIT110', name: 'Introduction to Information and Communication Technologies', credits: 4 },
+                { code: 'BBA115', name: 'Financial Accounting', credits: 3 },
+                { code: 'BBA116', name: 'Basic Statistics', credits: 3 }
+            ],
+            '2': [
+                { code: 'BBA311', name: 'Principles of Management', credits: 3 },
+                { code: 'BBA122', name: 'Quantitative Methods for Business', credits: 3 },
+                { code: 'PLM311', name: 'Principles of Procurement & Logistics Management', credits: 3 },
+                { code: 'BBA123', name: 'Macroeconomics', credits: 3 },
+                { code: 'BBA124', name: 'Principles of Marketing', credits: 3 },
+                { code: 'BBA125', name: 'Business Law', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'BBA211', name: 'Managerial Accounting', credits: 3 },
+                { code: 'BBA212', name: 'Organisational Behavior', credits: 3 },
+                { code: 'BBA214', name: 'Entrepreneurship & Small Business Management', credits: 3 },
+                { code: 'BAC215', name: 'Auditing I', credits: 3 },
+                { code: 'BBA215', name: 'Human Resource Management', credits: 3 },
+                { code: 'BBA216', name: 'Operations Management', credits: 3 }
+            ],
+            '2': [
+                { code: 'BBA221', name: 'Strategic Management', credits: 3 },
+                { code: 'BBA223', name: 'Taxation I', credits: 3 },
+                { code: 'BBF222', name: 'Financial Management', credits: 3 },
+                { code: 'BBA224', name: 'Business Ethics', credits: 3 },
+                { code: 'RSC001', name: 'Research Methodology', credits: 3 },
+                { code: 'BBA226', name: 'Practicum', credits: 3 }
+            ]
+        },
+        '3': {
+            '1': [
+                { code: 'BBF315', name: 'Corporate and Merchant Banking', credits: 3 },
+                { code: 'BAC316', name: 'Computerized Accounting I', credits: 4 },
+                { code: 'BBF326', name: 'International Finance', credits: 3 },
+                { code: 'BBF322', name: 'Regulatory Framework of Financial Institutions', credits: 3 },
+                { code: 'BBF313', name: 'Banking Operations', credits: 3 },
+                { code: 'BBF316', name: 'Public Finance', credits: 3 }
+            ],
+            '2': [
+                { code: 'BAC321', name: 'Auditing II', credits: 3 },
+                { code: 'BBF325', name: 'Banking Law', credits: 3 },
+                { code: 'BBF311', name: 'Banking Technologies & Systems Management', credits: 3 },
+                { code: 'BBA314', name: 'Investment Analysis', credits: 3 },
+                { code: 'BBF323', name: 'Security Analysis & Portfolio Management', credits: 3 },
+                { code: 'BBA326', name: 'Research Project', credits: 5 }
+            ]
+        }
+    },
+
+    // BBA Business Management - COMPLETE (Years 1-3)
+    'bba-business-management': {
+        '1': {
+            '1': [
+                { code: 'BBA112', name: 'Microeconomics', credits: 3 },
+                { code: 'BBA113', name: 'Business Administration', credits: 3 },
+                { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'BIT110', name: 'Introduction to Information and Communication Technologies', credits: 4 },
+                { code: 'BBA115', name: 'Financial Accounting', credits: 3 },
+                { code: 'BBA116', name: 'Basic Statistics', credits: 3 }
+            ],
+            '2': [
+                { code: 'BBA311', name: 'Principles of Management', credits: 3 },
+                { code: 'BBA122', name: 'Quantitative Methods for Business', credits: 3 },
+                { code: 'PLM311', name: 'Principles of Procurement & Logistics Management', credits: 3 },
+                { code: 'BBA123', name: 'Macroeconomics', credits: 3 },
+                { code: 'BBA124', name: 'Principles of Marketing', credits: 3 },
+                { code: 'BBA125', name: 'Business Law', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'BBA211', name: 'Managerial Accounting', credits: 3 },
+                { code: 'BBA212', name: 'Organisational Behavior', credits: 3 },
+                { code: 'BBA214', name: 'Entrepreneurship & Small Business Management', credits: 3 },
+                { code: 'BAC215', name: 'Auditing I', credits: 3 },
+                { code: 'BBA215', name: 'Human Resource Management', credits: 3 },
+                { code: 'BBA216', name: 'Operations Management', credits: 3 }
+            ],
+            '2': [
+                { code: 'BBA221', name: 'Strategic Management', credits: 3 },
+                { code: 'BBA223', name: 'Taxation I', credits: 3 },
+                { code: 'BBF222', name: 'Financial Management', credits: 3 },
+                { code: 'BBA224', name: 'Business Ethics', credits: 3 },
+                { code: 'RSC001', name: 'Research Methodology', credits: 3 },
+                { code: 'BBA226', name: 'Practicum', credits: 3 }
+            ]
+        },
+        '3': {
+            '1': [
+                { code: 'HRM316', name: 'Organisational Leadership', credits: 3 },
+                { code: 'BBA316', name: 'Management Information Systems', credits: 3 },
+                { code: 'BBA313', name: 'Quality Systems Management', credits: 3 },
+                { code: 'PLM314', name: 'Business Negotiations', credits: 3 },
+                { code: 'BBF326', name: 'International Finance', credits: 3 },
+                { code: 'BBF316', name: 'Public Finance', credits: 3 }
+            ],
+            '2': [
+                { code: 'BBA322', name: 'Project Planning & Management', credits: 3 },
+                { code: 'BBA324', name: 'Managing Change in Organizations', credits: 3 },
+                { code: 'BBA323', name: 'Business Risk Management', credits: 3 },
+                { code: 'BBA314', name: 'Investment Analysis', credits: 3 },
+                { code: 'BBA315', name: 'Marketing Strategy', credits: 3 },
+                { code: 'BBA326', name: 'Research Project', credits: 5 }
+            ]
+        }
+    },
+
+    // BBA Human Resource Management - COMPLETE (Years 1-3)
+    'bba-human-resource-management': {
+        '1': {
+            '1': [
+                { code: 'BBA112', name: 'Microeconomics', credits: 3 },
+                { code: 'BBA113', name: 'Business Administration', credits: 3 },
+                { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'BIT110', name: 'Introduction to Information and Communication Technologies', credits: 4 },
+                { code: 'BBA115', name: 'Financial Accounting', credits: 3 },
+                { code: 'BBA116', name: 'Basic Statistics', credits: 3 }
+            ],
+            '2': [
+                { code: 'BBA311', name: 'Principles of Management', credits: 3 },
+                { code: 'BBA122', name: 'Quantitative Methods for Business', credits: 3 },
+                { code: 'PLM311', name: 'Principles of Procurement & Logistics Management', credits: 3 },
+                { code: 'BBA123', name: 'Macroeconomics', credits: 3 },
+                { code: 'BBA124', name: 'Principles of Marketing', credits: 3 },
+                { code: 'BBA125', name: 'Business Law', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'BBA211', name: 'Managerial Accounting', credits: 3 },
+                { code: 'BBA212', name: 'Organisational Behavior', credits: 3 },
+                { code: 'BBA214', name: 'Entrepreneurship & Small Business Management', credits: 3 },
+                { code: 'BAC215', name: 'Auditing I', credits: 3 },
+                { code: 'BBA215', name: 'Human Resource Management', credits: 3 },
+                { code: 'BBA216', name: 'Operations Management', credits: 3 }
+            ],
+            '2': [
+                { code: 'BBA221', name: 'Strategic Management', credits: 3 },
+                { code: 'BBA223', name: 'Taxation I', credits: 3 },
+                { code: 'BBF222', name: 'Financial Management', credits: 3 },
+                { code: 'BBA224', name: 'Business Ethics', credits: 3 },
+                { code: 'RSC001', name: 'Research Methodology', credits: 3 },
+                { code: 'BBA226', name: 'Practicum', credits: 3 }
+            ]
+        },
+        '3': {
+            '1': [
+                { code: 'HRM316', name: 'Organisational Leadership', credits: 3 },
+                { code: 'HRM311', name: 'Human Resource Information System', credits: 3 },
+                { code: 'HRM312', name: 'Benefits and Compensation', credits: 3 },
+                { code: 'HRM313', name: 'Organizational Environment Management', credits: 3 },
+                { code: 'HRM314', name: 'Human Resource Policy & Management', credits: 3 },
+                { code: 'HRM315', name: 'Human Resource Training & Development', credits: 3 }
+            ],
+            '2': [
+                { code: 'HRM323', name: 'Strategic Human Resource Management', credits: 3 },
+                { code: 'BBA324', name: 'Managing Change in Organizations', credits: 3 },
+                { code: 'HRM321', name: 'Career Planning & Counseling', credits: 3 },
+                { code: 'HRM322', name: 'Occupational Health & Safety', credits: 3 },
+                { code: 'HRM325', name: 'Industrial Psychology', credits: 3 },
+                { code: 'BBA326', name: 'Research Report', credits: 5 }
+            ]
+        }
+    },
+
+    // BBA Procurement & Logistics - COMPLETE (Years 1-3)
+    'bba-procurement-logistics': {
+        '1': {
+            '1': [
+                { code: 'BBA112', name: 'Microeconomics', credits: 3 },
+                { code: 'BBA113', name: 'Business Administration', credits: 3 },
+                { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'BIT110', name: 'Introduction to Information and Communication Technologies', credits: 4 },
+                { code: 'BBA115', name: 'Financial Accounting', credits: 3 },
+                { code: 'BBA116', name: 'Basic Statistics', credits: 3 }
+            ],
+            '2': [
+                { code: 'BBA311', name: 'Principles of Management', credits: 3 },
+                { code: 'BBA122', name: 'Quantitative Methods for Business', credits: 3 },
+                { code: 'PLM311', name: 'Principles of Procurement & Logistics Management', credits: 3 },
+                { code: 'BBA123', name: 'Macroeconomics', credits: 3 },
+                { code: 'BBA124', name: 'Principles of Marketing', credits: 3 },
+                { code: 'BBA125', name: 'Business Law', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'BBA211', name: 'Managerial Accounting', credits: 3 },
+                { code: 'BBA212', name: 'Organisational Behavior', credits: 3 },
+                { code: 'BBA214', name: 'Entrepreneurship & Small Business Management', credits: 3 },
+                { code: 'BAC215', name: 'Auditing I', credits: 3 },
+                { code: 'BBA215', name: 'Human Resource Management', credits: 3 },
+                { code: 'BBA216', name: 'Operations Management', credits: 3 }
+            ],
+            '2': [
+                { code: 'BBA221', name: 'Strategic Management', credits: 3 },
+                { code: 'BBA223', name: 'Taxation I', credits: 3 },
+                { code: 'BBF222', name: 'Financial Management', credits: 3 },
+                { code: 'BBA224', name: 'Business Ethics', credits: 3 },
+                { code: 'RSC001', name: 'Research Methodology', credits: 3 },
+                { code: 'BBA226', name: 'Practicum', credits: 3 }
+            ]
+        },
+        '3': {
+            '1': [
+                { code: 'PLM317', name: 'Public Procurement & Contract Management', credits: 3 },
+                { code: 'PLM318', name: 'Risk & Insurance Management', credits: 3 },
+                { code: 'PLM319', name: 'Logistics & Supply Chain Management', credits: 3 },
+                { code: 'PLM314', name: 'Business Negotiations', credits: 3 },
+                { code: 'PLM315', name: 'Global Purchasing & Supply Chain Management', credits: 3 },
+                { code: 'PLM316', name: 'Legal Aspects of Purchasing', credits: 3 }
+            ],
+            '2': [
+                { code: 'PLM322', name: 'Sustainable Purchasing', credits: 3 },
+                { code: 'PLM326', name: 'Inventory & Warehousing Operations', credits: 3 },
+                { code: 'PLM324', name: 'Strategic Procurement', credits: 3 },
+                { code: 'PLM327', name: 'Procurement Audit & Investigations', credits: 3 },
+                { code: 'PLM328', name: 'E-Procurement & Software Applications', credits: 3 },
+                { code: 'BBA326', name: 'Research Project', credits: 5 }
+            ]
+        }
+    },
+
+    // BBA Marketing Management - COMPLETE (Years 1-3)
+    'bba-marketing-management': {
+        '1': {
+            '1': [
+                { code: 'BBA112', name: 'Microeconomics', credits: 3 },
+                { code: 'BBA113', name: 'Business Administration', credits: 3 },
+                { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'BIT110', name: 'Introduction to Information and Communication Technologies', credits: 4 },
+                { code: 'BBA115', name: 'Financial Accounting', credits: 3 },
+                { code: 'BBA116', name: 'Basic Statistics', credits: 3 }
+            ],
+            '2': [
+                { code: 'BBA311', name: 'Principles of Management', credits: 3 },
+                { code: 'BBA122', name: 'Quantitative Methods for Business', credits: 3 },
+                { code: 'PLM311', name: 'Principles of Procurement & Logistics Management', credits: 3 },
+                { code: 'BBA123', name: 'Macroeconomics', credits: 3 },
+                { code: 'BBA124', name: 'Principles of Marketing', credits: 3 },
+                { code: 'BBA125', name: 'Business Law', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'BBA211', name: 'Managerial Accounting', credits: 3 },
+                { code: 'BBA212', name: 'Organisational Behavior', credits: 3 },
+                { code: 'BBA214', name: 'Entrepreneurship & Small Business Management', credits: 3 },
+                { code: 'BAC215', name: 'Auditing I', credits: 3 },
+                { code: 'BBA215', name: 'Human Resource Management', credits: 3 },
+                { code: 'BBA216', name: 'Operations Management', credits: 3 }
+            ],
+            '2': [
+                { code: 'BBA221', name: 'Strategic Management', credits: 3 },
+                { code: 'BBA223', name: 'Taxation I', credits: 3 },
+                { code: 'BBF222', name: 'Financial Management', credits: 3 },
+                { code: 'BBA224', name: 'Business Ethics', credits: 3 },
+                { code: 'RSC001', name: 'Research Methodology', credits: 3 },
+                { code: 'BBA226', name: 'Practicum', credits: 3 }
+            ]
+        },
+        '3': {
+            '1': [
+                { code: 'MKT311', name: 'Consumer Behaviour', credits: 3 },
+                { code: 'MKT312', name: 'Service Marketing', credits: 3 },
+                { code: 'MKT313', name: 'Marketing Research & Planning', credits: 3 },
+                { code: 'PLM314', name: 'Business Negotiations', credits: 3 },
+                { code: 'MKT315', name: 'Global Marketing & Supply Chain Management', credits: 3 },
+                { code: 'MKT316', name: 'Legal Aspects of Marketing', credits: 3 }
+            ],
+            '2': [
+                { code: 'BBA313', name: 'Quality Systems Management', credits: 3 },
+                { code: 'MKT322', name: 'Industrial Marketing', credits: 3 },
+                { code: 'MKT323', name: 'Digital Marketing', credits: 3 },
+                { code: 'BBA315', name: 'Marketing Strategy', credits: 3 },
+                { code: 'MKT325', name: 'New Product & Services Development', credits: 3 },
+                { code: 'BBA326', name: 'Research Project', credits: 5 }
+            ]
+        }
+    },
+
+    // BBA Entrepreneurship - COMPLETE (Years 1-3)
+    'bba-entrepreneurship': {
+        '1': {
+            '1': [
+                { code: 'BBA112', name: 'Microeconomics', credits: 3 },
+                { code: 'BBA113', name: 'Business Administration', credits: 3 },
+                { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'BIT110', name: 'Introduction to Information and Communication Technologies', credits: 4 },
+                { code: 'BBA115', name: 'Financial Accounting', credits: 3 },
+                { code: 'BBA116', name: 'Basic Statistics', credits: 3 }
+            ],
+            '2': [
+                { code: 'BBA311', name: 'Principles of Management', credits: 3 },
+                { code: 'BBA122', name: 'Quantitative Methods for Business', credits: 3 },
+                { code: 'PLM311', name: 'Principles of Procurement & Logistics Management', credits: 3 },
+                { code: 'BBA123', name: 'Macroeconomics', credits: 3 },
+                { code: 'BBA124', name: 'Principles of Marketing', credits: 3 },
+                { code: 'BBA125', name: 'Business Law', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'BBA211', name: 'Managerial Accounting', credits: 3 },
+                { code: 'BBA212', name: 'Organisational Behavior', credits: 3 },
+                { code: 'BBA214', name: 'Entrepreneurship & Small Business Management', credits: 3 },
+                { code: 'BAC215', name: 'Auditing I', credits: 3 },
+                { code: 'BBA215', name: 'Human Resource Management', credits: 3 },
+                { code: 'BBA216', name: 'Operations Management', credits: 3 }
+            ],
+            '2': [
+                { code: 'BBA221', name: 'Strategic Management', credits: 3 },
+                { code: 'BBA223', name: 'Taxation I', credits: 3 },
+                { code: 'BBF222', name: 'Financial Management', credits: 3 },
+                { code: 'BBA224', name: 'Business Ethics', credits: 3 },
+                { code: 'RSC001', name: 'Research Methodology', credits: 3 },
+                { code: 'BBA226', name: 'Practicum', credits: 3 }
+            ]
+        },
+        '3': {
+            '1': [
+                { code: 'BBA313', name: 'Quality Systems Management', credits: 3 },
+                { code: 'ENT312', name: 'Electronic Business', credits: 3 },
+                { code: 'BBA314', name: 'Investment Analysis', credits: 3 },
+                { code: 'PLM314', name: 'Business Negotiations', credits: 3 },
+                { code: 'ENT315', name: 'Global Business & Supply Chain Management', credits: 3 },
+                { code: 'MKT311', name: 'Consumer Behaviour', credits: 3 }
+            ],
+            '2': [
+                { code: 'BBA322', name: 'Project Planning & Management', credits: 3 },
+                { code: 'ENT322', name: 'Service Sector Marketing', credits: 3 },
+                { code: 'ENT323', name: 'Proposal & Report Writing Skills', credits: 3 },
+                { code: 'ENT324', name: 'Venture Creation', credits: 3 },
+                { code: 'BBA315', name: 'Marketing Strategy', credits: 3 },
+                { code: 'BBA326', name: 'Research Project', credits: 5 }
+            ]
+        }
+    },
+
+
+    // National Certificate in Information & Communication Technology (NCICT)
+    'ncict': {
+        '1': {
+            '1': [
+                { code: 'NCIT111', name: 'Fundamentals of Information Technology', credits: 4 },
+                { code: 'NCIT112', name: 'Microsoft Office Applications', credits: 5 },
+                { code: 'NCIT113', name: 'Basic Mathematics', credits: 3 },
+                { code: 'GMLS111', name: 'Basic Communication Skills', credits: 3 },
+                { code: 'NCIT114', name: 'Real Life Project', credits: 5 }
+            ],
+            '2': [
+                { code: 'NCIT121', name: 'Basic HTML Web Programming', credits: 4 },
+                { code: 'NCIT122', name: 'Computer Graphics and Photo Editing', credits: 5 },
+                { code: 'NCBS120', name: 'Entrepreneurship Skills', credits: 3 },
+                { code: 'NCIT123', name: 'Computational Mathematics', credits: 3 },
+                { code: 'NCIT124', name: 'Real Life Project', credits: 5 },
+                { code: 'NCIT125', name: 'Industrial Training', credits: 5 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'NCIT211', name: 'Static Website Development', credits: 5 },
+                { code: 'NCIT212', name: 'Electronic Communication and Networks', credits: 5 },
+                { code: 'NCIT213', name: 'Computer Ethics', credits: 3 },
+                { code: 'NCIT214', name: 'Real Life Project', credits: 5 }
+            ],
+            '2': [
+                { code: 'NCIT221', name: 'Introduction to Visual Basic Programming', credits: 4 },
+                { code: 'NCIT222', name: 'Basic Computer Maintenance', credits: 5 },
+                { code: 'NCBS220', name: 'Basic Kiswahili', credits: 3 },
+                { code: 'NCIT223', name: 'Real Life Project', credits: 5 },
+                { code: 'NCIT224', name: 'Industrial Training', credits: 5 }
+            ]
+        }
+    },
+
+    // Bachelor of International Relations and Diplomatic Studies
+    'birds': {
+        '1': {
+            '1': [
+                { code: 'IRDS112', name: 'Introduction to Diplomacy', credits: 3 },
+                { code: 'BJC116', name: 'Basic Academic Writing Skills', credits: 3 },
+                { code: 'IRDS111', name: 'Introduction to International Relations', credits: 4 },
+                { code: 'BIT110', name: 'Introduction to Information Communication and Technology', credits: 4 },
+                { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'IRDS114', name: 'Protocol and Etiquette', credits: 3 }
+            ],
+            '2': [
+                { code: 'IRDS121', name: 'Introduction to Political Science', credits: 3 },
+                { code: 'IRDS122', name: 'Government and Politics in Africa', credits: 3 },
+                { code: 'IRDS128', name: 'The United Nations Systems', credits: 3 },
+                { code: 'IRDS124', name: 'International Law', credits: 4 },
+                { code: 'IRDS125', name: 'International Political Economy', credits: 3 },
+                { code: 'IRDS129', name: 'Terrorism and Related Global Issues', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'IRDS211', name: 'Africa and International Relations', credits: 3 },
+                { code: 'IRDS217', name: 'Religion, Conflict and Peace Studies', credits: 3 },
+                { code: 'IRDS213', name: 'Public Administration and Management', credits: 3 },
+                { code: 'IRDS214', name: 'Gender and International Relations', credits: 4 },
+                { code: 'IRDS215', name: 'Regional Integration and Globalization', credits: 3 },
+                { code: 'IRDS216', name: 'International Investment, Trade and Business Management', credits: 3 }
+            ],
+            '2': [
+                { code: 'IRDS227', name: 'Advanced Theory of Diplomacy', credits: 3 },
+                { code: 'IRDS222', name: 'Foreign Policy Analysis', credits: 3 },
+                { code: 'IRDS223', name: 'Comparative Political Systems', credits: 3 },
+                { code: 'IRDS224', name: 'International Politics of the Environment', credits: 3 },
+                { code: 'IRDS228', name: 'Research Methods in International Relations', credits: 3 },
+                { code: 'IRDS225', name: 'Conflict Resolution, Management and Transformation', credits: 3 },
+                { code: 'IRDS226', name: 'Internship', credits: 6 }
+            ]
+        },
+        '3': {
+            '1': [
+                { code: 'IRDS311', name: 'Security Studies', credits: 3 },
+                { code: 'IRDS312', name: 'Displaced Persons and Forced Migration Studies', credits: 4 },
+                { code: 'IRDS313', name: 'International Justice Mechanisms and International Criminal Justice', credits: 3 },
+                { code: 'IRDS314', name: 'International Politics, Media and Conflict', credits: 3 },
+                { code: 'IRDS315', name: 'International Development', credits: 3 },
+                { code: 'IRDS316', name: 'Global Geopolitical Analysis', credits: 4 }
+            ],
+            '2': [
+                { code: 'IRDS317', name: 'Civil-Military Relations', credits: 3 },
+                { code: 'IRDS321', name: 'Ethics in International Relations', credits: 3 },
+                { code: 'IRDS322', name: 'Africa and Contemporary International Security', credits: 3 },
+                { code: 'IRDS323', name: 'Strategic Intelligence, Modern Warfare and Human Rights', credits: 4 },
+                { code: 'IRDS324', name: 'Cyber Security and International Security', credits: 3 },
+                { code: 'IRDS325', name: 'International Public Relations and Strategic Communication', credits: 6 },
+                { code: 'IRDS326', name: 'Research Project', credits: 0 }
+            ]
+        }
+    },
+
+    // Diploma in Information Technology (DIT)
+    'dit': {
+        '1': {
+            '1': [
+                { code: 'DCS111', name: 'Fundamentals of Mathematics', credits: 3 },
+                { code: 'DIT110', name: 'Introduction to Information and Communication Technologies', credits: 3 },
+                { code: 'DCS112', name: 'Introduction to Operating Systems', credits: 3 },
+                { code: 'DIT114', name: 'Fundamentals of Information Systems', credits: 3 },
+                { code: 'DJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 }
+            ],
+            '2': [
+                { code: 'DCS121', name: 'Computer Architecture and Organisation', credits: 3 },
+                { code: 'DCS122', name: 'Programming Principles', credits: 4 },
+                { code: 'DIT123', name: 'Computer Applications', credits: 4 },
+                { code: 'DIT121', name: 'Introduction to Database Systems', credits: 4 },
+                { code: 'DIT122', name: 'Internet Technology and Web Design', credits: 4 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'DCS211', name: 'Computer Assembly, Repair and Maintenance', credits: 3 },
+                { code: 'DIT216', name: 'Emerging Trends in Computing', credits: 4 },
+                { code: 'DIT212', name: 'Systems Analysis and Design', credits: 3 },
+                { code: 'DIT213', name: 'Dynamic Website Development', credits: 4 },
+                {
+                    type: 'elective',
+                    title: 'Electives (Choose One)',
+                    options: [
+                        { code: 'DCS212', name: 'Computational Mathematics', credits: 3 },
+                        { code: 'DIT215', name: 'E-Commerce', credits: 3 },
+                        { code: 'FST210', name: 'Industrial Training (Recess Period)', credits: 5 }
+                    ],
+                    maxSelect: 1
+                }
+            ],
+            '2': [
+                { code: 'DIT221', name: 'Professional Issues in Computing', credits: 3 },
+                { code: 'DIT223', name: 'PC Network and Data Communication', credits: 4 },
+                { code: 'DIT226', name: 'Research Methodology in Computing', credits: 3 },
+                { code: 'DIT211', name: 'Database Development and Administration', credits: 4 },
+                { code: 'FST222', name: 'Graduation Project', credits: 6 },
+                {
+                    type: 'elective',
+                    title: 'Electives (Choose One)',
+                    options: [
+                        { code: 'DCS223', name: 'Application Development', credits: 4 },
+                        { code: 'DIT224', name: 'Introduction to Multimedia Systems', credits: 4 }
+                    ],
+                    maxSelect: 1
+                }
+            ]
+        }
+    },
+
+    // Bachelor of Information Technology (BIT)
+    'bit': {
+        '1': {
+            '1': [
+                { code: 'BIT110', name: 'Introduction to Information & Communication Technology', credits: 4 },
+                { code: 'BIT111', name: 'Discrete Mathematics', credits: 3 },
+                { code: 'BBA116', name: 'Basic Statistics', credits: 3 },
+                { code: 'BIT113', name: 'Fundamentals of Information Systems', credits: 3 },
+                { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 4 }
+            ],
+            '2': [
+                { code: 'BIT126', name: 'Database Development and Management I', credits: 4 },
+                { code: 'BIT122', name: 'Internet Technology & Web Design', credits: 3 },
+                { code: 'BIT123', name: 'Computer Applications', credits: 4 },
+                { code: 'BIT124', name: 'E-Commerce', credits: 3 },
+                { code: 'COM122', name: 'Principles of Programming', credits: 4 },
+                { code: 'BIT125', name: 'Information Systems Management', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'BIT215', name: 'Database Development and Management II', credits: 4 },
+                { code: 'BIT212', name: 'Systems Analysis and Design', credits: 3 },
+                { code: 'BIT213', name: 'Web Development and Management', credits: 4 },
+                { code: 'BIT214', name: 'Computer Networks & Data Communications', credits: 4 },
+                { code: 'COM211', name: 'Object Oriented Programming', credits: 4 },
+                { code: 'AGM212', name: 'Entrepreneurship & Small Business Management', credits: 3 }
+            ],
+            '2': [
+                { code: 'BIT222', name: 'Research Methodology in Computing', credits: 4 },
+                { code: 'BIT223', name: 'Computer Repair and Maintenance', credits: 3 },
+                { code: 'BIT225', name: 'Emerging Trends in Information Technology', credits: 3 },
+                { code: 'COM221', name: 'Operating Systems Principles', credits: 3 },
+                { code: 'COM224', name: 'Software Engineering Principles', credits: 3 }
+            ]
+        },
+        '3': {
+            '1': [
+                { code: 'BIT311', name: 'ICT Project Planning and Management', credits: 3 },
+                { code: 'BIT312', name: 'Mobile Application Development', credits: 4 },
+                { code: 'BIS313', name: 'Business Systems Modelling', credits: 4 },
+                { code: 'BIT314', name: 'Network Configuration and Management', credits: 4 },
+                {
+                    type: 'elective',
+                    title: 'Electives (Choose One)',
+                    options: [
+                        { code: 'BIT315', name: 'Multimedia Systems', credits: 4 },
+                        { code: 'BIT316', name: 'ICT 4 Development & Innovation', credits: 4 }
+                    ],
+                    maxSelect: 1
+                }
+            ],
+            '2': [
+                { code: 'BIT321', name: 'Professional Issues in Computing', credits: 3 },
+                { code: 'BIT325', name: 'Information Systems Audit', credits: 4 },
+                { code: 'BIT323', name: 'User Interface Design', credits: 4 },
+                { code: 'BIT324', name: 'Network and Information Security', credits: 4 },
+                { code: 'FST320', name: 'Graduation Project', credits: 4 },
+                {
+                    type: 'elective',
+                    title: 'Electives (Choose One)',
+                    options: [
+                        { code: 'BBC325', name: 'Business Intelligence and Data Warehouse', credits: 3 },
+                        { code: 'BIT322', name: 'Distributed System Development', credits: 3 }
+                    ],
+                    maxSelect: 1
+                }
+            ]
+        }
+    },
+
+    // Bachelor of Computer Science (BCS)
+    'bcs': {
+        '1': {
+            '1': [
+                { code: 'COM111', name: 'Mathematics for Computing', credits: 3 },
+                { code: 'COM113', name: 'Computer Architecture & Organization', credits: 3 },
+                { code: 'BIT110', name: 'Introduction to Information and Communication Technology', credits: 4 },
+                { code: 'BIT111', name: 'Discrete Mathematics', credits: 3 },
+                { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'BBA116', name: 'Basic Statistics', credits: 3 }
+            ],
+            '2': [
+                { code: 'BSE122', name: 'Internet and Web Programming I', credits: 4 },
+                { code: 'COM122', name: 'Principles of Programming', credits: 4 },
+                { code: 'COM123', name: 'Numerical Analysis and Computation', credits: 3 },
+                { code: 'BIT212', name: 'Systems Analysis and Design', credits: 4 },
+                { code: 'BIT124', name: 'E-Commerce', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'COM211', name: 'Object Oriented Programming', credits: 4 },
                 { code: 'COM212', name: 'Data Structures and Algorithms', credits: 3 },
-                { code: 'BIT214', name: 'Computer Networks and Data Communications', credits: 3 }
+                { code: 'BSE213', name: 'Internet and Web Programming II (Advanced Internet & Web Programming)', credits: 4 },
+                { code: 'BIT126', name: 'Database Development and Management I', credits: 4 },
+                { code: 'BIT214', name: 'Computer Networks and Data Communications', credits: 4 },
+                { code: 'COM321', name: 'Simulation & Modeling', credits: 4 }
             ],
             '2': [
                 { code: 'COM221', name: 'Operating Systems Principles', credits: 3 },
-                { code: 'COM224 / BSE212', name: 'Software Engineering Principles', credits: 3 },
-                { code: 'BIT215', name: 'Database Development and Management II', credits: 3 },
-                { code: 'BSE224', name: 'Python Programming', credits: 3 },
+                { code: 'COM224', name: 'Software Engineering Principles', credits: 3 },
+                { code: 'BSE224', name: 'Python Programming', credits: 4 },
                 { code: 'BIT222', name: 'Research Methodology in Computing', credits: 3 },
+                { code: 'BIT215', name: 'Database Development and Management II', credits: 4 },
                 {
                     type: 'elective',
                     title: 'Electives (Choose 1)',
                     options: [
                         { code: 'BIS313', name: 'Business Systems Modeling', credits: 3 },
-                        { code: 'BSE412 / COM225', name: 'Embedded Systems Design', credits: 3 }
+                        { code: 'COM225', name: 'Embedded Systems Design', credits: 3 }
                     ],
                     maxSelect: 1
                 }
@@ -1466,362 +1722,931 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         '3': {
             '1': [
-                { code: 'COM312', name: 'Artificial Intelligence and Expert Systems', credits: 3 },
-                { code: 'BIT311', name: 'ICT Project Planning and Management', credits: 3 },
-                { code: 'COM323', name: 'Computer Graphics', credits: 3 },
                 { code: 'COM311', name: 'Compiler Design', credits: 3 },
-                { code: 'BIT312 / BSE311', name: 'Mobile Application Development', credits: 3 },
-                { code: 'BIT314', name: 'Network Configuration and Management', credits: 3 }
-            ],
-            '2': [
-                { code: 'BIT321 / BSE427', name: 'Professional Issues in Computing', credits: 3 },
-                { code: 'COM324', name: 'Machine Learning', credits: 3 },
-                { code: 'BBA214 / DBA213 / AGM212', name: 'Entrepreneurship & Small Business Management', credits: 3 },
-                { code: 'BIT225', name: 'Emerging Trends in Computer Science', credits: 3 },
-                { code: 'BIT324', name: 'Network and Information Security', credits: 3 }
-            ]
-        }
-    },
-    
-    // Bachelor of Data Science and Artificial Intelligence
-    'bdsa': {
-        '1': {
-            '1': [
-                { code: 'DDA1106', name: 'Digital Electronics', credits: 3 },
-                { code: 'BIT111', name: 'Discrete Mathematics', credits: 3 },
-                { code: 'BBA116 / DBA116-GRP1', name: 'Basic Statistics', credits: 3 },
-                { code: 'BJC110-GRP2', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
-                { code: 'BSE224', name: 'Python Engineering', credits: 3 },
-                { code: 'BSE111', name: 'Calculus for Software Engineering', credits: 3 },
-                { code: 'BIT110-GRP3', name: 'Introduction to Information and Communication Technologies', credits: 3 }
-            ],
-            '2': [
-                { code: 'BDA1202 / DDA1203', name: 'R Programming', credits: 3 },
-                { code: 'BDA1201 / DDA1206', name: 'Design Thinking', credits: 3 },
-                { code: 'COM123 / DDA1201', name: 'Numerical Analysis and Computation', credits: 3 },
-                { code: 'BIT214', name: 'Computer Networks and Data Communications', credits: 3 },
+                { code: 'COM312', name: 'Artificial Intelligence & Expert Systems', credits: 3 },
+                { code: 'BIT312', name: 'Mobile Applications Development', credits: 4 },
+                { code: 'BIT311', name: 'ICT Project Planning and Management', credits: 3 },
+                { code: 'BIT314', name: 'Network Configuration & Management', credits: 4 },
                 {
                     type: 'elective',
-                    title: 'Electives (Choose One)',
+                    title: 'Electives (Choose 1)',
                     options: [
-                        { code: 'BIT122 / BSE121 / DDA1204', name: 'Internet and Web Programming', credits: 3 },
-                        { code: 'COM211', name: 'Object Oriented Programming', credits: 3 }
+                        { code: 'COM323', name: 'Computer Graphics', credits: 3 },
+                        { code: 'COM314', name: 'Cryptology and Coding Theory', credits: 3 }
                     ],
                     maxSelect: 1
                 }
-            ]
-        },
-        '2': {
-            '1': [
-                { code: 'COM221', name: 'Operating Systems', credits: 3 },
-                { code: 'BDA2102', name: 'Data Wrangling', credits: 3 },
-                { code: 'BDA2101', name: 'Data Ethics', credits: 3 },
-                { code: 'BIT121 / BSE121', name: 'Data Development and Management', credits: 3 },
-                { code: 'BSE314', name: 'Internet of Things', credits: 3 },
-                { code: 'COM212', name: 'Data Structures and Algorithms', credits: 3 },
-                { code: 'BDA2104', name: 'ASP.NET & C#', credits: 3 }
-            ]
-        }
-    },
-    
-    // Diploma in Data Science and Analytics
-    'ddsa': {
-        '1': {
-            '1': [
-                { code: 'DDA1106', name: 'Digital Electronics', credits: 3 },
-                { code: 'BBA116 / DBA116-GRP1', name: 'Basic Statistics', credits: 3 },
-                { code: 'BJC110-GRP2', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
-                { code: 'BSE224', name: 'Python Engineering', credits: 3 },
-                { code: 'BIT110-GRP3', name: 'Introduction to Information and Communication Technologies', credits: 3 },
-                { code: 'DCS111', name: 'Fundamentals of Mathematics', credits: 3 }
             ],
             '2': [
-                { code: 'BIT122 / BSE121 / DDA1204', name: 'Internet Technologies and Web Design', credits: 3 },
-                { code: 'DDA1205', name: 'Data Science Essentials', credits: 3 },
-                { code: 'BDA1202 / DDA1203', name: 'R Programming', credits: 3 },
-                { code: 'BSE314', name: 'Internet of Things', credits: 3 },
-                { code: 'BDA1201 / DDA1206', name: 'Design Thinking', credits: 3 },
-                { code: 'COM123 / DDA1201', name: 'Numerical Analysis and Computation', credits: 3 }
-            ]
-        },
-        '2': {
-            '1': [
-                { code: 'DDA2103', name: 'Business Cloud Computing', credits: 3 },
-                { code: 'DDA2102', name: 'Statistical Data Analysis', credits: 3 },
-                { code: 'BIT121 / BSE121', name: 'Database Development and Management', credits: 3 },
-                { code: 'BIT214', name: 'Computer Networks & Data Communication', credits: 3 }
+                { code: 'COM324', name: 'Machine Learning', credits: 3 },
+                { code: 'COM213', name: 'Emerging Trends in Computer Science', credits: 3 },
+                { code: 'BIT321', name: 'Professional Issues in Computing', credits: 3 },
+                { code: 'BIT324', name: 'Network and Information Security', credits: 4 },
+                { code: 'AGM212', name: 'Entrepreneurship & Small Business Management', credits: 3 },
+                { code: 'FST320', name: 'Graduation Project', credits: 4 }
             ]
         }
     },
-    
-    // Bachelor of Environmental Health Science
-    'behs': {
+
+    // Bachelor of Science in Public Health (BPH)
+    'bph': {
         '1': {
             '1': [
-                { code: 'EHS112', name: 'Principles of Epidemiology', credits: 3 },
+                { code: 'BPH114', name: 'Introduction to Public Health and Ethics', credits: 4 },
                 { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
-                { code: 'EHS113', name: 'Health Laboratory Management', credits: 3 },
-                { code: 'BPH113', name: 'Human Biology', credits: 3 },
-                { code: 'BIT110', name: 'Introduction to Information and Communication Technology', credits: 3 },
-                { code: 'EHS111', name: 'Human Environment', credits: 3 }
+                { code: 'BIT110', name: 'Introduction to Information and Communication Technology', credits: 4 },
+                { code: 'BPH112', name: 'Health and Health Behavior', credits: 4 },
+                { code: 'BPH212', name: 'Principles of Environmental Health', credits: 4 },
+                { code: 'BPH113', name: 'Human Biology', credits: 4 }
             ],
             '2': [
-                { code: 'EHS124', name: 'Introduction to Hydrology and Hydraulics', credits: 3 },
-                { code: 'EHS121', name: 'Biostatistics', credits: 3 },
-                { code: 'BPH124-EH', name: 'Diseases of Public Health Importance', credits: 3 },
-                { code: 'EHS122', name: 'Solid and Hazardous Wastes Management', credits: 3 },
-                { code: 'EHS125', name: 'Environmental Health Microbiology', credits: 3 }
+                { code: 'BPH121', name: 'First Aid and Emergency Rescue', credits: 4 },
+                { code: 'EHS121', name: 'Biostatistics', credits: 4 },
+                { code: 'BPH124', name: 'Diseases of Public Health Importance', credits: 4 },
+                { code: 'BPH122', name: 'Public Health Microbiology and Disease Surveillance', credits: 4 },
+                { code: 'EHS112', name: 'Principles of Epidemiology', credits: 4 }
             ]
         },
         '2': {
             '1': [
-                { code: 'EHS212', name: 'Environmental Pollution', credits: 3 },
-                { code: 'BPH211', name: 'Public Health Nutrition', credits: 3 },
-                { code: 'EHS215', name: 'Behavior Change Communication for Health', credits: 3 },
-                { code: 'EHS216', name: 'Vector and Vermin Control', credits: 3 },
-                { code: 'EHS213', name: 'Excreta and Waste Water Management', credits: 3 },
-                { code: 'EHS214', name: 'Principles of Demography and Population Dynamics', credits: 3 }
+                { code: 'BPH211', name: 'Public Health Nutrition', credits: 4 },
+                { code: 'BPH215', name: 'Principles of Health Promotion', credits: 4 },
+                { code: 'BPH216', name: 'Principles of Disease Control', credits: 4 },
+                { code: 'EHS214', name: 'Principles of Demography and Population Dynamics', credits: 4 },
+                { code: 'BPH323', name: 'Health Informatics', credits: 4 }
             ],
             '2': [
-                { code: 'EHS222', name: 'Town and Country Planning', credits: 3 },
+                { code: 'BPH221', name: 'Public Health in Emergency Situations', credits: 4 },
+                { code: 'BPH222', name: 'Principles of Health Education and Advocacy', credits: 4 },
+                { code: 'EHS223', name: 'Occupational Health & Safety', credits: 4 },
                 { code: 'RSC001', name: 'Research Methodology', credits: 3 },
-                { code: 'EHS224', name: 'Building Technology I', credits: 3 },
-                { code: 'EHS223', name: 'Occupational Health and Safety', credits: 3 },
-                { code: 'EHS225', name: 'Food Hygiene and Food Safety', credits: 3 },
-                { code: 'EHS221', name: 'Safe Water Management', credits: 3 }
+                { code: 'BPH224', name: 'Health Policies and Laws', credits: 4 }
             ]
         },
         '3': {
             '1': [
+                { code: 'BPH311', name: 'Community Health Practice', credits: 4 },
+                { code: 'BPH312', name: 'Field Training', credits: 4 },
+                { code: 'BPH313', name: 'Family and Reproductive Health', credits: 4 },
                 { code: 'EHS313', name: 'Health Monitoring and Evaluation', credits: 3 },
-                { code: 'BPH311', name: 'Community Health Practice', credits: 3 },
-                { code: 'EHS312', name: 'Environmental and Public Health Law', credits: 3 },
-                { code: 'EHS314', name: 'Building Technology II', credits: 3 },
-                {
-                    type: 'elective',
-                    title: 'Electives (Choose One)',
-                    options: [
-                        { code: 'EHS315', name: 'Environmental Impact Assessment', credits: 3 },
-                        { code: 'EHS316', name: 'Global Health', credits: 3 }
-                    ],
-                    maxSelect: 1
-                }
+                { code: 'BPH314', name: 'Social Marketing for Health', credits: 4 }
             ],
             '2': [
                 { code: 'BPH321', name: 'Health Economics and Financing', credits: 3 },
-                { code: 'EHS321', name: 'Natural and Alternative Medicine', credits: 3 },
                 { code: 'EHS323', name: 'Institutional Health Management', credits: 3 },
-                { code: 'EHS322', name: 'Health Policy Planning and Management', credits: 3 }
+                { code: 'BBA322', name: 'Project Planning and Management', credits: 4 },
+                { code: 'BPH325', name: 'Research Project', credits: 5 },
+                { code: 'BPH326', name: 'Health Service Management', credits: 4 }
             ]
         }
     },
-    
-    // Diploma in Business Administration
-    'dba': {
+
+    // Bachelor of Science in Environmental Health (BSEH)
+    'bseh': {
         '1': {
             '1': [
-                { code: 'BBA116 / DBA116', name: 'Basic Statistics', credits: 3 },
-                { code: 'BIT110', name: 'Introduction to Information and Communication Technologies', credits: 3 },
-                { code: 'BBA115', name: 'Financial Accounting', credits: 3 },
-                { code: 'BBA113 / DBA113', name: 'Business Administration', credits: 3 },
+                { code: 'EHS111', name: 'Human Environment', credits: 4 },
                 { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
-                { code: 'BBA112 / DBA112', name: 'Microeconomics', credits: 3 }
+                { code: 'BIT110', name: 'Introduction to Information and Communication Technology', credits: 4 },
+                { code: 'EHS112', name: 'Principles of Epidemiology', credits: 4 },
+                { code: 'EHS113', name: 'Health Laboratory Management', credits: 3 },
+                { code: 'BPH113', name: 'Human Biology', credits: 4 }
             ],
             '2': [
-                { code: 'BBA123', name: 'Macroeconomics', credits: 3 },
-                { code: 'BBA122 / DBA122', name: 'Quantitative Methods for Business', credits: 3 },
-                { code: 'DBA126', name: 'Stores and Inventory Management', credits: 3 },
-                { code: 'BBA311', name: 'Principles of Management', credits: 3 },
-                { code: 'BBA125 / DBA125', name: 'Business Law', credits: 3 },
-                { code: 'BBA124 / DBA124', name: 'Principles of Marketing', credits: 3 }
+                { code: 'EHS121', name: 'Biostatistics', credits: 4 },
+                { code: 'EHS122', name: 'Solid and Hazardous Wastes Management', credits: 4 },
+                { code: 'BPH124', name: 'Diseases of Public Health Importance', credits: 4 },
+                { code: 'EHS124', name: 'Introduction to Hydrology and Hydraulics', credits: 4 },
+                { code: 'EHS125', name: 'Environmental Health Microbiology', credits: 4 }
             ]
         },
         '2': {
             '1': [
-                { code: 'DBA216', name: 'Procurement Management', credits: 3 },
-                { code: 'BBA214 / DBA213 / AGM212', name: 'Entrepreneurship and E-commerce', credits: 3 },
-                { code: 'BBA216', name: 'Operations Management', credits: 3 },
-                { code: 'BIT125 / DBA212', name: 'Management Information Systems', credits: 3 },
-                { code: 'RSC001-B', name: 'Research Methodology', credits: 3 },
-                { code: 'BBA215 / DBA215', name: 'Human Resource Management', credits: 3 }
+                { code: 'BPH211', name: 'Public Health Nutrition', credits: 4 },
+                { code: 'EHS212', name: 'Environmental Pollution', credits: 3 },
+                { code: 'EHS213', name: 'Excreta and Waste Water Management', credits: 4 },
+                { code: 'EHS214', name: 'Principles of Demography and Population Dynamics', credits: 3 },
+                { code: 'EHS215', name: 'Behavior Change Communication for Health', credits: 4 },
+                { code: 'EHS216', name: 'Vector and Vermin Control', credits: 3 }
             ],
             '2': [
-                { code: 'DBA222', name: 'Financial Management', credits: 3 },
-                { code: 'DBA223', name: 'Taxation', credits: 3 },
-                { code: 'DBA221', name: 'Auditing I', credits: 3 },
-                { code: 'BBA211 / DBA211', name: 'Managerial Accounting', credits: 3 }
-            ]
-        }
-    },
-    
-    // Bachelor of Journalism and Communication Studies
-    'bjcs': {
-        '1': {
-            '1': [
-                { code: 'BJC112', name: 'Introduction to Behavioral Science', credits: 3 },
-                { code: 'BJC115', name: 'Introduction to Journalism & Media Organisation', credits: 3 },
-                { code: 'BJC110 (SES)', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
-                { code: 'BIT110', name: 'Introduction to Information and Communication Technologies', credits: 3 },
-                { code: 'BJC125', name: 'History of the Media and Communication', credits: 3 },
-                { code: 'BJC116', name: 'Basic Academic Writing Skills', credits: 3 }
-            ],
-            '2': [
-                { code: 'BJC121', name: 'Mass Media and Society', credits: 3 },
-                { code: 'IRDS121 / BPA121 / FOA124', name: 'Introduction to Political Science and Classical Thought', credits: 3 },
-                { code: 'BJC123', name: 'Introduction to Broadcasting', credits: 3 },
-                { code: 'BJC122', name: 'Introduction to Public Relations', credits: 3 },
-                { code: 'BJC127', name: 'Introduction to Media Writing', credits: 3 },
-                { code: 'BJC128', name: 'Computer Applications for Media', credits: 3 }
-            ]
-        },
-        '2': {
-            '1': [
-                { code: 'BJC214', name: 'Photojournalism', credits: 3 },
-                { code: 'BJC124', name: 'News Writing & Reporting', credits: 3 },
-                { code: 'BJC225', name: 'Development Communication', credits: 3 },
-                { code: 'BJC213', name: 'Media and Communication Policy', credits: 3 },
-                { code: 'BJC217', name: 'Media and Communication Theories', credits: 3 },
-                { code: 'BJC211', name: 'Audience Analysis and Media Research', credits: 3 }
-            ],
-            '2': [
-                { code: 'BJC226', name: 'Media Law & Ethics', credits: 3 },
-                { code: 'BJC224', name: 'Media Management', credits: 3 },
-                { code: 'BJC212', name: 'Advanced Writing', credits: 3 },
-                { code: 'BJC221', name: 'Principles of Advertising', credits: 3 },
-                { code: 'BJC229', name: 'Commercial Photography', credits: 3 },
+                { code: 'EHS221', name: 'Safe Water Management', credits: 3 },
+                { code: 'EHS222', name: 'Town and Country Planning', credits: 4 },
+                { code: 'EHS223', name: 'Occupational Health and Safety', credits: 4 },
+                { code: 'EHS224', name: 'Building Technology I', credits: 4 },
+                { code: 'EHS225', name: 'Food Hygiene and Food Safety', credits: 5 },
                 { code: 'RSC001', name: 'Research Methodology', credits: 3 }
             ]
         },
         '3': {
             '1': [
-                { code: 'BJC315', name: 'Investigative Journalism', credits: 3 },
-                { code: 'BJC324', name: 'Politics of Developments', credits: 3 },
-                { code: 'BJC323', name: 'Radio Production', credits: 3 },
-                { code: 'BJC311', name: 'The Art of Public Speaking', credits: 3 },
-                { code: 'BJC314', name: 'Multimedia and Animation', credits: 3 },
-                { code: 'BJC312', name: 'Public Relations & Media Practice', credits: 3 }
+                { code: 'BPH311', name: 'Community Health Practice', credits: 4 },
+                { code: 'EHS312', name: 'Environmental and Public Health Law', credits: 4 },
+                { code: 'EHS313', name: 'Health Monitoring and Evaluation', credits: 3 },
+                { code: 'EHS314', name: 'Building Technology II', credits: 4 },
+                { code: 'EHS317', name: 'Field Training', credits: 4 }
             ],
             '2': [
-                { code: 'BJC327', name: 'Environmental Journalism', credits: 3 },
-                { code: 'BJC313', name: 'Television Production', credits: 3 },
-                { code: 'BJC329', name: 'Online and Digital Journalism', credits: 3 },
-                { code: 'BJC322', name: 'Newspaper and Magazine Design', credits: 3 },
-                { code: 'BJC328', name: 'Fake News and Media Production', credits: 3 },
-                { code: 'BJC326', name: 'Media, Human Rights and Gender', credits: 3 }
+                { code: 'EHS321', name: 'Natural and Alternative Medicine', credits: 3 },
+                { code: 'BPH321', name: 'Health Economics and Financing', credits: 3 },
+                { code: 'EHS322', name: 'Health Policy Planning and Management', credits: 3 },
+                { code: 'EHS323', name: 'Institutional Health Management', credits: 3 },
+                { code: 'BPH221', name: 'Health in Emergency Situations', credits: 3 },
+                { code: 'EHS324', name: 'Research Project', credits: 5 }
             ]
         }
     },
-    
-    // Bachelor of Public Administration & Management
-    'bpam': {
+
+    // Bachelor of Laws (LLB)
+    'llb': {
         '1': {
             '1': [
-                { code: 'BJC110 (SES)', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
-                { code: 'BIT110', name: 'Introduction to Information and Communication Technologies', credits: 3 },
-                { code: 'BJC116', name: 'Basic Academic Writing Skills', credits: 3 },
-                { code: 'BPA116', name: 'Theory and Management of Organisations', credits: 3 },
+                { code: 'LLB111', name: 'Introducing Law', credits: 5 },
+                { code: 'LLB112', name: 'Constitutional History', credits: 5 },
+                { code: 'LLB113', name: 'Criminal Law I', credits: 5 },
+                { code: 'LLB114', name: 'Law of Contract I', credits: 5 },
+                { code: 'LLB115', name: 'Law and Development', credits: 5 }
+            ],
+            '2': [
+                { code: 'LLB121', name: 'Legal Methods', credits: 5 },
+                { code: 'LLB122', name: 'Constitutional Law', credits: 5 },
+                { code: 'LLB123', name: 'Criminal Law II', credits: 5 },
+                { code: 'LLB124', name: 'Law of Contract II', credits: 5 },
+                { code: 'LLB125', name: 'Administrative Law', credits: 5 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'LLB211', name: 'Family Law I', credits: 5 },
+                { code: 'LLB212', name: 'Land Law I', credits: 5 },
+                { code: 'LLB213', name: 'Evidence Law I', credits: 5 },
+                { code: 'LLB214', name: 'Nature and History of Torts', credits: 5 },
+                { code: 'LLB215', name: 'Equity and Trusts', credits: 5 }
+            ],
+            '2': [
+                { code: 'LLB221', name: 'Family Law II', credits: 5 },
+                { code: 'LLB222', name: 'Land Law II', credits: 5 },
+                { code: 'LLB223', name: 'Evidence Law II', credits: 5 },
+                { code: 'LLB224', name: 'Negligence & Strict Liability', credits: 5 },
+                { code: 'LLB225', name: 'Social Research', credits: 5 }
+            ]
+        },
+        '3': {
+            '1': [
+                { code: 'LLB311', name: 'Criminal Procedure', credits: 5 },
+                { code: 'LLB312', name: 'Civil Procedure I', credits: 5 },
+                { code: 'LLB313', name: 'Jurisprudence I', credits: 5 },
+                { code: 'LLB314', name: 'Sale of Goods', credits: 5 },
+                { code: 'LLB315', name: 'Law of Banking', credits: 5 }
+            ],
+            '2': [
+                { code: 'LLB321', name: 'Civil Procedure II', credits: 5 },
+                { code: 'LLB322', name: 'Jurisprudence II', credits: 5 },
+                { code: 'LLB323', name: 'Business Associations I', credits: 5 },
+                { code: 'LLB328', name: 'Clerkship', credits: 5 },
+                {
+                    type: 'elective',
+                    title: 'Electives (Choose Two)',
+                    options: [
+                        { code: 'LLB324', name: 'Alternative Dispute Resolution', credits: 5 },
+                        { code: 'LLB325', name: 'Computers and the Law', credits: 5 },
+                        { code: 'LLB326', name: 'Environmental Law', credits: 5 },
+                        { code: 'LLB327', name: 'Insurance Law', credits: 5 }
+                    ],
+                    maxSelect: 2
+                }
+            ]
+        },
+        '4': {
+            '1': [
+                { code: 'LLB411', name: 'Business Associations II', credits: 5 },
+                { code: 'LIB413', name: 'International Law I', credits: 5 },
+                {
+                    type: 'elective',
+                    title: 'Electives (Choose Three)',
+                    options: [
+                        { code: 'LLB412', name: 'Revenue and Taxation Law I', credits: 5 },
+                        { code: 'LLB414', name: 'Labour Law', credits: 5 },
+                        { code: 'LLB415', name: 'Insolvency Law', credits: 5 },
+                        { code: 'LLB416', name: 'Intellectual Property Law I', credits: 5 },
+                        { code: 'LLB417', name: 'International and Regional Human Rights Law', credits: 5 },
+                        { code: 'LLB418', name: 'Criminology and Penology', credits: 5 }
+                    ],
+                    maxSelect: 3
+                }
+            ],
+            '2': [
+                { code: 'LLB423', name: 'Research Paper', credits: 5 },
+                { code: 'LLB424', name: 'International Law II', credits: 5 },
+                {
+                    type: 'elective',
+                    title: 'Electives (Choose Three)',
+                    options: [
+                        { code: 'LLB421', name: 'International Trade', credits: 5 },
+                        { code: 'LLB422', name: 'Revenue and Taxation Law II', credits: 5 },
+                        { code: 'LLB425', name: 'International Humanitarian Law', credits: 5 },
+                        { code: 'LLB426', name: 'Intellectual Property II', credits: 5 },
+                        { code: 'LLB427', name: 'Human Rights in Domestic Perspective', credits: 5 },
+                        { code: 'LLB428', name: 'Natural Resources Law', credits: 5 },
+                        { code: 'LLB429', name: 'Investment Law', credits: 5 }
+                    ],
+                    maxSelect: 3
+                }
+            ]
+        }
+    },
+
+    // Bachelor of Public Administration (BPA)
+    'bpa': {
+        '1': {
+            '1': [
+                { code: 'BPA111', name: 'Introduction to Public Administration and Management', credits: 3 },
                 { code: 'BPA112', name: 'Public Finance Administration and Management', credits: 3 },
-                { code: 'BPA111', name: 'Public Administration and Management', credits: 3 }
+                { code: 'BJC116', name: 'Basic Academic Writing Skills', credits: 3 },
+                { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'BIT110', name: 'Introduction to Information and Communication Technology', credits: 4 },
+                { code: 'BPA116', name: 'Theory and Management of Organizations', credits: 4 }
             ],
             '2': [
-                { code: 'BPA124', name: 'Organizational Psychology', credits: 3 },
-                { code: 'IRDS121 / BPA121 / FOA124', name: 'Introduction to Political Science', credits: 3 },
-                { code: 'IRDS125 / BPA126', name: 'Political Economy', credits: 3 },
-                { code: 'BPA122', name: 'Governance and Public Sector Management', credits: 3 },
+                { code: 'IRDS121', name: 'Introduction to Political Science', credits: 3 },
+                { code: 'BPA122', name: 'Governance and Public Sector Management', credits: 4 },
                 { code: 'BPA123', name: 'Decentralization and Local Government Administration', credits: 3 },
-                { code: 'BPA221', name: 'Economics for Public Administration and Management', credits: 3 }
+                { code: 'BPA124', name: 'Organizational Psychology', credits: 3 },
+                { code: 'BPA221', name: 'Economics for Public Administration and Management', credits: 3 },
+                { code: 'BPA126', name: 'Political Economy', credits: 3 }
             ]
         },
         '2': {
             '1': [
+                { code: 'BPA211', name: 'Leadership and Change Management', credits: 4 },
+                { code: 'BPA125', name: 'Gender in Public Administration and Management', credits: 3 },
+                { code: 'BPA213', name: 'Regional Planning and Management', credits: 3 },
+                { code: 'BPA217', name: 'Development Public Administration and Management', credits: 4 },
                 { code: 'BPA215', name: 'Environmental Management and Sustainable Development', credits: 3 },
-                { code: 'BPA211', name: 'Leadership and Change Management', credits: 3 },
-                { code: 'BPA217', name: 'Development Public Administration and Management', credits: 3 },
-                { code: 'BPA216', name: 'Human and Social Services Systems', credits: 3 },
-                { code: 'BPA125 / IRDS214', name: 'Gender in Public Administration and Management', credits: 3 },
-                { code: 'BPA213', name: 'Regional Planning and Management', credits: 3 }
+                { code: 'BPA216', name: 'Human and Social Services Systems', credits: 3 }
             ],
             '2': [
+                { code: 'BPA113', name: 'Critical Thinking and Philosophy of Social Sciences', credits: 3 },
                 { code: 'BPA226', name: 'Demography and Population Studies', credits: 3 },
-                { code: 'FOA122 / BPA113', name: 'Introduction to Critical Thinking', credits: 3 },
-                { code: 'NGO316', name: 'Resource Mobilization and Grants Administration', credits: 3 },
-                { code: 'IRDS122 / BPA225', name: 'Government and Politics in Africa', credits: 3 },
-                { code: 'RSC001', name: 'Research Methodology', credits: 3 }
+                { code: 'NGO316', name: 'Resource Mobilization and Grant Administration', credits: 3 },
+                { code: 'RSC001', name: 'Research Methodology', credits: 4 },
+                { code: 'BPA225', name: 'Government and Politics in Public Administration', credits: 3 },
+                { code: 'BPA227', name: 'Internship', credits: 6 }
             ]
         },
         '3': {
             '1': [
+                { code: 'BBA215', name: 'Human Resource Management', credits: 3 },
                 { code: 'BPA312', name: 'Public Policy, Planning Analysis and Management', credits: 3 },
+                { code: 'BPA313', name: 'Civil Society Development and NGOs Management', credits: 3 },
                 { code: 'BPA314', name: 'Constitutionalism and Administrative Law', credits: 3 },
-                { code: 'PLM317', name: 'Public and Private Procurement Management', credits: 3 },
-                { code: 'BPA316', name: 'Management of Public Enterprises', credits: 3 },
-                { code: 'BBA215 / DBA215', name: 'Human Resource Management', credits: 3 },
-                { code: 'BPA313', name: 'Civil Society Development and NGOs Management', credits: 3 }
+                { code: 'PLM325', name: 'Public and Private Procurement Management', credits: 3 },
+                { code: 'BPA316', name: 'Management of Public Enterprises', credits: 4 }
             ],
             '2': [
                 { code: 'BBA322', name: 'Project Planning and Management', credits: 3 },
-                { code: 'BPA325', name: 'Human Rights and Social Justice', credits: 3 },
-                { code: 'BPA324', name: 'Ethics and Professionalism in Public Administration', credits: 3 },
+                { code: 'BPA322', name: 'Disaster Preparedness and Management', credits: 3 },
                 { code: 'IRDS311', name: 'Security Studies', credits: 3 },
-                { code: 'BPA322', name: 'Disaster Preparedness and Management', credits: 3 }
+                { code: 'BPA324', name: 'Ethics and Professionalism in Public Administration', credits: 3 },
+                { code: 'BPA323', name: 'Human Rights, Social Justice and Democracy', credits: 3 },
+                { code: 'BPA327', name: 'Research Project', credits: 6 }
             ]
         }
     },
-    
-    // Bachelor of International Relations and Diplomatic Studies
-    'birds': {
+
+    // Master of International Relations (MIR)
+    'mir': {
         '1': {
             '1': [
-                { code: 'BJC110 (SES)', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
-                { code: 'IRDS114', name: 'Protocol and Etiquette', credits: 3 },
-                { code: 'BIT110-GRP1', name: 'Introduction to Information and Communication Technologies', credits: 3 },
-                { code: 'BJC116', name: 'Basic Academic Writing Skills', credits: 3 },
-                { code: 'IRDS112', name: 'Introduction to Diplomacy', credits: 3 },
-                { code: 'IRDS111', name: 'Introduction to International Relations', credits: 3 }
+                { code: 'MIR711', name: 'Theories of International Relations', credits: 3 },
+                { code: 'MIR712', name: 'International Law', credits: 3 },
+                { code: 'MSS712', name: 'Security Studies', credits: 3 },
+                { code: 'MIR714', name: 'International Humanitarian Law', credits: 3 },
+                { code: 'MIR715', name: 'Democracy and Human Rights', credits: 3 },
+                { code: 'RSC002', name: 'Research Methodology', credits: 3 }
             ],
             '2': [
-                { code: 'IRDS129', name: 'Terrorism and Related Global Issues', credits: 3 },
-                { code: 'IRDS121 / BPA121 / FOA124', name: 'Introduction to Political Science', credits: 3 },
-                { code: 'IRDS124', name: 'International Law', credits: 3 },
-                { code: 'IRDS125 / BPA126', name: 'International Political Economy', credits: 3 },
-                { code: 'IRDS128', name: 'The United Nations Systems', credits: 3 },
-                { code: 'IRDS122 / BPA225', name: 'Government and Politics in Africa', credits: 3 }
+                { code: 'MIR721', name: 'Africa in International Relations', credits: 3 },
+                { code: 'MIR722', name: 'Foreign Policy Analysis', credits: 3 },
+                { code: 'MBA728', name: 'Scholarly Writing and Publication Skills', credits: 3 },
+                { code: 'MIR723', name: 'International Organisations', credits: 3 },
+                { code: 'MIR724', name: 'International Political Economy', credits: 3 }
             ]
         },
         '2': {
             '1': [
-                { code: 'IRDS215', name: 'Regional Integration and Globalization', credits: 3 },
-                { code: 'IRDS216', name: 'International Investment, Trade and Business Management', credits: 3 },
-                { code: 'IRDS217', name: 'Religion, Conflict and Peace Studies', credits: 3 },
-                { code: 'BPA111', name: 'Public Administration and Management', credits: 3 },
-                { code: 'BPA125 / IRDS214', name: 'Gender and International Relations', credits: 3 },
-                { code: 'IRDS211', name: 'Africa and International Relations', credits: 3 }
+                { code: 'MIR811', name: 'International Politics of the Environment', credits: 3 },
+                { code: 'MIR812', name: 'The Politics of Intervention', credits: 3 },
+                { code: 'MSS724', name: 'Natural Resources Conflicts and Contemporary Wars', credits: 3 },
+                { code: 'MIR814', name: 'Theory and Practice of Modern Diplomacy', credits: 3 },
+                { code: 'MSS813', name: 'Geopolitical Studies, Global Peace and Security', credits: 3 }
             ],
             '2': [
-                { code: 'IRDS224', name: 'International Politics of the Environment', credits: 3 },
-                { code: 'IRDS222', name: 'Foreign Policy Analysis', credits: 3 },
-                { code: 'IRDS225', name: 'Conflict Resolution, Management and Transformation', credits: 3 },
-                { code: 'RSC001-B', name: 'Research Methods in International Relations', credits: 3 },
-                { code: 'IRDS223', name: 'Comparative Political Systems', credits: 3 },
-                { code: 'IRDS227', name: 'Advanced Theory of Diplomacy', credits: 3 }
+                { code: 'MIR816', name: 'Dissertation', credits: 15 }
+            ]
+        }
+    },
+
+    // Master of Law (LLM)
+    'llm': {
+        '1': {
+            '1': [
+                { code: 'LLM711', name: 'Jurisprudence and Legal Theory (Compulsory)', credits: 4 },
+                {
+                    type: 'elective',
+                    title: 'Optional Courses (Choose 2)',
+                    options: [
+                        { code: 'LLM712', name: 'Oil and Gas Law & Policy', credits: 4 },
+                        { code: 'LLM713', name: 'Corporate Governance', credits: 4 },
+                        { code: 'LLM714', name: 'International Criminal Law', credits: 4 },
+                        { code: 'LLM715', name: 'International & Regional Child Law', credits: 4 },
+                        { code: 'LLM716', name: 'Intellectual Property Law I', credits: 4 },
+                        { code: 'LLM717', name: 'Forensic Justice and Criminology I', credits: 4 },
+                        { code: 'LLM718', name: 'Public International Law', credits: 4 },
+                        { code: 'LLM719', name: 'Human Rights in the Domestic Perspective', credits: 4 },
+                        { code: 'LLM724', name: 'International Law of Banking & Financial Institutions', credits: 4 }
+                    ],
+                    maxSelect: 2
+                }
+            ],
+            '2': [
+                {
+                    type: 'elective',
+                    title: 'Optional Courses (Choose 3)',
+                    options: [
+                        { code: 'LLM721', name: 'Governance and Anti-Corruption I', credits: 4 },
+                        { code: 'LLM722', name: 'Natural Resources and Energy Law I', credits: 4 },
+                        { code: 'LLM723', name: 'International Humanitarian Law', credits: 4 },
+                        { code: 'LLM725', name: 'World Trade Organisation & Regional Integration Law', credits: 4 },
+                        { code: 'LLM726', name: 'Intellectual Property II', credits: 4 },
+                        { code: 'LLM727', name: 'Forensic Justice and Criminology II', credits: 4 },
+                        { code: 'LLM728', name: 'International Environmental Law and Policy', credits: 4 },
+                        { code: 'LLM729', name: 'International Tax Law', credits: 4 },
+                        { code: 'LLM7210', name: 'Forced Migration and Refugee Law', credits: 4 }
+                    ],
+                    maxSelect: 3
+                }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'LLM811', name: 'Research Methodology I (Compulsory)', credits: 4 },
+                {
+                    type: 'elective',
+                    title: 'Optional Courses (Choose 2)',
+                    options: [
+                        { code: 'LLM812', name: 'Governance and Anti-Corruption II', credits: 4 },
+                        { code: 'LLM813', name: 'Alternative Dispute Resolution', credits: 4 },
+                        { code: 'LLM814', name: 'International and Regional Human Rights Law', credits: 4 },
+                        { code: 'LLM815', name: 'Cyber Law', credits: 4 },
+                        { code: 'LLM816', name: 'Law and Development', credits: 4 },
+                        { code: 'LLM817', name: 'International Commercial Transactions', credits: 4 },
+                        { code: 'LLM818', name: 'Natural Resources and Energy Law II', credits: 4 }
+                    ],
+                    maxSelect: 2
+                }
+            ],
+            '2': [
+                { code: 'LLM821', name: 'Dissertation', credits: 24 }
+            ]
+        }
+    },
+
+    // Bachelor of Software Engineering (BSE)
+    'bse': {
+        '1': {
+            '1': [
+                { code: 'BSE111', name: 'Calculus for Software Engineering', credits: 3 },
+                { code: 'COM113', name: 'Computer Architecture & Organization', credits: 3 },
+                { code: 'BIT110', name: 'Computer Fundamentals', credits: 4 },
+                { code: 'BIT111', name: 'Discrete Mathematics', credits: 3 },
+                { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 }
+            ],
+            '2': [
+                { code: 'BSE122', name: 'Internet and Web Programming', credits: 4 },
+                { code: 'COM122', name: 'Principles of Programming', credits: 4 },
+                { code: 'COM123', name: 'Numerical Analysis and Computation', credits: 3 },
+                { code: 'BIT121', name: 'Fundamentals of Database Systems', credits: 4 },
+                { code: 'BIT212', name: 'System Analysis and Design', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'COM211', name: 'Object Oriented Programming', credits: 4 },
+                { code: 'BSE212', name: 'Principles of Software Engineering', credits: 3 },
+                { code: 'COM221', name: 'Operating Systems Principles', credits: 3 },
+                { code: 'COM212', name: 'Data Structures and Algorithms', credits: 3 },
+                { code: 'BIT211', name: 'Advanced Database Systems', credits: 4 },
+                { code: 'BIT214', name: 'Computer Networks and Data Communications', credits: 4 }
+            ],
+            '2': [
+                { code: 'BSE222', name: 'Advanced Object Oriented Programming', credits: 4 },
+                { code: 'BSE226', name: 'Software Requirements Engineering', credits: 3 },
+                { code: 'BSE213', name: 'Advanced Internet and Web Programming', credits: 4 },
+                { code: 'BSE221', name: 'Formal Methods in Software Engineering', credits: 3 },
+                { code: 'BSE224', name: 'Python Programming', credits: 4 },
+                { code: 'BIT222', name: 'Research Methodology in Computing', credits: 3 }
             ]
         },
         '3': {
             '1': [
-                { code: 'IRDS314', name: 'International Politics, Media and Conflict', credits: 3 },
-                { code: 'IRDS313', name: 'International Justice Mechanisms and International Criminal Justice', credits: 3 },
-                { code: 'IRDS316', name: 'Global Geopolitical Analysis', credits: 3 },
-                { code: 'IRDS312', name: 'Displaced Persons and Forced Migration Studies', credits: 3 },
-                { code: 'IRDS311', name: 'Security Studies', credits: 3 },
-                { code: 'IRDS315', name: 'International Development', credits: 3 }
+                { code: 'BSE311', name: 'Mobile Applications Development', credits: 4 },
+                { code: 'COM312', name: 'Artificial Intelligence and Expert Systems', credits: 4 },
+                { code: 'BSE314', name: 'Internet of Things', credits: 4 },
+                { code: 'COM311', name: 'Compiler Design', credits: 3 },
+                { code: 'BIT314', name: 'Network Configuration & Management', credits: 4 },
+                {
+                    type: 'elective',
+                    title: 'Elective (Choose One)',
+                    options: [
+                        { code: 'BSE313', name: 'Object-Oriented Analysis and Design', credits: 3 },
+                        { code: 'BIT124', name: 'E-Commerce', credits: 3 }
+                    ],
+                    maxSelect: 1
+                }
             ],
             '2': [
-                { code: 'IRDS321', name: 'Ethics in International Relations', credits: 3 },
-                { code: 'IRDS325', name: 'International Public Relations and Strategic Communication', credits: 3 },
-                { code: 'IRDS323', name: 'Strategic Intelligence, Modern Warfare and Human Rights', credits: 3 },
-                { code: 'IRDS317', name: 'Civil Military Relations', credits: 3 },
-                { code: 'IRDS324', name: 'Cyber Security and International Security', credits: 3 },
-                { code: 'IRDS322', name: 'Africa and Contemporary International Security', credits: 3 }
+                { code: 'BSE326', name: 'Software Evolution', credits: 3 },
+                { code: 'BSE327', name: 'Advanced Mobile Applications Development', credits: 4 },
+                { code: 'COM321', name: 'Simulation & Modelling', credits: 4 },
+                { code: 'COM324', name: 'Machine Learning', credits: 3 },
+                {
+                    type: 'elective',
+                    title: 'Elective (Choose One)',
+                    options: [
+                        { code: 'BIT323', name: 'User Interface Design', credits: 3 },
+                        { code: 'BSE324', name: 'Mobile Communication Systems and Applications', credits: 3 }
+                    ],
+                    maxSelect: 1
+                }
+            ]
+        },
+        '4': {
+            '1': [
+                { code: 'BSE412', name: 'Software Quality Assurance and Testing', credits: 3 },
+                { code: 'BSE416', name: 'Embedded Systems Development', credits: 4 },
+                { code: 'BSE321', name: 'Software Metrics', credits: 3 },
+                { code: 'BSE323', name: 'Software Architecture & Patterns', credits: 3 },
+                { code: 'AGM212', name: 'Entrepreneurship & Small Business Management', credits: 3 },
+                {
+                    type: 'elective',
+                    title: 'Elective (Choose One)',
+                    options: [
+                        { code: 'BSE414', name: 'Computer Games Development', credits: 4 },
+                        { code: 'BSE415', name: 'Digital Image and Video Processing', credits: 4 }
+                    ],
+                    maxSelect: 1
+                }
+            ],
+            '2': [
+                { code: 'BSE417', name: 'Network Application Development', credits: 4 },
+                { code: 'BSE422', name: 'Managing Software Engineering Projects', credits: 3 },
+                { code: 'BSE427', name: 'Software Engineering Ethics', credits: 3 },
+                { code: 'BSE426', name: 'Software Security', credits: 3 },
+                { code: 'FST420', name: 'Graduation Project', credits: 4 }
+            ]
+        }
+    },
+
+    // Master of Science in Project Management (MPM)
+    'mpm': {
+        '1': {
+            '1': [
+                { code: 'MBA710', name: 'Management Theory and Practice', credits: 3 },
+                { code: 'MPM715', name: 'Finance for Project Managers', credits: 4 },
+                { code: 'MBA712', name: 'Marketing Management', credits: 3 },
+                { code: 'MPM716', name: 'Managing Operations and Projects', credits: 3 },
+                { code: 'RSC003', name: 'Research Methodology and Consultancy', credits: 3 }
+            ],
+            '2': [
+                { code: 'MPM720', name: 'Project Planning and Analysis', credits: 3 },
+                { code: 'MPM721', name: 'Project Finance and Techniques', credits: 4 },
+                { code: 'MPM722', name: 'Legal Aspects of Project Management', credits: 3 },
+                { code: 'MBA727', name: 'Human Resource Management', credits: 3 },
+                { code: 'MBA729', name: 'Computer Applications in Research', credits: 2 },
+                { code: 'MBA728', name: 'Scholarly Writing and Publications', credits: 2 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'MPM811', name: 'Project Monitoring and Evaluation', credits: 4 },
+                { code: 'MBA813', name: 'Business Ethics and Corporate Governance', credits: 3 },
+                { code: 'MBA724', name: 'Managing Change in Organisations', credits: 3 },
+                { code: 'MPM813', name: 'Project Implementation and Control', credits: 4 },
+                { code: 'MPM814', name: 'Management Consultancy', credits: 3 }
+            ],
+            '2': [
+                { code: 'MPM816', name: 'Dissertation / Project', credits: 15 }
+            ]
+        }
+    },
+
+    // Bachelor of Science in Economics and Statistics (BES)
+    'bes': {
+        '1': {
+            '1': [
+                { code: 'BBA112', name: 'Microeconomics I', credits: 3 },
+                { code: 'BBA113', name: 'Business Administration', credits: 3 },
+                { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'BIT110', name: 'Introduction to Information and Communication Technologies', credits: 3 },
+                { code: 'BBA115', name: 'Financial Accounting', credits: 3 },
+                { code: 'BBA116', name: 'Basic Statistics', credits: 3 }
+            ],
+            '2': [
+                { code: 'BES121', name: 'Macroeconomics I', credits: 3 },
+                { code: 'BES122', name: 'Time Series and Index Numbers', credits: 3 },
+                { code: 'BES123', name: 'Calculus', credits: 3 },
+                { code: 'BES124', name: 'Development Economics I', credits: 3 },
+                { code: 'BES125', name: 'Probability Theory', credits: 3 },
+                { code: 'BES126', name: 'Data Processing', credits: 3 }
+            ]
+        },
+        '2': {
+            'statistics': {
+                '1': [
+                    { code: 'BES211', name: 'Statistical Inference I', credits: 3 },
+                    { code: 'BES212', name: 'Mathematical Economics', credits: 3 },
+                    { code: 'BES213', name: 'Linear Algebra and Differential Equations', credits: 3 },
+                    { code: 'BDM212', name: 'Microeconomics II', credits: 3 },
+                    { code: 'BDM213', name: 'Natural Resource and Environmental Economics', credits: 3 },
+                    { code: 'BDM214', name: 'Labour Economics', credits: 3 }
+                ],
+                '2': [
+                    { code: 'BES221', name: 'Econometrics I', credits: 3 },
+                    { code: 'BES222', name: 'Industrial Statistical Modeling', credits: 3 },
+                    { code: 'BES223', name: 'Statistical Inference II', credits: 3 },
+                    { code: 'BDM222', name: 'Macroeconomics II', credits: 3 },
+                    { code: 'BDM226', name: 'Monetary Economics', credits: 3 },
+                    { code: 'RSC001', name: 'Research Methods', credits: 3 },
+                    { code: 'BBA226', name: 'Practicum', credits: 5 }
+                ]
+            },
+            'development-economics': {
+                '1': [
+                    { code: 'BDM211', name: 'Managerial Economics', credits: 3 },
+                    { code: 'BES212', name: 'Mathematical Economics', credits: 3 },
+                    { code: 'BDM212', name: 'Microeconomics II', credits: 3 },
+                    { code: 'BDM213', name: 'Natural Resource and Environmental Economics', credits: 3 },
+                    { code: 'BDM214', name: 'Labour Economics', credits: 3 },
+                    { code: 'BDM215', name: 'World Economic History', credits: 3 }
+                ],
+                '2': [
+                    { code: 'BES221', name: 'Econometrics I', credits: 3 },
+                    { code: 'BDM222', name: 'Macroeconomics II', credits: 3 },
+                    { code: 'BDM223', name: 'Development Economics II', credits: 3 },
+                    { code: 'BDM226', name: 'Monetary Economics', credits: 3 },
+                    { code: 'HRM221', name: 'Principles of Management', credits: 3 },
+                    { code: 'RSC001', name: 'Research Methods', credits: 3 },
+                    { code: 'BBA226', name: 'Practicum', credits: 5 }
+                ]
+            }
+        },
+        '3': {
+            'statistics': {
+                '1': [
+                    { code: 'BES311', name: 'Statistical Data Analysis', credits: 3 },
+                    { code: 'BES312', name: 'Operations Research', credits: 3 },
+                    { code: 'BES313', name: 'Multivariate Analyses', credits: 3 },
+                    { code: 'BDM312', name: 'Microeconomics III', credits: 3 },
+                    { code: 'BDM313', name: 'Public Sector Economics', credits: 3 },
+                    { code: 'BBA311', name: 'Project Planning and Management', credits: 3 }
+                ],
+                '2': [
+                    { code: 'BES321', name: 'Econometrics II', credits: 3 },
+                    { code: 'BES322', name: 'Sampling Design and Survey', credits: 3 },
+                    { code: 'BES323', name: 'Agricultural Statistics', credits: 3 },
+                    { code: 'BES324', name: 'Economic Policy and Planning', credits: 3 },
+                    { code: 'BDM321', name: 'Macroeconomics III', credits: 3 },
+                    { code: 'BBA326', name: 'Research Project', credits: 6 }
+                ]
+            },
+            'development-economics': {
+                '1': [
+                    { code: 'BDM316', name: 'Development Economics III', credits: 3 },
+                    { code: 'BDM312', name: 'Microeconomics III', credits: 3 },
+                    { code: 'BDM313', name: 'Public Sector Economics', credits: 3 },
+                    { code: 'BDM314', name: 'Health Economics', credits: 3 },
+                    { code: 'BDM315', name: 'International Economics', credits: 3 },
+                    { code: 'BBA311', name: 'Project Planning and Management', credits: 3 }
+                ],
+                '2': [
+                    { code: 'BDM321', name: 'Macroeconomics III', credits: 3 },
+                    { code: 'IRD125', name: 'International Political Economy', credits: 3 },
+                    { code: 'BDM322', name: 'Industrial Economics', credits: 3 },
+                    { code: 'BDM325', name: 'Agricultural Economics', credits: 3 },
+                    { code: 'BBA322', name: 'Strategic Management', credits: 3 },
+                    { code: 'BBA326', name: 'Research Project', credits: 6 }
+                ]
+            }
+        }
+    },
+
+    // Master of Education in Education Management (MEM)
+    'mem': {
+        '1': {
+            '1': [
+                { code: 'MBA710', name: 'Management Theory and Practice', credits: 3 },
+                { code: 'RSC003', name: 'Research Methodology and Consultancy', credits: 3 },
+                { code: 'MPM720', name: 'Project Planning and Management', credits: 3 },
+                { code: 'MED713', name: 'Cost Analysis and Financial Resource Management', credits: 3 },
+                { code: 'MED714', name: 'Economics of Education', credits: 3 }
+            ],
+            '2': [
+                { code: 'MED721', name: 'Legal Aspects in Education Management', credits: 3 },
+                { code: 'MED722', name: 'Ethics in Higher Education', credits: 3 },
+                { code: 'MED723', name: 'Educational Planning and Administration', credits: 3 },
+                { code: 'MBA728', name: 'Scholarly Writing and Publication Skills', credits: 3 },
+                { code: 'MBA729', name: 'Computer Applications in Research', credits: 4 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'MED811', name: 'Human Resource Management in Education', credits: 3 },
+                { code: 'MED812', name: 'Educational Policy Making and Analysis', credits: 3 },
+                { code: 'MED813', name: 'School Supervision and Inspection', credits: 3 },
+                { code: 'MHR814', name: 'Human Resource Information Systems', credits: 3 },
+                { code: 'MHR722', name: 'Organisational Behaviour', credits: 3 }
+            ],
+            '2': [
+                { code: 'MED820', name: 'Proposal Development and Dissertation Writing', credits: 5 }
+            ]
+        }
+    },
+
+    // Master of Science in Security Studies (MSS)
+    'mss': {
+        '1': {
+            '1': [
+                { code: 'MIR711', name: 'International Relations Theory', credits: 3 },
+                { code: 'MSS712', name: 'Security Studies', credits: 3 },
+                { code: 'RSC003', name: 'Research Methodology and Consultancy', credits: 3 },
+                { code: 'MSS714', name: 'Forensic Science and National Security', credits: 3 },
+                { code: 'MSS716', name: 'Criminology and Security', credits: 3 }
+            ],
+            '2': [
+                { code: 'MSS721', name: 'Human Security and Contemporary Wars', credits: 3 },
+                { code: 'MSS722', name: 'Anti-Terrorism and Counter-Terrorism Strategies', credits: 3 },
+                { code: 'MSS723', name: 'Threat, Risk Analysis and Security Management', credits: 3 },
+                { code: 'MSS724', name: 'Natural Resources -- Conflicts and Contemporary Wars', credits: 3 },
+                { code: 'MSS725', name: 'Arms Proliferation, Disarmament and Arms Control', credits: 3 },
+                { code: 'MBA728', name: 'Scholarly Writing and Publication Skills', credits: 3 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'MSS810', name: 'Homeland Security, Cyber Security and Human Rights', credits: 3 },
+                { code: 'MSS811', name: 'Civil-Military Relations and Security Sector', credits: 3 },
+                { code: 'MSS812', name: 'International Politics of the Environment and National Security', credits: 3 },
+                { code: 'MSS813', name: 'Geopolitical Studies, Global Peace and Security', credits: 3 },
+                { code: 'MSS216', name: 'World of Intelligence and Espionage', credits: 3 }
+            ],
+            '2': [
+                { code: 'MSS820', name: 'Master Project', credits: 15 }
+            ]
+        }
+    },
+
+    // Diploma in Paralegal Studies
+    'dps': {
+        '1': {
+            '1': [
+                { code: 'DPS111', name: 'Introduction to Law & Legal Systems', credits: 4 },
+                { code: 'DPS112', name: 'General Principles of Constitutional Law', credits: 4 },
+                { code: 'DPS113', name: 'Criminal Law', credits: 4 },
+                { code: 'DPS114', name: 'Contract Law', credits: 4 },
+                { code: 'DPS115', name: 'Administrative Law', credits: 4 },
+                { code: 'DPS116', name: 'Law of Evidence', credits: 4 }
+            ],
+            '2': [
+                { code: 'DPS121', name: 'Introduction to Legal Research & Writing', credits: 4 },
+                { code: 'DPS122', name: 'Paralegal Ethics & Professionalism', credits: 4 },
+                { code: 'DPS123', name: 'Forensic Justice and Criminology I', credits: 4 },
+                { code: 'DPS124', name: 'Criminal Procedure', credits: 4 },
+                { code: 'DPS125', name: 'Law of Real Property', credits: 4 },
+                { code: 'DPS126', name: 'Family Law and Succession', credits: 4 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'DPS211', name: 'Health and the Law', credits: 4 },
+                { code: 'DPS212', name: 'Introduction to Human Rights', credits: 4 },
+                { code: 'DPS213', name: 'Forensic Justice and Criminology II', credits: 4 },
+                { code: 'DPS214', name: 'Elements of Commercial Law', credits: 4 },
+                { code: 'DPS215', name: 'Labour Law', credits: 4 },
+                { code: 'DPS216', name: 'Civil Procedure', credits: 4 }
+            ],
+            '2': [
+                { code: 'DPS220', name: 'Internship -- Legal Assistant/Paralegal', credits: 4 },
+                { code: 'DPS221', name: 'Research Report', credits: 4 }
+            ]
+        }
+    },
+
+    // Master of Information Technology
+    'mit': {
+        '1': {
+            '1': [
+                { code: 'MIT710', name: 'Academic Writing and Publication Skills', credits: 3 },
+                { code: 'MIT712', name: 'Management Information System', credits: 3 },
+                { code: 'MIT715', name: 'E-Governance', credits: 3 },
+                { code: 'MIT716', name: 'ICT for Development & Innovation', credits: 4 },
+                { code: 'MIT717', name: 'Requirement Engineering', credits: 3 },
+                { code: 'MIT718', name: 'Legal and Ethical Aspects of Computing', credits: 3 }
+            ],
+            '2': [
+                { code: 'MBA729', name: 'Computer Applications in Research', credits: 4 },
+                { code: 'MHR722', name: 'Organizational Behavior', credits: 3 },
+                { code: 'MIT727', name: 'Information Technology Project Management', credits: 3 },
+                { code: 'MIT728', name: 'Data Analytics and Visualization', credits: 4 },
+                { code: 'MIT729', name: 'Research Methods in Information Technology', credits: 3 },
+                {
+                    type: 'elective',
+                    title: 'Electives (Choose 1)',
+                    options: [
+                        { code: 'MIT724', name: 'Knowledge Management & Business Intelligence', credits: 3 },
+                        { code: 'MIT725', name: 'Data Warehousing & Data Mining', credits: 3 },
+                        { code: 'MIT726', name: 'ICT Policy Formulation & E-Strategy Development', credits: 3 }
+                    ],
+                    maxSelect: 1
+                }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'MIT721', name: 'Computer Networks & Telecommunications', credits: 4 },
+                { code: 'MIT723', name: 'Web Application Engineering', credits: 4 },
+                { code: 'MIT722', name: 'Advanced Database Systems', credits: 4 },
+                { code: 'MIT821', name: 'Systems Analysis and Design', credits: 3 },
+                { code: 'MIT822', name: 'Security of Information Systems', credits: 3 },
+                {
+                    type: 'elective',
+                    title: 'Electives (Choose 1)',
+                    options: [
+                        { code: 'MIT818', name: 'Distributed Systems Technologies', credits: 3 },
+                        { code: 'MIT823', name: 'Artificial Intelligence & Intelligent Systems', credits: 3 },
+                        { code: 'MIT824', name: 'Mobile and Wireless Networks', credits: 3 }
+                    ],
+                    maxSelect: 1
+                }
+            ],
+            '2': [
+                { code: 'MIT825', name: 'Master\'s Dissertation in Information Technology', credits: 10 }
+            ]
+        }
+    },
+
+    // Advanced Diploma in Health Leadership and Management (ADHLM)
+    'adhlm': {
+        '1': {
+            '1': [
+                { code: 'ADHM1101', name: 'Information Technology in Health Services Management', credits: 4 },
+                { code: 'ADHM1102', name: 'Basic English Language Communication Skills', credits: 3 },
+                { code: 'ADHM1103', name: 'Managing Primary Health Care Services', credits: 4 },
+                { code: 'ADHM1104', name: 'Fundamentals of Epidemiology and Biostatistics', credits: 5 },
+                { code: 'ADHM1105', name: 'Fundamentals of Financial Management in Health Care', credits: 5 },
+                { code: 'ADHM1106', name: 'Health Systems Management', credits: 4 }
+            ],
+            '2': [
+                { code: 'ADHM1201', name: 'Environmental and Occupational Health and Safety', credits: 5 },
+                { code: 'ADHM1202', name: 'Human Resource Management', credits: 3 },
+                { code: 'ADHM1203', name: 'Management and Maintenance of Health Material Resources', credits: 4 },
+                { code: 'ADHM1204', name: 'Project Planning and Management', credits: 4 },
+                { code: 'ADHM1205', name: 'Mobilization of Resources for Health Services', credits: 4 },
+                { code: 'ADHM1206', name: 'Fundamentals of Action Research in Health Services Research', credits: 5 }
+            ]
+        }
+    },
+
+    // Diploma in Data Science and Analytics (DDSA)
+    'ddsa': {
+        '1': {
+            '1': [
+                { code: 'DDA1101', name: 'Python Programming', credits: 4 },
+                { code: 'DDA1102', name: 'Fundamentals of Mathematics', credits: 3 },
+                { code: 'DDA1103', name: 'Basic Statistics', credits: 3 },
+                { code: 'DDA1104', name: 'Introduction to Information Technology', credits: 4 },
+                { code: 'DDA1105', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                { code: 'DDA1106', name: 'Digital Electronics', credits: 4 }
+            ],
+            '2': [
+                { code: 'DDA1201', name: 'Numerical Analysis and Computation', credits: 3 },
+                { code: 'DDA1202', name: 'Internet of Things', credits: 4 },
+                { code: 'DDA1203', name: 'R Programming', credits: 4 },
+                { code: 'DDA1204', name: 'Internet Technologies and Web Design', credits: 4 },
+                { code: 'DDA1205', name: 'Data Science Essentials', credits: 3 },
+                { code: 'DDA1206', name: 'Design Thinking', credits: 4 }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'DDA2101', name: 'Database Development and Management', credits: 4 },
+                { code: 'DDA2102', name: 'Statistical Data Analysis', credits: 4 },
+                { code: 'DDA2103', name: 'Business Cloud Computing', credits: 3 },
+                { code: 'DDA2104', name: 'Computer Networks & Data Communication', credits: 4 }
+            ],
+            '2': [
+                { code: 'DDA2201', name: 'Analysis and Visualization', credits: 4 },
+                { code: 'DDA2202', name: 'Data Wrangling', credits: 4 },
+                { code: 'DDA2203', name: 'Emerging Trends in Data Analytics', credits: 3 },
+                { code: 'DDA2204', name: 'Tools for Data Science and Analytics', credits: 3 },
+                { code: 'DDA2205', name: 'Graduation Project', credits: 5 },
+                { code: 'DDA2206', name: 'Front End Development', credits: 4 }
+            ]
+        }
+    },
+
+    // Bachelor of Science in Data Science and Artificial Intelligence (BDSAI)
+    'bdsai': {
+        '1': {
+            '1': [
+                { code: 'BBA116', name: 'Basic Statistics', credits: 3 },
+                { code: 'BSE224', name: 'Python Programming', credits: 4 },
+                { code: 'BIT110', name: 'Introduction to Information Communication Technology', credits: 4 },
+                { code: 'BDA1101', name: 'Digital Electronics', credits: 4 },
+                { code: 'BJC110', name: 'Communication Skills and Learning Skills for Employability', credits: 3 },
+                {
+                    type: 'elective',
+                    title: 'Electives (Select One)',
+                    options: [
+                        { code: 'BSE111', name: 'Calculus for Software Engineering', credits: 3 },
+                        { code: 'BIT111', name: 'Discrete Mathematics', credits: 3 }
+                    ],
+                    maxSelect: 1
+                }
+            ],
+            '2': [
+                { code: 'BDA1201', name: 'Design Thinking', credits: 3 },
+                { code: 'COM123', name: 'Numerical Analysis and Computation', credits: 3 },
+                { code: 'BIT214', name: 'Computer Networks and Data Communications', credits: 4 },
+                { code: 'BDA1202', name: 'R Programming', credits: 4 },
+                {
+                    type: 'elective',
+                    title: 'Electives (Select One)',
+                    options: [
+                        { code: 'COM211', name: 'Object Oriented Programming', credits: 4 },
+                        { code: 'BSE122', name: 'Internet and Web Programming', credits: 4 }
+                    ],
+                    maxSelect: 1
+                }
+            ]
+        },
+        '2': {
+            '1': [
+                { code: 'BDA2101', name: 'Data Ethics', credits: 3 },
+                { code: 'COM221', name: 'Operating Systems', credits: 3 },
+                { code: 'COM212', name: 'Data Structures and Algorithms', credits: 3 },
+                { code: 'BDA2102', name: 'Data Wrangling', credits: 4 },
+                { code: 'BDA2103', name: 'Data Development and Management', credits: 3 },
+                { code: 'BSE314', name: 'Internet of Things', credits: 3 },
+                { code: 'BDA2104', name: 'ASP.NET & C#', credits: 4 }
+            ],
+            '2': [
+                { code: 'BSE222', name: 'Advanced Object-Oriented Programming', credits: 4 },
+                { code: 'BDA2201', name: 'Microprocessor and Microcontroller', credits: 3 },
+                { code: 'BDA2202', name: 'Front End Development', credits: 4 },
+                { code: 'BIT222', name: 'Research Methodology in Computing', credits: 3 },
+                {
+                    type: 'elective',
+                    title: 'Electives (Select One)',
+                    options: [
+                        { code: 'BDA2203', name: 'Analysis and Visualization', credits: 4 },
+                        { code: 'COM321', name: 'Simulation & Modelling', credits: 4 }
+                    ],
+                    maxSelect: 1
+                }
+            ]
+        },
+        '3': {
+            '1': [
+                { code: 'BDA3101', name: 'Augmented and Virtual Reality', credits: 4 },
+                { code: 'BDA3102', name: 'Business Cloud Computing', credits: 4 },
+                { code: 'BDA3103', name: 'Advanced Artificial Intelligence & Robotics', credits: 4 },
+                { code: 'COM324', name: 'Machine Learning', credits: 3 },
+                { code: 'BDA3104', name: 'Research / Minor Project', credits: 4 },
+                {
+                    type: 'elective',
+                    title: 'Electives (Select One)',
+                    options: [
+                        { code: 'COM312', name: 'Artificial Intelligence & Expert Systems', credits: 4 },
+                        { code: 'BDA3105', name: 'Advanced Data Science', credits: 4 }
+                    ],
+                    maxSelect: 1
+                }
+            ],
+            '2': [
+                { code: 'BDA3201', name: 'Deep Learning', credits: 4 },
+                { code: 'BDA3202', name: 'Cyber Security', credits: 3 },
+                { code: 'BDA3203', name: 'Data Engineering', credits: 4 },
+                { code: 'BDA3206', name: 'Research / Graduation Project', credits: 5 },
+                {
+                    type: 'elective',
+                    title: 'Electives (Select One)',
+                    options: [
+                        { code: 'BDA3204', name: 'Natural Language Processing', credits: 3 },
+                        { code: 'BDA3205', name: 'Blockchain Technology', credits: 3 }
+                    ],
+                    maxSelect: 1
+                }
             ]
         }
     }
@@ -2125,6 +2950,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </body>
 
 </html>
+
 
 
 
