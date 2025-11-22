@@ -3107,7 +3107,7 @@
             }
             
             // Add to semester history
-    const existingIndex = semesterResults.findIndex(result => 
+const existingIndex = semesterResults.findIndex(result => 
     result.program === program && result.year === year && result.semester === semester
 );
 
@@ -3181,7 +3181,7 @@ if (semesterResults.length > 0) {
     } else {
         cgpaResult.style.color = 'var(--accent)';
     }
-    } else {
+} else {
     cgpaResult.textContent = '-';
 }
         }
